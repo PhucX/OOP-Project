@@ -105,6 +105,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\QuanLyGiaoDich.cs" />
+    <Compile Include="Controllers\QuanLyKhoanVay.cs" />
+    <Compile Include="Controllers\QuanLyTaiKhoan.cs" />
     <Compile Include="fGiaoDich.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +144,16 @@
     <Compile Include="fTrangChu.Designer.cs">
       <DependentUpon>fTrangChu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\ThanhToan.cs" />
+    <Compile Include="Modules\GiaoDich.cs" />
+    <Compile Include="Modules\KhoanChoVay.cs" />
+    <Compile Include="Modules\KhoanNo.cs" />
+    <Compile Include="Modules\KhoanVay.cs" />
+    <Compile Include="Modules\TaiKhoan.cs" />
+    <Compile Include="Objects\BaseCRUD.cs" />
+    <Compile Include="Objects\DichVuGiaoDich.cs" />
+    <Compile Include="Objects\DichVuTaiKhoan.cs" />
+    <Compile Include="Objects\DichVuVay.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -176,6 +189,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Utils\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
