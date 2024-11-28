@@ -10,20 +10,24 @@ using System.Windows.Forms;
 
 namespace QuanLyChiTieu
 {
-    public partial class fSuaGiaoDich : Form
+    public partial class fThemKhoanVay : Form
     {
-
-        public fSuaGiaoDich()
+        public fThemKhoanVay()
         {
             InitializeComponent();
         }
 
-        private void fSuaGiaoDich_Load(object sender, EventArgs e)
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void fSuaGiaoDich_Load_1(object sender, EventArgs e)
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Separator2_Click(object sender, EventArgs e)
         {
 
         }

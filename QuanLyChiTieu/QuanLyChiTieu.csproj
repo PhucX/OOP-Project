@@ -111,6 +111,12 @@
     <Compile Include="fGiaoDich.Designer.cs">
       <DependentUpon>fGiaoDich.cs</DependentUpon>
     </Compile>
+    <Compile Include="fKhoanVay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fKhoanVay.Designer.cs">
+      <DependentUpon>fKhoanVay.cs</DependentUpon>
+    </Compile>
     <Compile Include="form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,11 +135,23 @@
     <Compile Include="fSuaGiaoDich.Designer.cs">
       <DependentUpon>fSuaGiaoDich.cs</DependentUpon>
     </Compile>
+    <Compile Include="fSuaKhoanVay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fSuaKhoanVay.Designer.cs">
+      <DependentUpon>fSuaKhoanVay.cs</DependentUpon>
+    </Compile>
     <Compile Include="fThemGiaoDich.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fThemGiaoDich.Designer.cs">
       <DependentUpon>fThemGiaoDich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fThemKhoanVay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fThemKhoanVay.Designer.cs">
+      <DependentUpon>fThemKhoanVay.cs</DependentUpon>
     </Compile>
     <Compile Include="fTrangChu.cs">
       <SubType>Form</SubType>
@@ -150,6 +168,9 @@
     <EmbeddedResource Include="fGiaoDich.resx">
       <DependentUpon>fGiaoDich.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fKhoanVay.resx">
+      <DependentUpon>fKhoanVay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form1.resx">
       <DependentUpon>form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,8 +180,14 @@
     <EmbeddedResource Include="fSuaGiaoDich.resx">
       <DependentUpon>fSuaGiaoDich.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fSuaKhoanVay.resx">
+      <DependentUpon>fSuaKhoanVay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fThemGiaoDich.resx">
       <DependentUpon>fThemGiaoDich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fThemKhoanVay.resx">
+      <DependentUpon>fThemKhoanVay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fTrangChu.resx">
       <DependentUpon>fTrangChu.cs</DependentUpon>
@@ -174,9 +201,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
       <Visible>False</Visible>
@@ -188,6 +213,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

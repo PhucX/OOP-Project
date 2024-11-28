@@ -92,15 +92,16 @@
             this.btnThongTin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnThongTin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnThongTin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnThongTin.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnThongTin.FillColor = System.Drawing.Color.Transparent;
             this.btnThongTin.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThongTin.ForeColor = System.Drawing.Color.White;
             this.btnThongTin.Image = ((System.Drawing.Image)(resources.GetObject("btnThongTin.Image")));
             this.btnThongTin.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnThongTin.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnThongTin.Location = new System.Drawing.Point(2, 631);
+            this.btnThongTin.Location = new System.Drawing.Point(0, 631);
             this.btnThongTin.Name = "btnThongTin";
-            this.btnThongTin.Size = new System.Drawing.Size(218, 60);
+            this.btnThongTin.Size = new System.Drawing.Size(220, 60);
             this.btnThongTin.TabIndex = 16;
             this.btnThongTin.Text = "THÔNG TIN";
             this.btnThongTin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -290,6 +291,7 @@
             this.panelDesktop.BorderColor = System.Drawing.Color.DimGray;
             this.panelDesktop.BorderRadius = 15;
             this.panelDesktop.Controls.Add(this.guna2PictureBox2);
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelDesktop.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.panelDesktop.Location = new System.Drawing.Point(220, 105);
             this.panelDesktop.Name = "panelDesktop";
@@ -315,7 +317,7 @@
             // 
             // guna2Elipse1
             // 
-            this.guna2Elipse1.BorderRadius = 10;
+            this.guna2Elipse1.BorderRadius = 20;
             this.guna2Elipse1.TargetControl = this;
             // 
             // guna2ControlBox1
@@ -338,7 +340,7 @@
             this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox2.IconColor = System.Drawing.Color.Black;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(862, 0);
+            this.guna2ControlBox2.Location = new System.Drawing.Point(861, 0);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
             this.guna2ControlBox2.Size = new System.Drawing.Size(29, 26);
             this.guna2ControlBox2.TabIndex = 16;
@@ -347,7 +349,7 @@
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
             this.guna2Panel1.BorderColor = System.Drawing.Color.DimGray;
-            this.guna2Panel1.BorderRadius = 20;
+            this.guna2Panel1.BorderRadius = 30;
             this.guna2Panel1.Controls.Add(this.guna2HtmlLabel2);
             this.guna2Panel1.Controls.Add(this.guna2ControlBox2);
             this.guna2Panel1.Controls.Add(this.guna2ControlBox1);

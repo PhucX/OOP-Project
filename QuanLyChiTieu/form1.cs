@@ -49,9 +49,7 @@ namespace QuanLyChiTieu
                 this.Hide();
                 form2.ShowDialog(); 
                 this.Close();
-
             }
-            
         }
     }
 }

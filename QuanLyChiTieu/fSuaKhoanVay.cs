@@ -10,22 +10,11 @@ using System.Windows.Forms;
 
 namespace QuanLyChiTieu
 {
-    public partial class fSuaGiaoDich : Form
+    public partial class fSuaKhoanVay : Form
     {
-
-        public fSuaGiaoDich()
+        public fSuaKhoanVay()
         {
             InitializeComponent();
-        }
-
-        private void fSuaGiaoDich_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fSuaGiaoDich_Load_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

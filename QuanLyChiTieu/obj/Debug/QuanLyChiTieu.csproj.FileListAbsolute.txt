@@ -39,3 +39,6 @@ D:\OOP(project)\QuanLyChiTieu\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fGiaoDich.re
 D:\OOP(project)\QuanLyChiTieu\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.Properties.Resources.resources
 D:\OOP(project)\QuanLyChiTieu\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fSuaGiaoDich.resources
 D:\OOP(project)\QuanLyChiTieu\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fThemGiaoDich.resources
+D:\OOP(project)\QuanLyChiTieu\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fKhoanVay.resources
+D:\OOP(project)\QuanLyChiTieu\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fThemKhoanVay.resources
+D:\OOP(project)\QuanLyChiTieu\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fSuaKhoanVay.resources
