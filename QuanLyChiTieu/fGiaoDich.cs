@@ -145,15 +145,6 @@ namespace QuanLyChiTieu
 
  
 
-        //private void guna2Button1_Leave(object sender, EventArgs e)
-        //{
-        //    if (guna2DataGridView1.Rows.Count > 0)
-        //    {
-        //        for (int i = 0; i < guna2DataGridView1.Columns.Count; i++)
-        //        {
-        //            guna2DataGridView1.Rows[0].Cells[i].ReadOnly = true;
-        //        }
-        //    }
-        //}
+        
     }
 }
