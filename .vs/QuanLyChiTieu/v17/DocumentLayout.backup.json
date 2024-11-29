@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\OOP(project)\\QuanLyChiTieu\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0F605ED0-4794-481D-BC1F-4F2DA96F787C}|QuanLyChiTieu\\QuanLyChiTieu.csproj|D:\\OOP(project)\\QuanLyChiTieu\\quanlychitieu\\fkhoanvay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F605ED0-4794-481D-BC1F-4F2DA96F787C}|QuanLyChiTieu\\QuanLyChiTieu.csproj|solutionrelative:quanlychitieu\\fkhoanvay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0F605ED0-4794-481D-BC1F-4F2DA96F787C}|QuanLyChiTieu\\QuanLyChiTieu.csproj|D:\\OOP(project)\\QuanLyChiTieu\\quanlychitieu\\fkhoanvay.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F605ED0-4794-481D-BC1F-4F2DA96F787C}|QuanLyChiTieu\\QuanLyChiTieu.csproj|solutionrelative:quanlychitieu\\fkhoanvay.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F605ED0-4794-481D-BC1F-4F2DA96F787C}|QuanLyChiTieu\\QuanLyChiTieu.csproj|d:\\oop(project)\\quanlychitieu\\quanlychitieu\\fsuakhoanvay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{0F605ED0-4794-481D-BC1F-4F2DA96F787C}|QuanLyChiTieu\\QuanLyChiTieu.csproj|D:\\OOP(project)\\QuanLyChiTieu\\quanlychitieu\\fsuakhoanvay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{0F605ED0-4794-481D-BC1F-4F2DA96F787C}|QuanLyChiTieu\\QuanLyChiTieu.csproj|solutionrelative:quanlychitieu\\fsuakhoanvay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F605ED0-4794-481D-BC1F-4F2DA96F787C}|QuanLyChiTieu\\QuanLyChiTieu.csproj|D:\\OOP(project)\\QuanLyChiTieu\\quanlychitieu\\fkhoanvay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F605ED0-4794-481D-BC1F-4F2DA96F787C}|QuanLyChiTieu\\QuanLyChiTieu.csproj|solutionrelative:quanlychitieu\\fkhoanvay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0F605ED0-4794-481D-BC1F-4F2DA96F787C}|QuanLyChiTieu\\QuanLyChiTieu.csproj|d:\\oop(project)\\quanlychitieu\\quanlychitieu\\fthemkhoanvay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -86,7 +86,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "fSuaKhoanVay.cs [Design]",
               "DocumentMoniker": "D:\\OOP(project)\\QuanLyChiTieu\\QuanLyChiTieu\\fSuaKhoanVay.cs",
               "RelativeDocumentMoniker": "QuanLyChiTieu\\fSuaKhoanVay.cs",
@@ -98,20 +98,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "fKhoanVay.Designer.cs",
               "DocumentMoniker": "D:\\OOP(project)\\QuanLyChiTieu\\QuanLyChiTieu\\fKhoanVay.Designer.cs",
               "RelativeDocumentMoniker": "QuanLyChiTieu\\fKhoanVay.Designer.cs",
               "ToolTip": "D:\\OOP(project)\\QuanLyChiTieu\\QuanLyChiTieu\\fKhoanVay.Designer.cs",
               "RelativeToolTip": "QuanLyChiTieu\\fKhoanVay.Designer.cs",
-              "ViewState": "AgIAAJwAAAAAAAAAAAAowK4AAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAowKUAAACQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-28T07:01:12.963Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "fKhoanVay.cs",
               "DocumentMoniker": "D:\\OOP(project)\\QuanLyChiTieu\\QuanLyChiTieu\\fKhoanVay.cs",
               "RelativeDocumentMoniker": "QuanLyChiTieu\\fKhoanVay.cs",
@@ -144,8 +144,7 @@
               "RelativeToolTip": "QuanLyChiTieu\\fGiaoDich.cs",
               "ViewState": "AgIAAGgAAAAAAAAAAAAQwEwAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T13:46:59.176Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-20T13:46:59.176Z"
             },
             {
               "$type": "Document",
@@ -156,8 +155,7 @@
               "ToolTip": "D:\\OOP(project)\\QuanLyChiTieu\\QuanLyChiTieu\\fGiaoDich.cs [Design]",
               "RelativeToolTip": "QuanLyChiTieu\\fGiaoDich.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T13:46:56.144Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-20T13:46:56.144Z"
             }
           ]
         }
