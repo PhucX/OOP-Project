@@ -17,15 +17,16 @@ namespace QuanLyChiTieu
         public fKhoanVay()
         {
             InitializeComponent();
+            dgvKhoanVay.MultiSelect = true;
         }
 
         private void fKhoanVay_Load(object sender, EventArgs e)
         {
             dgvKhoanVay.Rows.Clear();
 
-            for (int i = 0; i < DichVuVay.Instance.DanhSachKhoanVay.Count; i++)
+            foreach (var khoanVay in DichVuVay.Instance.DanhSachKhoanVay)
             {
-                KhoanNo khoanNo = DichVuVay.Instance.DanhSachKhoanVay[i] as KhoanNo;
+                KhoanNo khoanNo = khoanVay.Value as KhoanNo;
 
                 if (khoanNo != null)
                 {
@@ -57,10 +58,14 @@ namespace QuanLyChiTieu
                 }
             }
         }
+
+        private Queue<int> queueIndex = new Queue<int>();
         private void dgbKhoanVay_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0) // Kiểm tra có click vào vùng dữ liệu
             {
+                queueIndex.Enqueue(e.RowIndex);
+
                 if (e.ColumnIndex == dgvKhoanVay.Columns["xoaColumn"].Index)
                 {
                     // Xác nhận trước khi xóa
@@ -72,8 +77,15 @@ namespace QuanLyChiTieu
                     );
                     if (result == DialogResult.Yes)
                     {
-                        dgvKhoanVay.Rows.RemoveAt(e.RowIndex); // Xóa dòng
+                        while(queueIndex.Count > 0)
+                        {
+                            int index = queueIndex.Dequeue();
+                            string maVay = dgvKhoanVay.Rows[index].Cells["maVay"].Value.ToString();
+                            DichVuVay.Instance.Xoa(maVay); // xoas  
+                        }
+
                     }
+                    fKhoanVay_Load(sender, e);
                 }
                 else if (e.ColumnIndex == dgvKhoanVay.Columns["suaColumn"].Index)
                 {

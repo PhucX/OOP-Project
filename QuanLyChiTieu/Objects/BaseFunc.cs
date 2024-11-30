@@ -8,9 +8,9 @@ namespace QuanLyChiTieu.Objects
 {
     public abstract class BaseFunc<T>
     {
-        protected List<T> items = new List<T>();
+        protected Dictionary<string, T> items = new Dictionary<string, T>();
 
-        public abstract void Them(T item);
+        public abstract void Them(string id, T item);
         public abstract T DocDanhSach(string id);
         public abstract bool CapNhat(string id, T item);
 

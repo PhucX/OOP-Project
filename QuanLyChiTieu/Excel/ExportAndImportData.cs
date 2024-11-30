@@ -28,11 +28,11 @@ namespace QuanLyChiTieu
 
                     foreach (IXLRow row in worksheet.RowsUsed().Skip(1))
                     {
-                        DichVuGiaoDich.Instance.Them(new GiaoDich(row.Cell(1).Value.ToString(),
-                            DateTime.Parse(row.Cell(2).Value.ToString()),
-                            double.Parse(row.Cell(3).Value.ToString()),
-                            row.Cell(4).Value.ToString(),
-                            row.Cell(5).Value.ToString()));
+                        DichVuGiaoDich.Instance.Them(row.Cell(1).Value.ToString(), new GiaoDich(row.Cell(2).Value.ToString(),
+                            DateTime.Parse(row.Cell(3).Value.ToString()),
+                            double.Parse(row.Cell(4).Value.ToString()),
+                            row.Cell(5).Value.ToString(),
+                            row.Cell(6).Value.ToString()));
                     }
                 }
             }

@@ -26,7 +26,7 @@ namespace QuanLyChiTieu.Objects
         }
 
         public List<TaiKhoan> DanhSachTaiKhoan { get => danhSachTaiKhoan; set => danhSachTaiKhoan = value; }
-        public override void Them(TaiKhoan item) { }
+        public override void Them(string id, TaiKhoan item) { }
 
         public override TaiKhoan DocDanhSach(string id) { return new TaiKhoan(); }
 

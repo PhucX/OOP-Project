@@ -20,14 +20,14 @@ namespace QuanLyChiTieu
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            string idVay = "debt" + DichVuVay.Instance.DanhSachKhoanVay.Count.ToString();
+            string idVay = DichVuVay.Instance.GetIdKhoanVay();
             string nguoiChoVay = txbNguoiChoVay.Text;
             double soTienVay = double.Parse(txbSoTienVay.Text);
             double laiSuat = double.Parse(txbLaiSuat.Text);
             string trangThai = guna2ComboBox1.SelectedItem.ToString();
             DateTime ngayDenHan = NgayDenHan.Value.Date;
 
-            DichVuVay.Instance.Them(new Modules.KhoanNo(idVay, soTienVay, laiSuat, ngayDenHan, trangThai, nguoiChoVay));
+            DichVuVay.Instance.Them(idVay, new Modules.KhoanNo(idVay, soTienVay, laiSuat, ngayDenHan, trangThai, nguoiChoVay));
 
             this.Close();
         }

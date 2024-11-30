@@ -20,6 +20,7 @@ namespace QuanLyChiTieu
             InitializeComponent();
             this.khoanVay = DichVuVay.Instance.TimKiem(maVay);
             KhoanNo khoanNo = khoanVay as KhoanNo;
+
             txbNguoiChoVay.Text = khoanNo.NguoiChoVay;
             txbSoTienVay.Text = khoanNo.SoTienVay.ToString();
             txbLaiSuat.Text = khoanNo.LaiSuat.ToString();

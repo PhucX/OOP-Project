@@ -26,7 +26,7 @@ namespace QuanLyChiTieu.Objects
         }
 
         public List<GiaoDich> DanhSachGiaoDich { get => danhSachGiaoDich; set => danhSachGiaoDich = value; }
-        public override void Them(GiaoDich item) { }
+        public override void Them(string id, GiaoDich item) { }
 
         public override GiaoDich DocDanhSach(string id) { return new GiaoDich(); }
 
