@@ -69,9 +69,11 @@ namespace QuanLyChiTieu.Objects
 
         public override void HienThi() { }
 
-        public override KhoanVay TimKiem(string id) 
+        public override bool TimKiem(string id) 
         {
-            return danhSachKhoanVay[id];
+            if(danhSachKhoanVay.ContainsKey(id))
+                return true;
+            return false;
         }
 
 

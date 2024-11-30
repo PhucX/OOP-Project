@@ -58,16 +58,16 @@ namespace QuanLyChiTieu
                 {
                     IXLWorksheet worksheet = workbook.Worksheets.Add("Sheet1");
 
-                    for (int i = 0; i < dataGridView.Columns.Count; i++)
+                    for (int i = 1; i < dataGridView.Columns.Count - 2; i++)
                     {
-                        worksheet.Cell(1, i + 1).Value = dataGridView.Columns[i].HeaderText;
+                        worksheet.Cell(1, i).Value = dataGridView.Columns[i].HeaderText;
                     }
 
-                    if (dataGridView.Rows.Count > 1)
+                    if (dataGridView.Rows.Count > 0)
                     {
-                        for (int i = 0; i < dataGridView.Rows.Count; i++)
+                        for (int i = 1; i < dataGridView.Rows.Count - 2; i++)
                         {
-                            for (int j = 0; j < dataGridView.Columns.Count; j++)
+                            for (int j = 1; j < dataGridView.Columns.Count - 2; j++)
                             {
                                 worksheet.Cell(i + 2, j + 1).Value = dataGridView.Rows[i].Cells[j].Value.ToString();
                             }

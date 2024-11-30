@@ -47,8 +47,8 @@ namespace QuanLyChiTieu
             else
             {
                 fBangDieuKhien form2 = new fBangDieuKhien();
-                string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), $"data.xlsx");
-                new DataManager(new ExcelImporter()).ImportData(filePath);
+                //string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), $"data.xlsx");
+                //new DataManager(new ExcelImporter()).ImportData(filePath);
 
                 this.Hide();
                 form2.ShowDialog(); 

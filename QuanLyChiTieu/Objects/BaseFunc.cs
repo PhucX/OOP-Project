@@ -17,6 +17,6 @@ namespace QuanLyChiTieu.Objects
         public abstract bool Xoa(string id);
         public abstract void HienThi();
 
-        public abstract T TimKiem(string id);
+        public abstract bool TimKiem(string id);
     }
 }

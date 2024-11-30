@@ -35,7 +35,7 @@ namespace QuanLyChiTieu.Objects
 
         public override void HienThi() { }
 
-        public override TaiKhoan TimKiem(string id) { return new TaiKhoan(); }
+        public override bool TimKiem(string id) { return false; }
 
         public void ChuyenKhoan(string maTaiKhoan, double soTien) { }
     }

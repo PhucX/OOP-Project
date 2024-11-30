@@ -36,7 +36,7 @@ namespace QuanLyChiTieu.Objects
 
         public override void HienThi() { }
         //public override GiaoDich TimKiem(string id) { }
-        public override GiaoDich TimKiem(string id) { return new GiaoDich(); }
+        public override bool TimKiem(string id) { return false; }
 
 
         public List<GiaoDich> PhanLoaiGiaoDich(string id) { return new List<GiaoDich>(); }

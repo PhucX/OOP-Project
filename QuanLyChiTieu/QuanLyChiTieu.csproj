@@ -192,6 +192,7 @@
     <Compile Include="Modules\KhoanVay.cs" />
     <Compile Include="Modules\TaiKhoan.cs" />
     <Compile Include="Objects\BaseFunc.cs" />
+    <Compile Include="Objects\Connection.cs" />
     <Compile Include="Objects\DichVuGiaoDich.cs" />
     <Compile Include="Objects\DichVuTaiKhoan.cs" />
     <Compile Include="Objects\DichVuVay.cs" />
@@ -232,7 +233,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="data\~%24data.xlsx" />
+    <None Include="Data\~%24data.xlsx" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
