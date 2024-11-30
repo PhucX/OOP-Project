@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyChiTieu.Objects;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,19 +18,18 @@ namespace QuanLyChiTieu
             InitializeComponent();
         }
 
-        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
+            string idVay = "debt" + DichVuVay.Instance.DanhSachKhoanVay.Count.ToString();
+            string nguoiChoVay = txbNguoiChoVay.Text;
+            double soTienVay = double.Parse(txbSoTienVay.Text);
+            double laiSuat = double.Parse(txbLaiSuat.Text);
+            string trangThai = guna2ComboBox1.SelectedItem.ToString();
+            DateTime ngayDenHan = NgayDenHan.Value.Date;
 
-        }
+            DichVuVay.Instance.Them(new Modules.KhoanNo(idVay, soTienVay, laiSuat, ngayDenHan, trangThai, nguoiChoVay));
 
-        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Separator2_Click(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
     }
 }

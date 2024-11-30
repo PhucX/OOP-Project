@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,7 +46,10 @@ namespace QuanLyChiTieu
             }
             else
             {
-                fBangDieuKhien   form2 = new fBangDieuKhien();
+                fBangDieuKhien form2 = new fBangDieuKhien();
+                string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), $"data.xlsx");
+                new DataManager(new ExcelImporter()).ImportData(filePath);
+
                 this.Hide();
                 form2.ShowDialog(); 
                 this.Close();

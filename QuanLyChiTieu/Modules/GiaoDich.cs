@@ -16,8 +16,9 @@ namespace QuanLyChiTieu.Modules
 
         // phương thức khởi tạo
         public GiaoDich() { }
-        public GiaoDich(string maGiaoDich, double soTienGiaoDich, DateTime ngayGiaoDich, string ghiChu, string loaiGiaoDich)
-        { 
+        public GiaoDich(string maGiaoDich, DateTime ngayGiaoDich, double soTienGiaoDich, string loaiGiaoDich, string ghiChu)
+        {
+            
             this.maGiaoDich = maGiaoDich;
             this.soTienGiaoDich = soTienGiaoDich;
             this.ngayGiaoDich = ngayGiaoDich;

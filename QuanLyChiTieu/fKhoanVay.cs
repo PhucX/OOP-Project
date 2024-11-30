@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLyChiTieu.Modules;
+using QuanLyChiTieu.Objects;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,9 +21,18 @@ namespace QuanLyChiTieu
 
         private void fKhoanVay_Load(object sender, EventArgs e)
         {
-            dgvKhoanVay.Rows.Add(false, "Nguyễn Văn A", "01/12/2024", "5,000,000", "5%", "Chưa thanh toán");
-            dgvKhoanVay.Rows.Add(false, "Lê Thị B", "15/12/2024", "10,000,000", "10%", "Đã thanh toán");
-            dgvKhoanVay.Rows.Add(false, "Trần Văn C", "20/12/2024", "3,000,000", "3%", "Quá hạn");
+            dgvKhoanVay.Rows.Clear();
+
+            for (int i = 0; i < DichVuVay.Instance.DanhSachKhoanVay.Count; i++)
+            {
+                KhoanNo khoanNo = DichVuVay.Instance.DanhSachKhoanVay[i] as KhoanNo;
+
+                if (khoanNo != null)
+                {
+                    dgvKhoanVay.Rows.Add(false, khoanNo.IdKhoanVay, khoanNo.NguoiChoVay, khoanNo.NgayDenHan.ToString(), khoanNo.SoTienVay.ToString(), khoanNo.LaiSuat.ToString(), khoanNo.TrangThai);
+                }
+
+            }
         }
 
         private void dgvKhoanVay_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -66,8 +77,9 @@ namespace QuanLyChiTieu
                 }
                 else if (e.ColumnIndex == dgvKhoanVay.Columns["suaColumn"].Index)
                 {
-                    fSuaKhoanVay fSuaKhoanVay = new fSuaKhoanVay();
+                    fSuaKhoanVay fSuaKhoanVay = new fSuaKhoanVay(dgvKhoanVay.Rows[e.RowIndex].Cells["maVay"].Value.ToString());
                     fSuaKhoanVay.ShowDialog();
+                    fKhoanVay_Load(sender, e);
                 }
             }
         }
@@ -76,6 +88,7 @@ namespace QuanLyChiTieu
         {
             fThemKhoanVay fThemKhoanVay = new fThemKhoanVay();
             fThemKhoanVay.ShowDialog();
+            fKhoanVay_Load(sender, e);
         }
 
     }
