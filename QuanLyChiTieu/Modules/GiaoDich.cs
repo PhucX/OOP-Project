@@ -34,5 +34,8 @@ namespace QuanLyChiTieu.Modules
         public string GhiChu      { get => ghiChu; set => ghiChu = value; }
 
         public string LoaiGiaoDich { get => loaiGiaoDich; set => loaiGiaoDich = value; }
+
+        public DateTime NgayGiaoDich { get => ngayGiaoDich; set => ngayGiaoDich = value; }
+
     }
 }
