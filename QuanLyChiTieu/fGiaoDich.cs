@@ -16,27 +16,22 @@ namespace QuanLyChiTieu
     
     public partial class fGiaoDich : Form
     {
-        public Guna2DataGridView Guna2DataGridView1;
+       public Guna2DataGridView Guna2DataGridView1;
         public fGiaoDich()
         {
             InitializeComponent();
-            
-          
-
+            dgvGiaoDich.MultiSelect = true;
+        
         }
-
+        private Queue<int> queueIndex = new Queue<int>();
+        
+        private void dgv_Them(GiaoDich giaodich)
+        {
+            dgvGiaoDich.Rows.Add(false, giaodich.MaGiaoDich, giaodich.LoaiGiaoDich, giaodich.NgayGiaoDich.ToString(), giaodich.SoTienGiaoDich.ToString(), giaodich.GhiChu);
+        
+        }
         private void fGiaoDich_Load(object sender, EventArgs e)
         {
-            // Thêm các dòng dữ liệu vào DataGridView
-            dgvGiaoDich.Rows.Add(false, "GD001", "01/01/2024", "100,000", "Note 1");
-            dgvGiaoDich.Rows.Add(false, "GD002", "02/01/2024", "200,000", "Note 2");
-            dgvGiaoDich.Rows.Add(false, "GD003", "03/01/2024", "300,000", "Note 3");
-
-            // Đặt các cột chỉ đọc
-            dgvGiaoDich.Columns[1].ReadOnly = true;
-            dgvGiaoDich.Columns[2].ReadOnly = true;
-            dgvGiaoDich.Columns[3].ReadOnly = true;
-            dgvGiaoDich.Columns[4].ReadOnly = true;
 
             // Điều chỉnh độ rộng của các cột
             dgvGiaoDich.Columns["xoaColumn"].Width = 50;  // Độ rộng cho cột xóa (biểu tượng khóa)
@@ -54,6 +49,13 @@ namespace QuanLyChiTieu
             dgvGiaoDich.Columns["xoaColumn"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvGiaoDich.Columns["suaColumn"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvGiaoDich.Columns["loaiGiaoDich"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            dgvGiaoDich.Rows.Clear();
+            foreach (var giaodich in DichVuGiaoDich.Instance.DanhSachGiaoDich)
+            { 
+                if (giaodich.Value != null)
+                    dgv_Them(giaodich.Value);
+            }
         }
         private void guna2DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
@@ -105,7 +107,15 @@ namespace QuanLyChiTieu
             }
         }
 
-
+        private void XoaGiaoDich()
+        {
+            while (queueIndex.Count > 0)
+            {
+                int index=queueIndex.Dequeue();
+                string MaGiaoDich = dgvGiaoDich.Rows[index].Cells["Idgiaodich"].Value.ToString();
+                DichVuGiaoDich.Instance.Xoa(MaGiaoDich);
+            }
+        }
 
 
 
@@ -122,19 +132,12 @@ namespace QuanLyChiTieu
         {
             fThemGiaoDich fThemGiaoDich = new fThemGiaoDich();
             fThemGiaoDich.ShowDialog();
-
+            fGiaoDich_Load(sender, e);
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            for (int i = dgvGiaoDich.Rows.Count - 1; i >= 0; i--) // Duyệt ngược từ cuối lên đầu
-            {
-                if (dgvGiaoDich.Rows[i].Cells["chon"].Value != null &&
-                    (bool)dgvGiaoDich.Rows[i].Cells["chon"].Value) // Kiểm tra giá trị ô "chon"
-                {
-                    dgvGiaoDich.Rows.RemoveAt(i); // Xóa dòng
-                }
-            }
+            XoaGiaoDich();
         }
 
 
@@ -142,7 +145,32 @@ namespace QuanLyChiTieu
         {
 
         }
-
+        private void ptbTimKiem_Click(object sender, EventArgs e)
+        {
+            string searchText = txbTimKiem.Text;
+            if (string.IsNullOrEmpty(searchText)) // kiểm tra văn bản có rỗng hay không
+            {
+                fGiaoDich_Load(sender, e);
+                return;
+            }
+            else
+                dgvGiaoDich.Rows.Clear(); // xóa bảng hiển thị trước khi tìm kiếm
+        
+            if (!DichVuGiaoDich.Instance.TimKiem(searchText))
+            {
+                foreach (var giaodich in DichVuGiaoDich.Instance.DanhSachGiaoDich)
+                {
+                    bool laMaGiaoDich = giaodich.Key.Contains(searchText);
+                    if (laMaGiaoDich)
+                        dgv_Them(giaodich.Value);
+                }
+            }
+            else
+            {
+                GiaoDich giaodich = DichVuGiaoDich.Instance.DanhSachGiaoDich[searchText];
+                dgv_Them(giaodich);
+            }
+        }
  
 
         
