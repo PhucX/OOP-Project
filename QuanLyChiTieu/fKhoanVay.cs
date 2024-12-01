@@ -39,7 +39,7 @@ namespace QuanLyChiTieu
                     dgv_Them(khoanNo);
             }
 
-            //new DataManager(new ExcelExporter()).ExportKhoanVay(dgvKhoanVay, Connection.GetFileConnection());
+            new DataManager(new ExcelExporter()).ExportKhoanVay("nha123vo", Connection.GetFileConnection("\\Data\\nha123vo\\LoanAndDebt.xlsx"));
         }
 
         private void dgvKhoanVay_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -113,33 +113,20 @@ namespace QuanLyChiTieu
 
         private void ptbTimKiem_Click(object sender, EventArgs e)
         {
-            string searchText = txbTimKiem.Text;
+            string searchText = txbTimKiem.Text.Trim();
             if (string.IsNullOrEmpty(searchText)) // kiểm tra văn bản có rỗng hay không
             {
                 fKhoanVay_Load(sender, e);
                 return;
             }
-            else
-                dgvKhoanVay.Rows.Clear(); // xóa bảng hiển thị trước khi tìm kiếm
 
-            if(!DichVuVay.Instance.TimKiem(searchText))
-            {
-                foreach(var khoanVay in DichVuVay.Instance.DanhSachKhoanVay)
-                {
-                    KhoanNo khoanNo = khoanVay.Value as KhoanNo;
+            dgvKhoanVay.Rows.Clear(); // xóa bảng hiển thị trước khi tìm kiếm
 
-                    bool laMaVay = khoanVay.Key.Contains(searchText);
-                    bool laNguoiChoVay = khoanNo.NguoiChoVay.Contains(searchText);
+            List<KhoanNo> giaTriThoaMan = DichVuVay.Instance.DanhSachKhoanVay.Where(khoanVay => khoanVay.Key.Contains(searchText) || ((KhoanNo)khoanVay.Value).NguoiChoVay.Contains(searchText)).Select(khoanVay => (KhoanNo)khoanVay.Value).ToList();
 
-                    if (laMaVay || laNguoiChoVay)
-                        dgv_Them(khoanNo);
-                }
-            }
-            else
-            {
-                KhoanNo khoanNo = DichVuVay.Instance.DanhSachKhoanVay[searchText] as KhoanNo;
+            // Thêm kết quả vào DataGridView
+            foreach (var khoanNo in giaTriThoaMan)
                 dgv_Them(khoanNo);
-            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
