@@ -130,7 +130,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Excel\ExcelSearcher.cs" />
     <Compile Include="Excel\ExportAndImportData.cs" />
+    <Compile Include="Excel\TaoFileExcel.cs" />
     <Compile Include="fGiaoDich.cs">
       <SubType>Form</SubType>
     </Compile>

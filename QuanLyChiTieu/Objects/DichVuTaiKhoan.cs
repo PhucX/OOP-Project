@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QuanLyChiTieu.Objects
 {
     public class DichVuTaiKhoan : BaseFunc<TaiKhoan>
     {
         private static DichVuTaiKhoan instance;
-        private List<TaiKhoan> danhSachTaiKhoan = new List<TaiKhoan>();
+        private Dictionary<string, TaiKhoan> danhSachTaiKhoan = new Dictionary<string, TaiKhoan>();
 
         // phương thức khởi tạo
         public static DichVuTaiKhoan Instance
@@ -25,8 +26,23 @@ namespace QuanLyChiTieu.Objects
             set => instance = value;
         }
 
-        public List<TaiKhoan> DanhSachTaiKhoan { get => danhSachTaiKhoan; set => danhSachTaiKhoan = value; }
-        public override void Them(string id, TaiKhoan item) { }
+        public Dictionary<string, TaiKhoan> DanhSachTaiKhoan { get => danhSachTaiKhoan; set => danhSachTaiKhoan = value; }
+
+        public string LayIdTaiKhoan()
+        {
+            for (int i = 0; i < 1e6; i++)
+                if (!danhSachTaiKhoan.ContainsKey("id" + i.ToString()))
+                    return "debt" + i.ToString();
+            return "-1";
+        }
+
+        public override void Them(string id, TaiKhoan item) 
+        {
+            if (id != "-1")
+                danhSachTaiKhoan.Add(id, item);
+            else
+                MessageBox.Show("Đã đủ số lượng tài khoản cho phép!", "Lỗi");
+        }
 
         public override TaiKhoan DocDanhSach(string id) { return new TaiKhoan(); }
 

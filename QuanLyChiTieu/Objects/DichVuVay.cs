@@ -41,7 +41,7 @@ namespace QuanLyChiTieu.Objects
             if (id != "-1")
                 danhSachKhoanVay.Add(id, item);
             else
-                MessageBox.Show("Vui lòng xóa lịch sử giao dịch!", "Lỗi");
+                MessageBox.Show("Vui lòng xóa lịch sử khoản vay!", "Lỗi");
         }
 
         public override KhoanVay DocDanhSach(string id) { return new KhoanVay(); }

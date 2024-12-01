@@ -39,7 +39,7 @@ namespace QuanLyChiTieu
                     dgv_Them(khoanNo);
             }
 
-            //new DataManager(new ExcelExporter()).ExportData(dgvKhoanVay, Connection.GetFileConnection());
+            //new DataManager(new ExcelExporter()).ExportKhoanVay(dgvKhoanVay, Connection.GetFileConnection());
         }
 
         private void dgvKhoanVay_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -145,6 +145,7 @@ namespace QuanLyChiTieu
         private void btnXoa_Click(object sender, EventArgs e)
         {
             XoaKhoanVay();
+            fKhoanVay_Load(sender, e);
         }
     }
 }
