@@ -12,9 +12,20 @@ namespace QuanLyChiTieu
 {
     public partial class fSuaGiaoDich : Form
     {
+
         public fSuaGiaoDich()
         {
             InitializeComponent();
+        }
+
+        private void fSuaGiaoDich_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fSuaGiaoDich_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

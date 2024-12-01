@@ -48,17 +48,41 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.104.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.104.2\lib\netstandard2.0\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML.Parser, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1d5f7376574c51ec, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.Parser.1.2.0\lib\netstandard2.0\ClosedXML.Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=3.1.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.3.1.1\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml.Framework, Version=3.1.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.Framework.3.1.1\lib\net46\DocumentFormat.OpenXml.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net48\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="RBush, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RBush.4.0.0\lib\net47\RBush.dll</HintPath>
+    </Reference>
     <Reference Include="RestSharp, Version=112.1.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.112.1.0\lib\net48\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.Fonts.1.0.0\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -103,16 +127,21 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\QuanLyGiaoDich.cs" />
-    <Compile Include="Controllers\QuanLyKhoanVay.cs" />
-    <Compile Include="Controllers\QuanLyTaiKhoan.cs" />
+    <Compile Include="Excel\ExportAndImportData.cs" />
     <Compile Include="fGiaoDich.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fGiaoDich.Designer.cs">
       <DependentUpon>fGiaoDich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fKhoanVay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fKhoanVay.Designer.cs">
+      <DependentUpon>fKhoanVay.cs</DependentUpon>
     </Compile>
     <Compile Include="form1.cs">
       <SubType>Form</SubType>
@@ -132,11 +161,23 @@
     <Compile Include="fSuaGiaoDich.Designer.cs">
       <DependentUpon>fSuaGiaoDich.cs</DependentUpon>
     </Compile>
+    <Compile Include="fSuaKhoanVay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fSuaKhoanVay.Designer.cs">
+      <DependentUpon>fSuaKhoanVay.cs</DependentUpon>
+    </Compile>
     <Compile Include="fThemGiaoDich.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fThemGiaoDich.Designer.cs">
       <DependentUpon>fThemGiaoDich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fThemKhoanVay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fThemKhoanVay.Designer.cs">
+      <DependentUpon>fThemKhoanVay.cs</DependentUpon>
     </Compile>
     <Compile Include="fTrangChu.cs">
       <SubType>Form</SubType>
@@ -150,7 +191,8 @@
     <Compile Include="Modules\KhoanNo.cs" />
     <Compile Include="Modules\KhoanVay.cs" />
     <Compile Include="Modules\TaiKhoan.cs" />
-    <Compile Include="Objects\BaseCRUD.cs" />
+    <Compile Include="Objects\BaseFunc.cs" />
+    <Compile Include="Objects\Connection.cs" />
     <Compile Include="Objects\DichVuGiaoDich.cs" />
     <Compile Include="Objects\DichVuTaiKhoan.cs" />
     <Compile Include="Objects\DichVuVay.cs" />
@@ -163,6 +205,9 @@
     <EmbeddedResource Include="fGiaoDich.resx">
       <DependentUpon>fGiaoDich.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fKhoanVay.resx">
+      <DependentUpon>fKhoanVay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form1.resx">
       <DependentUpon>form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,8 +217,14 @@
     <EmbeddedResource Include="fSuaGiaoDich.resx">
       <DependentUpon>fSuaGiaoDich.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fSuaKhoanVay.resx">
+      <DependentUpon>fSuaKhoanVay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fThemGiaoDich.resx">
       <DependentUpon>fThemGiaoDich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fThemKhoanVay.resx">
+      <DependentUpon>fThemKhoanVay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fTrangChu.resx">
       <DependentUpon>fTrangChu.cs</DependentUpon>
@@ -182,13 +233,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Data\~%24data.xlsx" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
     <Folder Include="Utils\" />
   </ItemGroup>
   <ItemGroup>
@@ -202,6 +253,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

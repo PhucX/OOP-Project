@@ -17,6 +17,7 @@ namespace QuanLyChiTieu
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            OpenChildForm(new fTrangChu(), btnTrangChu);
         }
 
         private void OpenChildForm(Form childForm, object btnSender)
@@ -63,6 +64,7 @@ namespace QuanLyChiTieu
         private void btnKhoanVay_Click(object sender, EventArgs e)
         {
             UpdatePanel(btnKhoanVay);
+            OpenChildForm(new fKhoanVay(), btnKhoanVay);
         }
 
         private void btnTraCuuQuanLy_Click(object sender, EventArgs e)
@@ -125,5 +127,6 @@ namespace QuanLyChiTieu
         {
 
         }
+
     }
 }
