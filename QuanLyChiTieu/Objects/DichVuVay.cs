@@ -75,8 +75,10 @@ namespace QuanLyChiTieu.Objects
                 return true;
             return false;
         }
-
-
+        public int SoLuong()
+        {
+            return danhSachKhoanVay.Count;
+        }
         public List<KhoanVay> PhanLoaiGiaoDich(string id) { return new List<KhoanVay>(); }
     }
 }

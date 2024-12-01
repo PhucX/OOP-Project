@@ -11,6 +11,7 @@ using QuanLyChiTieu.Excel;
 using QuanLyChiTieu.Objects;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using QuanLyChiTieu.Modules;
 
 namespace QuanLyChiTieu
 {
@@ -99,18 +100,26 @@ namespace QuanLyChiTieu
         }
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-
+            string taiKhoan = txbTaiKhoan.Text;
             fBangDieuKhien form2 = new fBangDieuKhien();
 
             bool _ = false;
-            bool laHopLe = new Excel.ExcelSearcher().Search(Objects.Connection.GetFileConnection("\\Data\\Account.xlsx"), txbTaiKhoan.Text, txbMatKhau.Text, out _);
+            bool laHopLe = new Excel.ExcelSearcher().Search(Objects.Connection.GetFileConnection("\\Data\\Account.xlsx"), taiKhoan, txbMatKhau.Text, out _);
 
             if (laHopLe)
             {
                 MessageBox.Show("Đăng nhập thành công");
                 this.Hide();
+
                 // Lấy dữ liệu các tài khoản tại folder user
                 new DataManager(new ExcelImporter()).ImportTaiKhoan(Connection.GetFileConnection($"\\Data\\{txbTaiKhoan.Text}\\Accounts.xlsx"));
+
+                // lấy dữ liệu phần giao dịch của user
+                new DataManager(new ExcelImporter()).ImportGiaoDich(Connection.GetFileConnection($"\\Data\\{txbTaiKhoan.Text}\\Transaction.xlsx"), taiKhoan);
+
+
+                // lấy dữ liệu phần khoản vay của user
+                new DataManager(new ExcelImporter()).ImportKhoanVay(Connection.GetFileConnection($"\\Data\\{txbTaiKhoan.Text}\\LoanAndDebt.xlsx"), taiKhoan);
 
                 form2.ShowDialog();
                 this.Close();

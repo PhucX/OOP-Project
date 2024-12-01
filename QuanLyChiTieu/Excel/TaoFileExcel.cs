@@ -65,9 +65,9 @@ namespace QuanLyChiTieu.Excel
 
                         // Thêm tiêu đề cột
                         worksheet.Cell(1, 1).Value = "Mã giao dịch";
-                        worksheet.Cell(1, 2).Value = "Loại giao dịch";
                         worksheet.Cell(1, 3).Value = "Ngày giao dịch";
                         worksheet.Cell(1, 4).Value = "Số tiền";
+                        worksheet.Cell(1, 2).Value = "Loại giao dịch";
                         worksheet.Cell(1, 5).Value = "Ghi chú";
 
                         // Lưu workbook vào file Excel
@@ -99,12 +99,13 @@ namespace QuanLyChiTieu.Excel
 
                         // Thêm tiêu đề cột
                         worksheet.Cell(1, 1).Value = "Mã khoản nợ";
-                        worksheet.Cell(1, 2).Value = "Số tiền vay";
-                        worksheet.Cell(1, 3).Value = "Lãi suất";
-                        worksheet.Cell(1, 4).Value = "Ngày đến hạn";
-                        worksheet.Cell(1, 5).Value = "Trạng thái";
-                        worksheet.Cell(1, 6).Value = "Người cho vay";
-                        worksheet.Cell(1, 7).Value = "Người vay";
+                        worksheet.Cell(1, 2).Value = "Mã cho vay";
+                        worksheet.Cell(1, 3).Value = "Số tiền vay";
+                        worksheet.Cell(1, 4).Value = "Lãi suất";
+                        worksheet.Cell(1, 5).Value = "Ngày đến hạn";
+                        worksheet.Cell(1, 6).Value = "Trạng thái";
+                        worksheet.Cell(1, 7).Value = "Người cho vay";
+                        worksheet.Cell(1, 8).Value = "Người vay";
 
                         // Lưu workbook vào file Excel
                         workbook.SaveAs(filePath);

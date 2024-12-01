@@ -70,6 +70,10 @@ namespace QuanLyChiTieu.Objects
             return false;
         }
 
+        public int SoLuong()
+        {
+            return danhSachGiaoDich.Count;
+        }
 
         public List<GiaoDich> PhanLoaiGiaoDich(string id) { return new List<GiaoDich>(); }
     }
