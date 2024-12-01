@@ -86,6 +86,7 @@ namespace QuanLyChiTieu
         {
             if (e.RowIndex >= 0) // Kiểm tra có click vào vùng dữ liệu
             {
+                queueIndex.Enqueue(e.RowIndex);
                 if (e.ColumnIndex == dgvGiaoDich.Columns["xoaColumn"].Index)
                 {
                     // Xác nhận trước khi xóa
@@ -109,13 +110,22 @@ namespace QuanLyChiTieu
             }
         }
 
-        private void XoaGiaoDich()
+        private void XoaGiaoDich(object sender, EventArgs e)
         {
-            while (queueIndex.Count > 0)
+            DialogResult result = MessageBox.Show(
+                        $"Bạn có chắc chắn muốn xóa {queueIndex.Count} cuộc giao dịch này?",
+                        "Xác nhận xóa",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning
+             );
+            if (result == DialogResult.Yes)
             {
-                int index=queueIndex.Dequeue();
-                string MaGiaoDich = dgvGiaoDich.Rows[index].Cells["Idgiaodich"].Value.ToString();
-                DichVuGiaoDich.Instance.Xoa(MaGiaoDich);
+                while (queueIndex.Count > 0)
+                {
+                    int index = queueIndex.Dequeue();
+                    string MaGiaoDich = dgvGiaoDich.Rows[index].Cells["Idgiaodich"].Value.ToString();
+                    DichVuGiaoDich.Instance.Xoa(MaGiaoDich);
+                }
             }
         }
 
@@ -140,7 +150,8 @@ namespace QuanLyChiTieu
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            XoaGiaoDich();
+            XoaGiaoDich(sender,e);
+            fGiaoDich_Load(sender, e);
         }
 
 
