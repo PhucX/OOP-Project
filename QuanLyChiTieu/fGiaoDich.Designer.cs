@@ -43,16 +43,16 @@ namespace QuanLyChiTieu
             this.txbTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dgvGiaoDich = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.chon = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Idgiaodich = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loaiGiaoDich = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngayGiaoDich = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ghiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.xoaColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.suaColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.suaColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.xoaColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ghiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayGiaoDich = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loaiGiaoDich = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Idgiaodich = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chon = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.pnlGiaoDich.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTimKiem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiaoDich)).BeginInit();
@@ -247,79 +247,8 @@ namespace QuanLyChiTieu
             this.dgvGiaoDich.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvGiaoDich.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvGiaoDich.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
-            this.dgvGiaoDich.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiaoDich_CellContentClick);
+            this.dgvGiaoDich.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
             this.dgvGiaoDich.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.guna2DataGridView1_CellFormatting);
-            // 
-            // chon
-            // 
-            this.chon.DataPropertyName = "Id";
-            this.chon.FillWeight = 35F;
-            this.chon.HeaderText = "#";
-            this.chon.MinimumWidth = 6;
-            this.chon.Name = "chon";
-            this.chon.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.chon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.chon.Width = 40;
-            // 
-            // Idgiaodich
-            // 
-            this.Idgiaodich.FillWeight = 125F;
-            this.Idgiaodich.HeaderText = "ID giao dich";
-            this.Idgiaodich.MinimumWidth = 6;
-            this.Idgiaodich.Name = "Idgiaodich";
-            this.Idgiaodich.Width = 150;
-            // 
-            // loaiGiaoDich
-            // 
-            this.loaiGiaoDich.FillWeight = 135F;
-            this.loaiGiaoDich.HeaderText = "Loại giao dịch";
-            this.loaiGiaoDich.MinimumWidth = 6;
-            this.loaiGiaoDich.Name = "loaiGiaoDich";
-            this.loaiGiaoDich.Width = 159;
-            // 
-            // ngayGiaoDich
-            // 
-            this.ngayGiaoDich.FillWeight = 117.7023F;
-            this.ngayGiaoDich.HeaderText = "Ngày giao dịch";
-            this.ngayGiaoDich.MinimumWidth = 6;
-            this.ngayGiaoDich.Name = "ngayGiaoDich";
-            this.ngayGiaoDich.Width = 138;
-            // 
-            // soTien
-            // 
-            this.soTien.FillWeight = 72.45506F;
-            this.soTien.HeaderText = "Số tiền";
-            this.soTien.MinimumWidth = 6;
-            this.soTien.Name = "soTien";
-            this.soTien.Width = 85;
-            // 
-            // ghiChu
-            // 
-            this.ghiChu.FillWeight = 98.99228F;
-            this.ghiChu.HeaderText = "Ghi Chú ";
-            this.ghiChu.MinimumWidth = 6;
-            this.ghiChu.Name = "ghiChu";
-            this.ghiChu.Width = 117;
-            // 
-            // xoaColumn
-            // 
-            this.xoaColumn.FillWeight = 71.472F;
-            this.xoaColumn.HeaderText = "";
-            this.xoaColumn.Image = global::QuanLyChiTieu.Properties.Resources.delete_icon;
-            this.xoaColumn.MinimumWidth = 6;
-            this.xoaColumn.Name = "xoaColumn";
-            this.xoaColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.xoaColumn.Width = 84;
-            // 
-            // suaColumn
-            // 
-            this.suaColumn.HeaderText = "";
-            this.suaColumn.Image = global::QuanLyChiTieu.Properties.Resources.edit_icon;
-            this.suaColumn.MinimumWidth = 6;
-            this.suaColumn.Name = "suaColumn";
-            this.suaColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.suaColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.suaColumn.Width = 117;
             // 
             // dataGridViewImageColumn1
             // 
@@ -340,6 +269,77 @@ namespace QuanLyChiTieu
             this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewImageColumn2.Width = 117;
+            // 
+            // suaColumn
+            // 
+            this.suaColumn.HeaderText = "";
+            this.suaColumn.Image = global::QuanLyChiTieu.Properties.Resources.edit_icon;
+            this.suaColumn.MinimumWidth = 6;
+            this.suaColumn.Name = "suaColumn";
+            this.suaColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.suaColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.suaColumn.Width = 117;
+            // 
+            // xoaColumn
+            // 
+            this.xoaColumn.FillWeight = 71.472F;
+            this.xoaColumn.HeaderText = "";
+            this.xoaColumn.Image = global::QuanLyChiTieu.Properties.Resources.delete_icon;
+            this.xoaColumn.MinimumWidth = 6;
+            this.xoaColumn.Name = "xoaColumn";
+            this.xoaColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.xoaColumn.Width = 84;
+            // 
+            // ghiChu
+            // 
+            this.ghiChu.FillWeight = 98.99228F;
+            this.ghiChu.HeaderText = "Ghi Chú ";
+            this.ghiChu.MinimumWidth = 6;
+            this.ghiChu.Name = "ghiChu";
+            this.ghiChu.Width = 117;
+            // 
+            // soTien
+            // 
+            this.soTien.FillWeight = 72.45506F;
+            this.soTien.HeaderText = "Số tiền";
+            this.soTien.MinimumWidth = 6;
+            this.soTien.Name = "soTien";
+            this.soTien.Width = 85;
+            // 
+            // ngayGiaoDich
+            // 
+            this.ngayGiaoDich.FillWeight = 117.7023F;
+            this.ngayGiaoDich.HeaderText = "Ngày giao dịch";
+            this.ngayGiaoDich.MinimumWidth = 6;
+            this.ngayGiaoDich.Name = "ngayGiaoDich";
+            this.ngayGiaoDich.Width = 138;
+            // 
+            // loaiGiaoDich
+            // 
+            this.loaiGiaoDich.FillWeight = 135F;
+            this.loaiGiaoDich.HeaderText = "Loại giao dịch";
+            this.loaiGiaoDich.MinimumWidth = 6;
+            this.loaiGiaoDich.Name = "loaiGiaoDich";
+            this.loaiGiaoDich.Width = 159;
+            // 
+            // Idgiaodich
+            // 
+            this.Idgiaodich.FillWeight = 125F;
+            this.Idgiaodich.HeaderText = "ID giao dich";
+            this.Idgiaodich.MinimumWidth = 6;
+            this.Idgiaodich.Name = "Idgiaodich";
+            this.Idgiaodich.Width = 150;
+            // 
+            // chon
+            // 
+            this.chon.DataPropertyName = "Id";
+            this.chon.FillWeight = 35F;
+            this.chon.HeaderText = "#";
+            this.chon.MinimumWidth = 6;
+            this.chon.Name = "chon";
+            this.chon.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.chon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.chon.Width = 40;
             // 
             // fGiaoDich
             // 

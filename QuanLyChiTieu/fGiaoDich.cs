@@ -1,4 +1,6 @@
-﻿using Guna.UI2.WinForms;
+﻿using QuanLyChiTieu.Modules;
+using QuanLyChiTieu.Objects;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
-
+//using DocumentFormat.OpenXml.Drawing.Charts;
 namespace QuanLyChiTieu
 {
     
@@ -101,7 +103,7 @@ namespace QuanLyChiTieu
                 else if (e.ColumnIndex == dgvGiaoDich.Columns["suaColumn"].Index)
                 {
                     // Mở form sửa
-                    fSuaGiaoDich fSuaGiaoDich = new fSuaGiaoDich();
+                    fSuaGiaoDich fSuaGiaoDich = new fSuaGiaoDich(dgvGiaoDich.Rows[e.RowIndex].Cells["Idgiaodich"].Value.ToString());
                     fSuaGiaoDich.ShowDialog();
                 }
             }
@@ -122,9 +124,10 @@ namespace QuanLyChiTieu
 
         private void ptbSua_Click(object sender, EventArgs e)
         {
-            fSuaGiaoDich fSuaGiaoDich = new fSuaGiaoDich();
+            string idGiaoDich = dgvGiaoDich.CurrentRow.Cells["Idgiaodich"].Value.ToString();
+            fSuaGiaoDich fSuaGiaoDich = new fSuaGiaoDich(idGiaoDich);
             fSuaGiaoDich.ShowDialog();
-
+            fGiaoDich_Load(sender, e);
         }
 
 
@@ -171,8 +174,5 @@ namespace QuanLyChiTieu
                 dgv_Them(giaodich);
             }
         }
- 
-
-        
     }
 }

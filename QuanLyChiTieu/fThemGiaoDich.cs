@@ -30,17 +30,30 @@ namespace QuanLyChiTieu
             guna2ComboBox1.Text= loaiGiaoDich[1];
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        //private void guna2Button1_Click(object sender, EventArgs e)
+        //{
+        //    string magiaodich = DichVuGiaoDich.Instance.GetIdGiaoDich();
+        //    Double SoTien= Double.Parse(txbTSoTien.Text);
+        //    string GhiChu = txbGhiChu.Text;
+        //    DateTime ngaygiaodich = NgayGiaoDich.Value.Date;
+        //    string loaigiaodich= guna2ComboBox1.SelectedItem.ToString();
+
+        //    DichVuGiaoDich.Instance.Them(magiaodich,new Modules.GiaoDich(magiaodich,ngaygiaodich,SoTien,loaigiaodich,GhiChu));
+
+        //    this.Close();  
+        //}
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
         {
             string magiaodich = DichVuGiaoDich.Instance.GetIdGiaoDich();
-            Double SoTien= Double.Parse(txbTSoTien.Text);
+            Double SoTien = Double.Parse(txbTSoTien.Text);
             string GhiChu = txbGhiChu.Text;
             DateTime ngaygiaodich = NgayGiaoDich.Value.Date;
-            string loaigiaodich= guna2ComboBox1.SelectedItem.ToString();
+            string loaigiaodich = guna2ComboBox1.SelectedItem.ToString();
 
-            DichVuGiaoDich.Instance.Them(magiaodich,new Modules.GiaoDich(magiaodich,ngaygiaodich,SoTien,loaigiaodich,GhiChu));
+            DichVuGiaoDich.Instance.Them(magiaodich, new Modules.GiaoDich(magiaodich, ngaygiaodich, SoTien, loaigiaodich, GhiChu));
 
-            this.Close();  
+            this.Close();
         }
     }
 }
