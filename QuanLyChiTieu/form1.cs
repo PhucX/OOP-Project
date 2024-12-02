@@ -104,7 +104,7 @@ namespace QuanLyChiTieu
             fBangDieuKhien form2 = new fBangDieuKhien();
 
             bool _ = false;
-            bool laHopLe = new Excel.ExcelSearcher().Search(Objects.Connection.GetFileConnection("\\Data\\Account.xlsx"), taiKhoan, txbMatKhau.Text, out _);
+            bool laHopLe = new Excel.ExcelSearcher().Search(Objects.ConnectionFile.GetFileConnection("\\Data\\Account.xlsx"), taiKhoan, txbMatKhau.Text, out _);
 
             if (laHopLe)
             {
@@ -112,14 +112,14 @@ namespace QuanLyChiTieu
                 this.Hide();
 
                 // Lấy dữ liệu các tài khoản tại folder user
-                new DataManager(new ExcelImporter()).ImportTaiKhoan(Connection.GetFileConnection($"\\Data\\{txbTaiKhoan.Text}\\Accounts.xlsx"));
+                new DataManager(new ExcelImporter()).ImportTaiKhoan(ConnectionFile.GetFileConnection($"\\Data\\{txbTaiKhoan.Text}\\Accounts.xlsx"));
 
                 // lấy dữ liệu phần giao dịch của user
-                new DataManager(new ExcelImporter()).ImportGiaoDich(Connection.GetFileConnection($"\\Data\\{txbTaiKhoan.Text}\\Transaction.xlsx"), taiKhoan);
+                new DataManager(new ExcelImporter()).ImportGiaoDich(ConnectionFile.GetFileConnection($"\\Data\\{txbTaiKhoan.Text}\\Transaction.xlsx"), taiKhoan);
 
 
                 // lấy dữ liệu phần khoản vay của user
-                new DataManager(new ExcelImporter()).ImportKhoanVay(Connection.GetFileConnection($"\\Data\\{txbTaiKhoan.Text}\\LoanAndDebt.xlsx"), taiKhoan);
+                new DataManager(new ExcelImporter()).ImportKhoanVay(ConnectionFile.GetFileConnection($"\\Data\\{txbTaiKhoan.Text}\\LoanAndDebt.xlsx"), taiKhoan);
 
                 form2.ShowDialog();
                 this.Close();
@@ -139,7 +139,7 @@ namespace QuanLyChiTieu
                 return;
             }
             bool daTonTaiTK = false;
-            new Excel.ExcelSearcher().Search(Objects.Connection.GetFileConnection("\\Data\\Account.xlsx"), taiKhoanMoi, matKhauMoi, out daTonTaiTK);
+            new Excel.ExcelSearcher().Search(Objects.ConnectionFile.GetFileConnection("\\Data\\Account.xlsx"), taiKhoanMoi, matKhauMoi, out daTonTaiTK);
 
             if (!daTonTaiTK)
             {
@@ -150,16 +150,16 @@ namespace QuanLyChiTieu
                     if (matKhauMoi == matKhau2)
                     {
                         // lưu tài khoản mới đăng ký vào
-                        new DataManager(new ExcelExporter()).ExportNguoiDung(taiKhoanMoi, matKhauMoi, Connection.GetFileConnection("\\Data\\Account.xlsx"));
+                        new DataManager(new ExcelExporter()).ExportNguoiDung(taiKhoanMoi, matKhauMoi, ConnectionFile.GetFileConnection("\\Data\\Account.xlsx"));
 
                         // tạo file excel để lưu trữ dữ liệu cho tài khoản mới
-                        new DataCreator(new TaoFileTaiKhoan()).TaoFile(Connection.GetFileConnection($"\\Data\\{taiKhoanMoi}\\Accounts.xlsx"), taiKhoanMoi);
+                        new DataCreator(new TaoFileTaiKhoan()).TaoFile(ConnectionFile.GetFileConnection($"\\Data\\{taiKhoanMoi}\\Accounts.xlsx"), taiKhoanMoi);
 
                         // tạo file excel lưu trữ các cuộc giao dịch
-                        new DataCreator(new TaoFileGiaoDich()).TaoFile(Connection.GetFileConnection($"\\Data\\{taiKhoanMoi}\\Transaction.xlsx"), taiKhoanMoi);
+                        new DataCreator(new TaoFileGiaoDich()).TaoFile(ConnectionFile.GetFileConnection($"\\Data\\{taiKhoanMoi}\\Transaction.xlsx"), taiKhoanMoi);
 
                         // tạo file excel lưu trữ các khoản vay
-                        new DataCreator(new TaoFileKhoanVay()).TaoFile(Connection.GetFileConnection($"\\Data\\{taiKhoanMoi}\\LoanAndDebt.xlsx"), taiKhoanMoi);
+                        new DataCreator(new TaoFileKhoanVay()).TaoFile(ConnectionFile.GetFileConnection($"\\Data\\{taiKhoanMoi}\\LoanAndDebt.xlsx"), taiKhoanMoi);
 
                         guna2ShadowPanel1.Visible = true;
                     }
