@@ -12,10 +12,9 @@ namespace QuanLyChiTieu.Modules
         private double soTienBiThieu;
 
         // phương thức khởi tạo
-        public KhoanChoVay(string idKhoanVay, double soTienVay, double laiSuat, DateTime ngayDenHan, string trangThai, string nguoiVay, double soTienBiThieu) : base(idKhoanVay, soTienVay, laiSuat, ngayDenHan, trangThai)
+        public KhoanChoVay(string idKhoanVay, double soTienVay, double laiSuat, DateTime ngayDenHan, string trangThai, string nguoiVay) : base(idKhoanVay, soTienVay, laiSuat, ngayDenHan, trangThai)
         {
             this.nguoiVay = nguoiVay;
-            this.soTienBiThieu = soTienBiThieu;
         }
 
         // tạo các property cho các thuộc tính

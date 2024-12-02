@@ -48,17 +48,41 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.104.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.104.2\lib\netstandard2.0\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML.Parser, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1d5f7376574c51ec, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.Parser.1.2.0\lib\netstandard2.0\ClosedXML.Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=3.1.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.3.1.1\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml.Framework, Version=3.1.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.Framework.3.1.1\lib\net46\DocumentFormat.OpenXml.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net48\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="RBush, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RBush.4.0.0\lib\net47\RBush.dll</HintPath>
+    </Reference>
     <Reference Include="RestSharp, Version=112.1.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.112.1.0\lib\net48\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.Fonts.1.0.0\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -94,6 +118,7 @@
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -103,13 +128,27 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Excel\ExportAndImportData.cs" />
+    <Compile Include="fBaoCao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fBaoCao.Designer.cs">
+      <DependentUpon>fBaoCao.cs</DependentUpon>
+    </Compile>
     <Compile Include="fGiaoDich.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fGiaoDich.Designer.cs">
       <DependentUpon>fGiaoDich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fKhoanChoVay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fKhoanChoVay.Designer.cs">
+      <DependentUpon>fKhoanChoVay.cs</DependentUpon>
     </Compile>
     <Compile Include="fKhoanVay.cs">
       <SubType>Form</SubType>
@@ -135,6 +174,12 @@
     <Compile Include="fSuaGiaoDich.Designer.cs">
       <DependentUpon>fSuaGiaoDich.cs</DependentUpon>
     </Compile>
+    <Compile Include="fSuaKhoanChoVay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fSuaKhoanChoVay.Designer.cs">
+      <DependentUpon>fSuaKhoanChoVay.cs</DependentUpon>
+    </Compile>
     <Compile Include="fSuaKhoanVay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,11 +192,23 @@
     <Compile Include="fThemGiaoDich.Designer.cs">
       <DependentUpon>fThemGiaoDich.cs</DependentUpon>
     </Compile>
+    <Compile Include="fThemKhoanChoVay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fThemKhoanChoVay.Designer.cs">
+      <DependentUpon>fThemKhoanChoVay.cs</DependentUpon>
+    </Compile>
     <Compile Include="fThemKhoanVay.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fThemKhoanVay.Designer.cs">
       <DependentUpon>fThemKhoanVay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fTraCuuQuanLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTraCuuQuanLy.Designer.cs">
+      <DependentUpon>fTraCuuQuanLy.cs</DependentUpon>
     </Compile>
     <Compile Include="fTrangChu.cs">
       <SubType>Form</SubType>
@@ -165,8 +222,9 @@
     <Compile Include="Modules\KhoanNo.cs" />
     <Compile Include="Modules\KhoanVay.cs" />
     <Compile Include="Modules\TaiKhoan.cs" />
-    <Compile Include="Objects\BaseCRUD.cs" />
+    <Compile Include="Objects\BaseFunc.cs" />
     <Compile Include="Objects\DichVuGiaoDich.cs" />
+    <Compile Include="Objects\DichVuChoVay.cs" />
     <Compile Include="Objects\DichVuTaiKhoan.cs" />
     <Compile Include="Objects\DichVuVay.cs" />
     <Compile Include="Program.cs" />
@@ -175,8 +233,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="fBaoCao.resx">
+      <DependentUpon>fBaoCao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fGiaoDich.resx">
       <DependentUpon>fGiaoDich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fKhoanChoVay.resx">
+      <DependentUpon>fKhoanChoVay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fKhoanVay.resx">
       <DependentUpon>fKhoanVay.cs</DependentUpon>
@@ -190,14 +254,23 @@
     <EmbeddedResource Include="fSuaGiaoDich.resx">
       <DependentUpon>fSuaGiaoDich.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fSuaKhoanChoVay.resx">
+      <DependentUpon>fSuaKhoanChoVay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fSuaKhoanVay.resx">
       <DependentUpon>fSuaKhoanVay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fThemGiaoDich.resx">
       <DependentUpon>fThemGiaoDich.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fThemKhoanChoVay.resx">
+      <DependentUpon>fThemKhoanChoVay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fThemKhoanVay.resx">
       <DependentUpon>fThemKhoanVay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fTraCuuQuanLy.resx">
+      <DependentUpon>fTraCuuQuanLy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fTrangChu.resx">
       <DependentUpon>fTrangChu.cs</DependentUpon>
@@ -206,6 +279,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="data\~%24data.xlsx" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

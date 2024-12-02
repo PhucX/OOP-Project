@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyChiTieu.Objects
 {
-    public class DichVuGiaoDich : BaseCRUD<GiaoDich>
+    public class DichVuGiaoDich : BaseFunc<GiaoDich>
     {
         private static DichVuGiaoDich instance;
         private List<GiaoDich> danhSachGiaoDich = new List<GiaoDich>();
@@ -26,7 +26,7 @@ namespace QuanLyChiTieu.Objects
         }
 
         public List<GiaoDich> DanhSachGiaoDich { get => danhSachGiaoDich; set => danhSachGiaoDich = value; }
-        public override void Them(GiaoDich item) { }
+        public override void Them(string id, GiaoDich item) { }
 
         public override GiaoDich DocDanhSach(string id) { return new GiaoDich(); }
 
@@ -35,6 +35,9 @@ namespace QuanLyChiTieu.Objects
         public override bool Xoa(string id) { return false; }
 
         public override void HienThi() { }
+        //public override GiaoDich TimKiem(string id) { }
+        public override GiaoDich TimKiem(string id) { return new GiaoDich(); }
+
 
         public List<GiaoDich> PhanLoaiGiaoDich(string id) { return new List<GiaoDich>(); }
     }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLyChiTieu.Modules;
+using QuanLyChiTieu.Objects;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,33 @@ namespace QuanLyChiTieu
 {
     public partial class fSuaKhoanVay : Form
     {
-        public fSuaKhoanVay()
+        private KhoanVay khoanVay;
+        public fSuaKhoanVay(string maVay)
         {
             InitializeComponent();
+            this.khoanVay = DichVuVay.Instance.TimKiem(maVay);
+            KhoanNo khoanNo = khoanVay as KhoanNo;
+
+            txbNguoiChoVay.Text = khoanNo.NguoiChoVay;
+            txbSoTienVay.Text = khoanNo.SoTienVay.ToString();
+            txbLaiSuat.Text = khoanNo.LaiSuat.ToString();
+            guna2ComboBox1.Text = khoanNo.TrangThai;
+            NgayDenHan.Text = khoanNo.NgayDenHan.ToString();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            string idVay = khoanVay.IdKhoanVay;
+            string nguoiChoVay = txbNguoiChoVay.Text;
+            double soTienVay = double.Parse(txbSoTienVay.Text);
+            double laiSuat = double.Parse(txbLaiSuat.Text);
+            string trangThai = guna2ComboBox1.SelectedItem.ToString();
+            DateTime ngayDenHan = NgayDenHan.Value.Date;
+
+            KhoanNo khoanNo = new KhoanNo(idVay, soTienVay, laiSuat, ngayDenHan, trangThai, nguoiChoVay);
+            DichVuVay.Instance.CapNhat(khoanVay.IdKhoanVay, khoanNo);
+
+            this.Close();
         }
     }
 }
