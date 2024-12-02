@@ -18,7 +18,9 @@ namespace QuanLyChiTieu
         public fSuaKhoanVay(string maVay)
         {
             InitializeComponent();
-            this.khoanVay = DichVuVay.Instance.TimKiem(maVay);
+            bool laHopLe = DichVuVay.Instance.TimKiem(maVay);
+            if (laHopLe)
+                khoanVay = DichVuVay.Instance.DanhSachKhoanVay[maVay];
             KhoanNo khoanNo = khoanVay as KhoanNo;
 
             txbNguoiChoVay.Text = khoanNo.NguoiChoVay;

@@ -131,13 +131,18 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Excel\ExcelSearcher.cs" />
     <Compile Include="Excel\ExportAndImportData.cs" />
+<<<<<<< HEAD
     <Compile Include="fBaoCao.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fBaoCao.Designer.cs">
       <DependentUpon>fBaoCao.cs</DependentUpon>
     </Compile>
+=======
+    <Compile Include="Excel\TaoFileExcel.cs" />
+>>>>>>> a94c0632f97a1f61f62fabb5ed9e47be7637f160
     <Compile Include="fGiaoDich.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +228,7 @@
     <Compile Include="Modules\KhoanVay.cs" />
     <Compile Include="Modules\TaiKhoan.cs" />
     <Compile Include="Objects\BaseFunc.cs" />
+    <Compile Include="Objects\Connection.cs" />
     <Compile Include="Objects\DichVuGiaoDich.cs" />
     <Compile Include="Objects\DichVuChoVay.cs" />
     <Compile Include="Objects\DichVuTaiKhoan.cs" />
@@ -279,7 +285,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="data\~%24data.xlsx" />
+    <None Include="Data\~%24data.xlsx" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

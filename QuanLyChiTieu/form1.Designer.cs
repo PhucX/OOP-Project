@@ -138,7 +138,7 @@
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft YaHei", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(64, 42);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(159, 33);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(200, 42);
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "ĐĂNG NHẬP";
             // 
@@ -147,7 +147,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Location = new System.Drawing.Point(88, 225);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(80, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(96, 16);
             this.linkLabel1.TabIndex = 5;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Quên mật khẩu";
@@ -173,6 +173,7 @@
             this.txbTaiKhoan.IconRightOffset = new System.Drawing.Point(8, 0);
             this.txbTaiKhoan.IconRightSize = new System.Drawing.Size(22, 22);
             this.txbTaiKhoan.Location = new System.Drawing.Point(20, 98);
+            this.txbTaiKhoan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbTaiKhoan.Name = "txbTaiKhoan";
             this.txbTaiKhoan.PasswordChar = '\0';
             this.txbTaiKhoan.PlaceholderForeColor = System.Drawing.Color.Gray;
@@ -220,6 +221,7 @@
             this.txbMatKhau.IconRight = ((System.Drawing.Image)(resources.GetObject("txbMatKhau.IconRight")));
             this.txbMatKhau.IconRightOffset = new System.Drawing.Point(8, 0);
             this.txbMatKhau.Location = new System.Drawing.Point(23, 160);
+            this.txbMatKhau.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbMatKhau.Name = "txbMatKhau";
             this.txbMatKhau.PasswordChar = '●';
             this.txbMatKhau.PlaceholderForeColor = System.Drawing.Color.Gray;
@@ -269,6 +271,7 @@
             this.guna2TextBox5.IconRight = ((System.Drawing.Image)(resources.GetObject("guna2TextBox5.IconRight")));
             this.guna2TextBox5.IconRightOffset = new System.Drawing.Point(8, 0);
             this.guna2TextBox5.Location = new System.Drawing.Point(20, 225);
+            this.guna2TextBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2TextBox5.Name = "guna2TextBox5";
             this.guna2TextBox5.PasswordChar = '●';
             this.guna2TextBox5.PlaceholderForeColor = System.Drawing.Color.Gray;
@@ -286,7 +289,7 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Location = new System.Drawing.Point(183, 351);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.Size = new System.Drawing.Size(72, 16);
             this.label3.TabIndex = 14;
             this.label3.Text = "Đăng nhập";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -309,6 +312,7 @@
             this.guna2Button2.Size = new System.Drawing.Size(217, 45);
             this.guna2Button2.TabIndex = 13;
             this.guna2Button2.Text = "Tạo tài khoản";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click_1);
             // 
             // guna2HtmlLabel2
             // 
@@ -316,7 +320,7 @@
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft YaHei", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(64, 42);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(118, 33);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(147, 42);
             this.guna2HtmlLabel2.TabIndex = 0;
             this.guna2HtmlLabel2.Text = "ĐĂNG KÝ ";
             // 
@@ -326,7 +330,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(61, 234);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.Size = new System.Drawing.Size(0, 16);
             this.label2.TabIndex = 7;
             // 
             // linkLabel2
@@ -334,7 +338,7 @@
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Location = new System.Drawing.Point(151, 234);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(0, 13);
+            this.linkLabel2.Size = new System.Drawing.Size(0, 16);
             this.linkLabel2.TabIndex = 5;
             // 
             // guna2TextBox3
@@ -358,6 +362,7 @@
             this.guna2TextBox3.IconRightOffset = new System.Drawing.Point(8, 0);
             this.guna2TextBox3.IconRightSize = new System.Drawing.Size(22, 22);
             this.guna2TextBox3.Location = new System.Drawing.Point(20, 98);
+            this.guna2TextBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2TextBox3.Name = "guna2TextBox3";
             this.guna2TextBox3.PasswordChar = '\0';
             this.guna2TextBox3.PlaceholderForeColor = System.Drawing.Color.Gray;
@@ -385,6 +390,7 @@
             this.guna2TextBox4.IconRight = ((System.Drawing.Image)(resources.GetObject("guna2TextBox4.IconRight")));
             this.guna2TextBox4.IconRightOffset = new System.Drawing.Point(8, 0);
             this.guna2TextBox4.Location = new System.Drawing.Point(23, 160);
+            this.guna2TextBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2TextBox4.Name = "guna2TextBox4";
             this.guna2TextBox4.PasswordChar = '●';
             this.guna2TextBox4.PlaceholderForeColor = System.Drawing.Color.Gray;

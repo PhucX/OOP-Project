@@ -11,18 +11,16 @@ namespace QuanLyChiTieu.Modules
         private string idTaiKhoan;
         private string tenTaiKhoan;
         private string loaiTaiKhoan;
-        private string matKhau;
         private double soDu;
 
         // Phương thức khởi tạo
         public TaiKhoan() { }
 
-        public TaiKhoan(string idTaiKhoan, string tenTaikhoan, string loaiTaiKhoan, string matKhau, double soDu)
+        public TaiKhoan(string idTaiKhoan, string tenTaikhoan, string loaiTaiKhoan, double soDu)
         {
             this.idTaiKhoan = idTaiKhoan;
             this.tenTaiKhoan = tenTaikhoan;
             this.LoaiTaiKhoan = loaiTaiKhoan;
-            this.matKhau = matKhau;
             this.soDu = soDu;
         }
 
@@ -32,8 +30,6 @@ namespace QuanLyChiTieu.Modules
         public string TenTaiKhoan { get => tenTaiKhoan; set => tenTaiKhoan = value; }
 
         public string LoaiTaiKhoan { get => loaiTaiKhoan; set => loaiTaiKhoan = value; }
-
-        public string MatKhau { get => matKhau; set => matKhau = value; }
 
         public double SoDu { get => soDu; set => soDu = value; }
     }

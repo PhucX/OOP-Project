@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,12 @@ namespace QuanLyChiTieu
             dgvKhoanVay.MultiSelect = true;
         }
 
+        private Queue<int> queueIndex = new Queue<int>(); // danh sách chứa các vị trí được chọn trong bảng
+        private void dgv_Them(KhoanNo khoanNo)
+        {
+            dgvKhoanVay.Rows.Add(false, khoanNo.IdKhoanVay, khoanNo.NguoiChoVay, khoanNo.NgayDenHan.ToString(), khoanNo.SoTienVay.ToString(), khoanNo.LaiSuat.ToString(), khoanNo.TrangThai);
+        }
+
         private void fKhoanVay_Load(object sender, EventArgs e)
         {
             dgvKhoanVay.Rows.Clear();
@@ -29,11 +36,10 @@ namespace QuanLyChiTieu
                 KhoanNo khoanNo = khoanVay.Value as KhoanNo;
 
                 if (khoanNo != null)
-                {
-                    dgvKhoanVay.Rows.Add(false, khoanNo.IdKhoanVay, khoanNo.NguoiChoVay, khoanNo.NgayDenHan.ToString(), khoanNo.SoTienVay.ToString(), khoanNo.LaiSuat.ToString(), khoanNo.TrangThai);
-                }
-
+                    dgv_Them(khoanNo);
             }
+
+            new DataManager(new ExcelExporter()).ExportKhoanVay("nha123vo", Connection.GetFileConnection("\\Data\\nha123vo\\LoanAndDebt.xlsx"));
         }
 
         private void dgvKhoanVay_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -59,7 +65,16 @@ namespace QuanLyChiTieu
             }
         }
 
-        private Queue<int> queueIndex = new Queue<int>();
+        private void XoaKhoanVay()
+        {
+            while (queueIndex.Count > 0)
+            {
+                int index = queueIndex.Dequeue();
+                string maVay = dgvKhoanVay.Rows[index].Cells["maVay"].Value.ToString();
+                DichVuVay.Instance.Xoa(maVay); // xóa theo mã vay
+            }
+        }
+
         private void dgbKhoanVay_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0) // Kiểm tra có click vào vùng dữ liệu
@@ -76,15 +91,8 @@ namespace QuanLyChiTieu
                         MessageBoxIcon.Warning
                     );
                     if (result == DialogResult.Yes)
-                    {
-                        while(queueIndex.Count > 0)
-                        {
-                            int index = queueIndex.Dequeue();
-                            string maVay = dgvKhoanVay.Rows[index].Cells["maVay"].Value.ToString();
-                            DichVuVay.Instance.Xoa(maVay); // xoas  
-                        }
+                        XoaKhoanVay();
 
-                    }
                     fKhoanVay_Load(sender, e);
                 }
                 else if (e.ColumnIndex == dgvKhoanVay.Columns["suaColumn"].Index)
@@ -103,5 +111,28 @@ namespace QuanLyChiTieu
             fKhoanVay_Load(sender, e);
         }
 
+        private void ptbTimKiem_Click(object sender, EventArgs e)
+        {
+            string searchText = txbTimKiem.Text.Trim();
+            if (string.IsNullOrEmpty(searchText)) // kiểm tra văn bản có rỗng hay không
+            {
+                fKhoanVay_Load(sender, e);
+                return;
+            }
+
+            dgvKhoanVay.Rows.Clear(); // xóa bảng hiển thị trước khi tìm kiếm
+
+            List<KhoanNo> giaTriThoaMan = DichVuVay.Instance.DanhSachKhoanVay.Where(khoanVay => khoanVay.Key.Contains(searchText) || ((KhoanNo)khoanVay.Value).NguoiChoVay.Contains(searchText)).Select(khoanVay => (KhoanNo)khoanVay.Value).ToList();
+
+            // Thêm kết quả vào DataGridView
+            foreach (var khoanNo in giaTriThoaMan)
+                dgv_Them(khoanNo);
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            XoaKhoanVay();
+            fKhoanVay_Load(sender, e);
+        }
     }
 }

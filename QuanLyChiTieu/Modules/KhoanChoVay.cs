@@ -18,7 +18,7 @@ namespace QuanLyChiTieu.Modules
         }
 
         // tạo các property cho các thuộc tính
-        public string NguoiChoVay { get => nguoiVay; set => nguoiVay = value; }
+        public string NguoiVay { get => nguoiVay; set => nguoiVay = value; }
 
         public double SoTienBiThieu { get => soTienBiThieu; set => soTienBiThieu = value; }
     }
