@@ -43,7 +43,9 @@ namespace QuanLyChiTieu
             this.txbTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dgvGiaoDich = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.chon = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Idgiaodich = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loaiGiaoDich = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayGiaoDich = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,8 +53,6 @@ namespace QuanLyChiTieu
             this.ghiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.xoaColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.suaColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlGiaoDich.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTimKiem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiaoDich)).BeginInit();
@@ -184,7 +184,6 @@ namespace QuanLyChiTieu
             // dgvGiaoDich
             // 
             this.dgvGiaoDich.AllowUserToAddRows = false;
-            this.dgvGiaoDich.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.dgvGiaoDich.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvGiaoDich.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
@@ -200,7 +199,7 @@ namespace QuanLyChiTieu
             this.dgvGiaoDich.ColumnHeadersHeight = 60;
             this.dgvGiaoDich.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvGiaoDich.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.chon,
+            this.Select,
             this.Idgiaodich,
             this.loaiGiaoDich,
             this.ngayGiaoDich,
@@ -250,16 +249,40 @@ namespace QuanLyChiTieu
             this.dgvGiaoDich.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
             this.dgvGiaoDich.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.guna2DataGridView1_CellFormatting);
             // 
-            // chon
+            // dataGridViewImageColumn1
             // 
-            this.chon.DataPropertyName = "Id";
-            this.chon.FillWeight = 35F;
-            this.chon.HeaderText = "#";
-            this.chon.MinimumWidth = 6;
-            this.chon.Name = "chon";
-            this.chon.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.chon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.chon.Width = 40;
+            this.dataGridViewImageColumn1.FillWeight = 71.472F;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::QuanLyChiTieu.Properties.Resources.delete_icon;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.Width = 84;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::QuanLyChiTieu.Properties.Resources.edit_icon;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn2.Width = 117;
+            // 
+            // Select
+            // 
+            this.Select.DataPropertyName = "Id";
+            this.Select.FalseValue = "False";
+            this.Select.FillWeight = 35F;
+            this.Select.HeaderText = "#";
+            this.Select.IndeterminateValue = "False";
+            this.Select.MinimumWidth = 6;
+            this.Select.Name = "Select";
+            this.Select.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Select.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Select.ThreeState = true;
+            this.Select.TrueValue = "True";
+            this.Select.Width = 40;
             // 
             // Idgiaodich
             // 
@@ -322,26 +345,6 @@ namespace QuanLyChiTieu
             this.suaColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.suaColumn.Width = 117;
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.FillWeight = 71.472F;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::QuanLyChiTieu.Properties.Resources.delete_icon;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.Width = 84;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = global::QuanLyChiTieu.Properties.Resources.edit_icon;
-            this.dataGridViewImageColumn2.MinimumWidth = 6;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewImageColumn2.Width = 117;
-            // 
             // fGiaoDich
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 31F);
@@ -375,7 +378,7 @@ namespace QuanLyChiTieu
         private Guna.UI2.WinForms.Guna2Button btnLuu;
         private DataGridViewImageColumn dataGridViewImageColumn1;
         private DataGridViewImageColumn dataGridViewImageColumn2;
-        private DataGridViewCheckBoxColumn chon;
+        private DataGridViewCheckBoxColumn Select;
         private DataGridViewTextBoxColumn Idgiaodich;
         private DataGridViewTextBoxColumn loaiGiaoDich;
         private DataGridViewTextBoxColumn ngayGiaoDich;

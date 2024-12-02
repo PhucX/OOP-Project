@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using DocumentFormat.OpenXml.Spreadsheet;
 //using DocumentFormat.OpenXml.Drawing.Charts;
 namespace QuanLyChiTieu
 {
@@ -84,30 +85,50 @@ namespace QuanLyChiTieu
 
         private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Kiểm tra có click vào vùng dữ liệu
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                queueIndex.Enqueue(e.RowIndex);
-                if (e.ColumnIndex == dgvGiaoDich.Columns["xoaColumn"].Index)
+                object cellValue = dgvGiaoDich.Rows[e.RowIndex].Cells["Select"].Value;
+
+                if (cellValue != DBNull.Value)
                 {
-                    // Xác nhận trước khi xóa
-                    DialogResult result = MessageBox.Show(
-                        "Bạn có chắc chắn muốn xóa giao dịch này?",
-                        "Xác nhận xóa",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Warning
-                    );
-                    if (result == DialogResult.Yes)
+                    // Kiểm tra nếu giá trị là kiểu CheckState
+                    if (cellValue is CheckState)
                     {
-                        dgvGiaoDich.Rows.RemoveAt(e.RowIndex); // Xóa dòng
+                        CheckState checkState = (CheckState)cellValue;
+
+                        // Kiểm tra trạng thái của checkbox
+                        if (checkState == CheckState.Checked)
+                        {
+                            // Nếu checkbox được chọn, thêm index vào queue
+                            if (!queueIndex.Contains(e.RowIndex))
+                            {
+                                queueIndex.Enqueue(e.RowIndex); // Thêm vào hàng đợi
+                            }
+                        }
                     }
                 }
-                else if (e.ColumnIndex == dgvGiaoDich.Columns["suaColumn"].Index)
+            }
+            if (e.ColumnIndex == dgvGiaoDich.Columns["xoaColumn"].Index)
+            {
+                // Xác nhận trước khi xóa
+                DialogResult result = MessageBox.Show(
+                    "Bạn có chắc chắn muốn xóa giao dịch này?",
+                    "Xác nhận xóa",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+                if (result == DialogResult.Yes)
                 {
-                    // Mở form sửa
-                    fSuaGiaoDich fSuaGiaoDich = new fSuaGiaoDich(dgvGiaoDich.Rows[e.RowIndex].Cells["Idgiaodich"].Value.ToString());
-                    fSuaGiaoDich.ShowDialog();
+                    dgvGiaoDich.Rows.RemoveAt(e.RowIndex); // Xóa dòng
                 }
             }
+            else if (e.ColumnIndex == dgvGiaoDich.Columns["suaColumn"].Index)
+            {
+                // Mở form sửa
+                fSuaGiaoDich fSuaGiaoDich = new fSuaGiaoDich(dgvGiaoDich.Rows[e.RowIndex].Cells["Idgiaodich"].Value.ToString());
+                fSuaGiaoDich.ShowDialog();
+            }
+            
         }
 
         private void XoaGiaoDich(object sender, EventArgs e)

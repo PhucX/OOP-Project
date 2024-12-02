@@ -40,7 +40,12 @@ namespace QuanLyChiTieu
         }
         private void fSuaGiaoDich_Load_1(object sender, EventArgs e)
         {
-
+            //dgvGiaoDich.Rows.Clear();
+            //foreach (var giaodich in DichVuGiaoDich.Instance.DanhSachGiaoDich)
+            //{
+            //    if (giaodich.Value != null)
+            //        dgv_Them(giaodich.Value);
+            //}
         }
 
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
