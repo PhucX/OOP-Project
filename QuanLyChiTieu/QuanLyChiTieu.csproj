@@ -118,6 +118,7 @@
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -132,12 +133,27 @@
   <ItemGroup>
     <Compile Include="Excel\ExcelSearcher.cs" />
     <Compile Include="Excel\ExportAndImportData.cs" />
+<<<<<<< HEAD
+    <Compile Include="fBaoCao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fBaoCao.Designer.cs">
+      <DependentUpon>fBaoCao.cs</DependentUpon>
+    </Compile>
+=======
     <Compile Include="Excel\TaoFileExcel.cs" />
+>>>>>>> a94c0632f97a1f61f62fabb5ed9e47be7637f160
     <Compile Include="fGiaoDich.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fGiaoDich.Designer.cs">
       <DependentUpon>fGiaoDich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fKhoanChoVay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fKhoanChoVay.Designer.cs">
+      <DependentUpon>fKhoanChoVay.cs</DependentUpon>
     </Compile>
     <Compile Include="fKhoanVay.cs">
       <SubType>Form</SubType>
@@ -163,6 +179,12 @@
     <Compile Include="fSuaGiaoDich.Designer.cs">
       <DependentUpon>fSuaGiaoDich.cs</DependentUpon>
     </Compile>
+    <Compile Include="fSuaKhoanChoVay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fSuaKhoanChoVay.Designer.cs">
+      <DependentUpon>fSuaKhoanChoVay.cs</DependentUpon>
+    </Compile>
     <Compile Include="fSuaKhoanVay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,11 +197,23 @@
     <Compile Include="fThemGiaoDich.Designer.cs">
       <DependentUpon>fThemGiaoDich.cs</DependentUpon>
     </Compile>
+    <Compile Include="fThemKhoanChoVay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fThemKhoanChoVay.Designer.cs">
+      <DependentUpon>fThemKhoanChoVay.cs</DependentUpon>
+    </Compile>
     <Compile Include="fThemKhoanVay.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fThemKhoanVay.Designer.cs">
       <DependentUpon>fThemKhoanVay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fTraCuuQuanLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTraCuuQuanLy.Designer.cs">
+      <DependentUpon>fTraCuuQuanLy.cs</DependentUpon>
     </Compile>
     <Compile Include="fTrangChu.cs">
       <SubType>Form</SubType>
@@ -196,6 +230,7 @@
     <Compile Include="Objects\BaseFunc.cs" />
     <Compile Include="Objects\Connection.cs" />
     <Compile Include="Objects\DichVuGiaoDich.cs" />
+    <Compile Include="Objects\DichVuChoVay.cs" />
     <Compile Include="Objects\DichVuTaiKhoan.cs" />
     <Compile Include="Objects\DichVuVay.cs" />
     <Compile Include="Program.cs" />
@@ -204,8 +239,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="fBaoCao.resx">
+      <DependentUpon>fBaoCao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fGiaoDich.resx">
       <DependentUpon>fGiaoDich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fKhoanChoVay.resx">
+      <DependentUpon>fKhoanChoVay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fKhoanVay.resx">
       <DependentUpon>fKhoanVay.cs</DependentUpon>
@@ -219,14 +260,23 @@
     <EmbeddedResource Include="fSuaGiaoDich.resx">
       <DependentUpon>fSuaGiaoDich.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fSuaKhoanChoVay.resx">
+      <DependentUpon>fSuaKhoanChoVay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fSuaKhoanVay.resx">
       <DependentUpon>fSuaKhoanVay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fThemGiaoDich.resx">
       <DependentUpon>fThemGiaoDich.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fThemKhoanChoVay.resx">
+      <DependentUpon>fThemKhoanChoVay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fThemKhoanVay.resx">
       <DependentUpon>fThemKhoanVay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fTraCuuQuanLy.resx">
+      <DependentUpon>fTraCuuQuanLy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fTrangChu.resx">
       <DependentUpon>fTrangChu.cs</DependentUpon>
