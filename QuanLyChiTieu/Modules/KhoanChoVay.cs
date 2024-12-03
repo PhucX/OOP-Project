@@ -12,6 +12,7 @@ namespace QuanLyChiTieu.Modules
         private double soTienBiThieu;
 
         // phương thức khởi tạo
+        public KhoanChoVay() { }
         public KhoanChoVay(string idKhoanVay, double soTienVay, double laiSuat, DateTime ngayDenHan, string trangThai, string nguoiVay) : base(idKhoanVay, soTienVay, laiSuat, ngayDenHan, trangThai)
         {
             this.nguoiVay = nguoiVay;

@@ -69,7 +69,7 @@ namespace QuanLyChiTieu
             this.pnlGiaoDich.Controls.Add(this.txbTimKiem);
             this.pnlGiaoDich.Controls.Add(this.guna2HtmlLabel1);
             this.pnlGiaoDich.Controls.Add(this.dgvGiaoDich);
-            this.pnlGiaoDich.Location = new System.Drawing.Point(35, 10);
+            this.pnlGiaoDich.Location = new System.Drawing.Point(22, 12);
             this.pnlGiaoDich.Name = "pnlGiaoDich";
             this.pnlGiaoDich.Size = new System.Drawing.Size(824, 564);
             this.pnlGiaoDich.TabIndex = 41;
@@ -177,16 +177,16 @@ namespace QuanLyChiTieu
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Cambria", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(41, 3);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(387, 61);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(312, 49);
             this.guna2HtmlLabel1.TabIndex = 39;
             this.guna2HtmlLabel1.Text = "Lịch sử giao dịch";
             // 
             // dgvGiaoDich
             // 
             this.dgvGiaoDich.AllowUserToAddRows = false;
+            this.dgvGiaoDich.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.dgvGiaoDich.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvGiaoDich.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
             this.dgvGiaoDich.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -196,7 +196,7 @@ namespace QuanLyChiTieu
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvGiaoDich.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvGiaoDich.ColumnHeadersHeight = 60;
+            this.dgvGiaoDich.ColumnHeadersHeight = 20;
             this.dgvGiaoDich.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvGiaoDich.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Select,
@@ -236,7 +236,7 @@ namespace QuanLyChiTieu
             this.dgvGiaoDich.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvGiaoDich.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvGiaoDich.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvGiaoDich.ThemeStyle.HeaderStyle.Height = 60;
+            this.dgvGiaoDich.ThemeStyle.HeaderStyle.Height = 20;
             this.dgvGiaoDich.ThemeStyle.ReadOnly = false;
             this.dgvGiaoDich.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvGiaoDich.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -245,9 +245,8 @@ namespace QuanLyChiTieu
             this.dgvGiaoDich.ThemeStyle.RowsStyle.Height = 22;
             this.dgvGiaoDich.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvGiaoDich.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvGiaoDich.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
-            this.dgvGiaoDich.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
-            this.dgvGiaoDich.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.guna2DataGridView1_CellFormatting);
+            this.dgvGiaoDich.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiaoDich_CellClick);
+            this.dgvGiaoDich.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvGiaoDich_CellFormatting);
             // 
             // dataGridViewImageColumn1
             // 
@@ -280,9 +279,7 @@ namespace QuanLyChiTieu
             this.Select.Name = "Select";
             this.Select.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Select.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Select.ThreeState = true;
             this.Select.TrueValue = "True";
-            this.Select.Width = 40;
             // 
             // Idgiaodich
             // 
@@ -290,7 +287,7 @@ namespace QuanLyChiTieu
             this.Idgiaodich.HeaderText = "ID giao dich";
             this.Idgiaodich.MinimumWidth = 6;
             this.Idgiaodich.Name = "Idgiaodich";
-            this.Idgiaodich.Width = 150;
+            this.Idgiaodich.ReadOnly = true;
             // 
             // loaiGiaoDich
             // 
@@ -298,7 +295,7 @@ namespace QuanLyChiTieu
             this.loaiGiaoDich.HeaderText = "Loại giao dịch";
             this.loaiGiaoDich.MinimumWidth = 6;
             this.loaiGiaoDich.Name = "loaiGiaoDich";
-            this.loaiGiaoDich.Width = 159;
+            this.loaiGiaoDich.ReadOnly = true;
             // 
             // ngayGiaoDich
             // 
@@ -306,7 +303,7 @@ namespace QuanLyChiTieu
             this.ngayGiaoDich.HeaderText = "Ngày giao dịch";
             this.ngayGiaoDich.MinimumWidth = 6;
             this.ngayGiaoDich.Name = "ngayGiaoDich";
-            this.ngayGiaoDich.Width = 138;
+            this.ngayGiaoDich.ReadOnly = true;
             // 
             // soTien
             // 
@@ -314,7 +311,7 @@ namespace QuanLyChiTieu
             this.soTien.HeaderText = "Số tiền";
             this.soTien.MinimumWidth = 6;
             this.soTien.Name = "soTien";
-            this.soTien.Width = 85;
+            this.soTien.ReadOnly = true;
             // 
             // ghiChu
             // 
@@ -322,8 +319,8 @@ namespace QuanLyChiTieu
             this.ghiChu.HeaderText = "Ghi Chú ";
             this.ghiChu.MinimumWidth = 6;
             this.ghiChu.Name = "ghiChu";
+            this.ghiChu.ReadOnly = true;
             this.ghiChu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ghiChu.Width = 117;
             // 
             // xoaColumn
             // 
@@ -333,7 +330,6 @@ namespace QuanLyChiTieu
             this.xoaColumn.MinimumWidth = 6;
             this.xoaColumn.Name = "xoaColumn";
             this.xoaColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.xoaColumn.Width = 84;
             // 
             // suaColumn
             // 
@@ -343,11 +339,10 @@ namespace QuanLyChiTieu
             this.suaColumn.Name = "suaColumn";
             this.suaColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.suaColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.suaColumn.Width = 117;
             // 
             // fGiaoDich
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(858, 586);

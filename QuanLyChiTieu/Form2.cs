@@ -41,6 +41,7 @@ namespace QuanLyChiTieu
             pnlThanhTruot.Top = btn.Top;
             pnlThanhTruot.Left = btn.Left;
             btn.BackColor = Color.FromArgb(12, 139, 60);
+            pnlThanhTruot.BringToFront();
         }
 
         private void ResetButtonColor(Guna2Button btn)
@@ -66,15 +67,21 @@ namespace QuanLyChiTieu
             UpdatePanel(btnKhoanVay);
             OpenChildForm(new fKhoanVay(), btnKhoanVay);
         }
-
+        private void btnKhoanChoVay_Click(object sender, EventArgs e)
+        {
+            UpdatePanel(btnKhoanChoVay);
+            OpenChildForm(new fKhoanChoVay(), btnKhoanChoVay);
+        }
         private void btnTraCuuQuanLy_Click(object sender, EventArgs e)
         {
             UpdatePanel(btnTraCuuQuanLy);
+            OpenChildForm(new fTranCuuQuanLy(), btnTraCuuQuanLy);
         }
 
         private void btnBaoCao_Click(object sender, EventArgs e)
         {
             UpdatePanel(btnBaoCao);
+            OpenChildForm(new fBaoCao(), btnBaoCao);
         }
 
         private void btnSoDu_Click(object sender, EventArgs e)
@@ -128,5 +135,6 @@ namespace QuanLyChiTieu
 
         }
 
+        
     }
 }

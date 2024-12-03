@@ -67,10 +67,9 @@
             this.pnlKhoanVay.Controls.Add(this.txbTimKiem);
             this.pnlKhoanVay.Controls.Add(this.guna2HtmlLabel1);
             this.pnlKhoanVay.Controls.Add(this.dgvKhoanVay);
-            this.pnlKhoanVay.Location = new System.Drawing.Point(49, 14);
-            this.pnlKhoanVay.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlKhoanVay.Location = new System.Drawing.Point(37, 11);
             this.pnlKhoanVay.Name = "pnlKhoanVay";
-            this.pnlKhoanVay.Size = new System.Drawing.Size(1123, 694);
+            this.pnlKhoanVay.Size = new System.Drawing.Size(842, 564);
             this.pnlKhoanVay.TabIndex = 42;
             // 
             // btnLuu
@@ -87,10 +86,9 @@
             this.btnLuu.ForeColor = System.Drawing.Color.White;
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnLuu.Location = new System.Drawing.Point(988, 100);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLuu.Location = new System.Drawing.Point(741, 81);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(55, 49);
+            this.btnLuu.Size = new System.Drawing.Size(41, 40);
             this.btnLuu.TabIndex = 47;
             // 
             // btnXoa
@@ -107,10 +105,9 @@
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnXoa.Location = new System.Drawing.Point(925, 100);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
+            this.btnXoa.Location = new System.Drawing.Point(694, 81);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(55, 49);
+            this.btnXoa.Size = new System.Drawing.Size(41, 40);
             this.btnXoa.TabIndex = 46;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -128,10 +125,9 @@
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnThem.Location = new System.Drawing.Point(863, 100);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThem.Location = new System.Drawing.Point(647, 81);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(55, 49);
+            this.btnThem.Size = new System.Drawing.Size(41, 40);
             this.btnThem.TabIndex = 45;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -140,10 +136,9 @@
             this.ptbTimKiem.BackColor = System.Drawing.Color.Transparent;
             this.ptbTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("ptbTimKiem.Image")));
             this.ptbTimKiem.ImageRotate = 0F;
-            this.ptbTimKiem.Location = new System.Drawing.Point(377, 100);
-            this.ptbTimKiem.Margin = new System.Windows.Forms.Padding(4);
+            this.ptbTimKiem.Location = new System.Drawing.Point(283, 81);
             this.ptbTimKiem.Name = "ptbTimKiem";
-            this.ptbTimKiem.Size = new System.Drawing.Size(45, 46);
+            this.ptbTimKiem.Size = new System.Drawing.Size(34, 37);
             this.ptbTimKiem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbTimKiem.TabIndex = 42;
             this.ptbTimKiem.TabStop = false;
@@ -164,23 +159,22 @@
             this.txbTimKiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txbTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbTimKiem.Location = new System.Drawing.Point(55, 100);
-            this.txbTimKiem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txbTimKiem.Location = new System.Drawing.Point(41, 81);
+            this.txbTimKiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbTimKiem.Name = "txbTimKiem";
             this.txbTimKiem.PasswordChar = '\0';
             this.txbTimKiem.PlaceholderText = "Search";
             this.txbTimKiem.SelectedText = "";
-            this.txbTimKiem.Size = new System.Drawing.Size(315, 46);
+            this.txbTimKiem.Size = new System.Drawing.Size(236, 37);
             this.txbTimKiem.TabIndex = 40;
             // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Cambria", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(55, 4);
-            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(41, 3);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(417, 61);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(333, 49);
             this.guna2HtmlLabel1.TabIndex = 39;
             this.guna2HtmlLabel1.Text = "Lịch sử khoản vay";
             // 
@@ -190,7 +184,6 @@
             this.dgvKhoanVay.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.dgvKhoanVay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvKhoanVay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
             this.dgvKhoanVay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -222,13 +215,12 @@
             this.dgvKhoanVay.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvKhoanVay.Font = new System.Drawing.Font("Cambria", 12F);
             this.dgvKhoanVay.GridColor = System.Drawing.Color.Red;
-            this.dgvKhoanVay.Location = new System.Drawing.Point(55, 153);
-            this.dgvKhoanVay.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvKhoanVay.Location = new System.Drawing.Point(41, 124);
             this.dgvKhoanVay.Name = "dgvKhoanVay";
             this.dgvKhoanVay.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvKhoanVay.RowHeadersVisible = false;
             this.dgvKhoanVay.RowHeadersWidth = 51;
-            this.dgvKhoanVay.Size = new System.Drawing.Size(973, 510);
+            this.dgvKhoanVay.Size = new System.Drawing.Size(730, 414);
             this.dgvKhoanVay.TabIndex = 38;
             this.dgvKhoanVay.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvKhoanVay.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -262,14 +254,13 @@
             this.chon.Name = "chon";
             this.chon.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.chon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.chon.Width = 20;
             // 
             // maVay
             // 
             this.maVay.HeaderText = "Mã Vay";
             this.maVay.MinimumWidth = 6;
             this.maVay.Name = "maVay";
-            this.maVay.Width = 125;
+            this.maVay.ReadOnly = true;
             // 
             // nguoiChoVay
             // 
@@ -277,7 +268,7 @@
             this.nguoiChoVay.HeaderText = "Người cho vay ";
             this.nguoiChoVay.MinimumWidth = 6;
             this.nguoiChoVay.Name = "nguoiChoVay";
-            this.nguoiChoVay.Width = 154;
+            this.nguoiChoVay.ReadOnly = true;
             // 
             // ngayGiaoDich
             // 
@@ -285,7 +276,7 @@
             this.ngayGiaoDich.HeaderText = "Ngày đến hạn ";
             this.ngayGiaoDich.MinimumWidth = 6;
             this.ngayGiaoDich.Name = "ngayGiaoDich";
-            this.ngayGiaoDich.Width = 132;
+            this.ngayGiaoDich.ReadOnly = true;
             // 
             // soTienVay
             // 
@@ -293,7 +284,7 @@
             this.soTienVay.HeaderText = "Số tiền vay";
             this.soTienVay.MinimumWidth = 6;
             this.soTienVay.Name = "soTienVay";
-            this.soTienVay.Width = 101;
+            this.soTienVay.ReadOnly = true;
             // 
             // laiSuat
             // 
@@ -301,7 +292,7 @@
             this.laiSuat.HeaderText = "Lãi Suất";
             this.laiSuat.MinimumWidth = 6;
             this.laiSuat.Name = "laiSuat";
-            this.laiSuat.Width = 118;
+            this.laiSuat.ReadOnly = true;
             // 
             // trangThai
             // 
@@ -313,7 +304,7 @@
             "Quá hạn"});
             this.trangThai.MinimumWidth = 6;
             this.trangThai.Name = "trangThai";
-            this.trangThai.Width = 116;
+            this.trangThai.ReadOnly = true;
             // 
             // xoaColumn
             // 
@@ -323,7 +314,6 @@
             this.xoaColumn.MinimumWidth = 6;
             this.xoaColumn.Name = "xoaColumn";
             this.xoaColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.xoaColumn.Width = 48;
             // 
             // suaColumn
             // 
@@ -334,7 +324,6 @@
             this.suaColumn.Name = "suaColumn";
             this.suaColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.suaColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.suaColumn.Width = 50;
             // 
             // dataGridViewImageColumn1
             // 
@@ -344,28 +333,26 @@
             this.dataGridViewImageColumn1.MinimumWidth = 6;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.Width = 48;
+            this.dataGridViewImageColumn1.Width = 84;
             // 
             // dataGridViewImageColumn2
             // 
-            this.dataGridViewImageColumn2.FillWeight = 49.43225F;
             this.dataGridViewImageColumn2.HeaderText = "";
             this.dataGridViewImageColumn2.Image = global::QuanLyChiTieu.Properties.Resources.edit_icon;
             this.dataGridViewImageColumn2.MinimumWidth = 6;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewImageColumn2.Width = 50;
+            this.dataGridViewImageColumn2.Width = 117;
             // 
             // fKhoanVay
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1223, 721);
+            this.ClientSize = new System.Drawing.Size(917, 586);
             this.Controls.Add(this.pnlKhoanVay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fKhoanVay";
             this.ShowIcon = false;
             this.Text = "fKhoanVay";

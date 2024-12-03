@@ -35,24 +35,6 @@ namespace QuanLyChiTieu
         }
         private void fGiaoDich_Load(object sender, EventArgs e)
         {
-
-            // Điều chỉnh độ rộng của các cột
-            dgvGiaoDich.Columns["xoaColumn"].Width = 50;  // Độ rộng cho cột xóa (biểu tượng khóa)
-            dgvGiaoDich.Columns["suaColumn"].Width = 50;  // Độ rộng cho cột sửa (biểu tượng bút chì)
-            dgvGiaoDich.Columns["loaiGiaoDich"].Width = 150;  // Độ rộng cho cột mã giao dịch
-            dgvGiaoDich.Columns["ngayGiaoDich"].Width = 150; // Độ rộng cho cột ngày giao dịch
-            dgvGiaoDich.Columns["soTien"].Width = 100; // Độ rộng cho cột số tiền
-            dgvGiaoDich.Columns["ghiChu"].Width = 200; // Độ rộng cho cột ghi chú
-
-            // Đặt căn giữa cho các cột chứa biểu tượng
-            dgvGiaoDich.Columns["xoaColumn"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvGiaoDich.Columns["suaColumn"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            // Căn giữa tiêu đề các cột
-            dgvGiaoDich.Columns["xoaColumn"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvGiaoDich.Columns["suaColumn"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvGiaoDich.Columns["loaiGiaoDich"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
             dgvGiaoDich.Rows.Clear();
             foreach (var giaodich in DichVuGiaoDich.Instance.DanhSachGiaoDich)
             { 
@@ -60,7 +42,7 @@ namespace QuanLyChiTieu
                     dgv_Them(giaodich.Value);
             }
         }
-        private void guna2DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void dgvGiaoDich_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // Kiểm tra nếu cột là "xoaColumn" hoặc "suaColumn"
             if (e.ColumnIndex == this.dgvGiaoDich.Columns["xoaColumn"].Index ||
@@ -83,7 +65,7 @@ namespace QuanLyChiTieu
             }
         }
 
-        private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvGiaoDich_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {

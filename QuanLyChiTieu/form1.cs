@@ -99,16 +99,6 @@ namespace QuanLyChiTieu
         }
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            if (txbTaiKhoan.Text == "" || txbMatKhau.Text == "")
-            {
-                MessageBox.Show("Tài khoản hay mật khẩu không hợp lệ" +
-                " !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                fBangDieuKhien   form2 = new fBangDieuKhien();
-=======
             string taiKhoan = txbTaiKhoan.Text;
             fBangDieuKhien form2 = new fBangDieuKhien();
 
@@ -118,7 +108,6 @@ namespace QuanLyChiTieu
             if (laHopLe)
             {
                 MessageBox.Show("Đăng nhập thành công");
->>>>>>> a94c0632f97a1f61f62fabb5ed9e47be7637f160
                 this.Hide();
 
                 // Lấy dữ liệu các tài khoản tại folder user

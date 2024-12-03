@@ -133,16 +133,13 @@
   <ItemGroup>
     <Compile Include="Excel\ExcelSearcher.cs" />
     <Compile Include="Excel\ExportAndImportData.cs" />
-<<<<<<< HEAD
+    <Compile Include="Excel\TaoFileExcel.cs" />
     <Compile Include="fBaoCao.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fBaoCao.Designer.cs">
       <DependentUpon>fBaoCao.cs</DependentUpon>
     </Compile>
-=======
-    <Compile Include="Excel\TaoFileExcel.cs" />
->>>>>>> a94c0632f97a1f61f62fabb5ed9e47be7637f160
     <Compile Include="fGiaoDich.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +169,12 @@
     </Compile>
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fQuanLyTraCuu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fQuanLyTraCuu.Designer.cs">
+      <DependentUpon>fQuanLyTraCuu.cs</DependentUpon>
     </Compile>
     <Compile Include="fSuaGiaoDich.cs">
       <SubType>Form</SubType>
@@ -209,12 +212,6 @@
     <Compile Include="fThemKhoanVay.Designer.cs">
       <DependentUpon>fThemKhoanVay.cs</DependentUpon>
     </Compile>
-    <Compile Include="fTraCuuQuanLy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fTraCuuQuanLy.Designer.cs">
-      <DependentUpon>fTraCuuQuanLy.cs</DependentUpon>
-    </Compile>
     <Compile Include="fTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,8 +226,8 @@
     <Compile Include="Modules\TaiKhoan.cs" />
     <Compile Include="Objects\BaseFunc.cs" />
     <Compile Include="Objects\Connection.cs" />
-    <Compile Include="Objects\DichVuGiaoDich.cs" />
     <Compile Include="Objects\DichVuChoVay.cs" />
+    <Compile Include="Objects\DichVuGiaoDich.cs" />
     <Compile Include="Objects\DichVuTaiKhoan.cs" />
     <Compile Include="Objects\DichVuVay.cs" />
     <Compile Include="Program.cs" />
@@ -257,6 +254,9 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fQuanLyTraCuu.resx">
+      <DependentUpon>fQuanLyTraCuu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fSuaGiaoDich.resx">
       <DependentUpon>fSuaGiaoDich.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,9 +275,6 @@
     <EmbeddedResource Include="fThemKhoanVay.resx">
       <DependentUpon>fThemKhoanVay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fTraCuuQuanLy.resx">
-      <DependentUpon>fTraCuuQuanLy.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="fTrangChu.resx">
       <DependentUpon>fTrangChu.cs</DependentUpon>
     </EmbeddedResource>
@@ -285,13 +282,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Data\~%24data.xlsx" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Data\" />
     <Folder Include="Utils\" />
   </ItemGroup>
   <ItemGroup>
