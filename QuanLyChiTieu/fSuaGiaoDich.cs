@@ -44,17 +44,17 @@ namespace QuanLyChiTieu
             //}
         }
 
-        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedValue = guna2ComboBox1.SelectedItem.ToString();
+        //private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    string selectedValue = guna2ComboBox1.SelectedItem.ToString();
 
-            // Hiển thị loại giao dịch được chọn (ví dụ)
-            MessageBox.Show("Bạn đã chọn: " + selectedValue);
-        }
+        //    // Hiển thị loại giao dịch được chọn (ví dụ)
+        //    MessageBox.Show("Bạn đã chọn: " + selectedValue);
+        //}
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
-            string magiaodich = DichVuGiaoDich.Instance.GetIdGiaoDich();
+            string magiaodich = giaodich.MaGiaoDich;
             Double SoTien = Double.Parse(txbTSoTien.Text);
             string GhiChu = guna2TextBox1.Text;
             DateTime ngaygiaodich = NgayGiaoDich.Value.Date;
