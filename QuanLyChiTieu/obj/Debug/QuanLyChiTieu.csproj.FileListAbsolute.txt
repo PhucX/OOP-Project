@@ -67,3 +67,4 @@ D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyCh.D9B58F0F.Up2Date
 D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.exe
 D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.pdb
 D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fChuyenKhoan.resources
+D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fNguoiDung.resources

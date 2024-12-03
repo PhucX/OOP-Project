@@ -171,5 +171,10 @@ namespace QuanLyChiTieu
             else
                 MessageBox.Show("Tài khoản không tồn tại!");
         }
+
+        private void fDangNhap_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

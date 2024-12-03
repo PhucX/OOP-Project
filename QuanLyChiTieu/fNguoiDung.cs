@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace QuanLyChiTieu
 {
-    public partial class fTranCuuQuanLy : Form
+    public partial class fNguoiDung : Form
     {
-        public fTranCuuQuanLy()
+        public fNguoiDung()
         {
             InitializeComponent();
-        }
-
-        private void dgvViDienTu_Load(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }
