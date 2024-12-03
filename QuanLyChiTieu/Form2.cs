@@ -129,7 +129,10 @@ namespace QuanLyChiTieu
         {
             ResetButtonColor(btnThongTin);
         }
-
+        private void btnKhoanChoVay_Leave(object sender, EventArgs e)
+        {
+            ResetButtonColor(btnKhoanChoVay);
+        }
         private void panelDesktop_Paint(object sender, PaintEventArgs e)
         {
 

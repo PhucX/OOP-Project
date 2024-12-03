@@ -190,8 +190,9 @@ namespace QuanLyChiTieu
             {
                 for (int i = dgvGiaoDich.Rows.Count - 1; i >= 0; i--) // Duyệt ngược từ cuối lên đầu
                 {
-                    if (dgvGiaoDich.Rows[i].Cells["chon"].Value != null &&
-                        (bool)dgvGiaoDich.Rows[i].Cells["chon"].Value) // Kiểm tra giá trị ô "chon"
+         
+                    if (dgvGiaoDich.Rows[i].Cells["Select"].Value != null &&
+                        (bool)dgvGiaoDich.Rows[i].Cells["Select"].Value) // Kiểm tra giá trị ô "chon"
                     {
                         string magiaodich = dgvGiaoDich.Rows[i].Cells["Idgiaodich"].Value.ToString();
                         DichVuGiaoDich.Instance.Xoa(magiaodich);
