@@ -173,6 +173,7 @@
             this.txbTaiKhoan.IconRightOffset = new System.Drawing.Point(8, 0);
             this.txbTaiKhoan.IconRightSize = new System.Drawing.Size(22, 22);
             this.txbTaiKhoan.Location = new System.Drawing.Point(20, 98);
+            this.txbTaiKhoan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbTaiKhoan.Name = "txbTaiKhoan";
             this.txbTaiKhoan.PasswordChar = '\0';
             this.txbTaiKhoan.PlaceholderForeColor = System.Drawing.Color.Gray;
@@ -220,6 +221,7 @@
             this.txbMatKhau.IconRight = ((System.Drawing.Image)(resources.GetObject("txbMatKhau.IconRight")));
             this.txbMatKhau.IconRightOffset = new System.Drawing.Point(8, 0);
             this.txbMatKhau.Location = new System.Drawing.Point(23, 160);
+            this.txbMatKhau.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbMatKhau.Name = "txbMatKhau";
             this.txbMatKhau.PasswordChar = '●';
             this.txbMatKhau.PlaceholderForeColor = System.Drawing.Color.Gray;
@@ -269,6 +271,7 @@
             this.guna2TextBox5.IconRight = ((System.Drawing.Image)(resources.GetObject("guna2TextBox5.IconRight")));
             this.guna2TextBox5.IconRightOffset = new System.Drawing.Point(8, 0);
             this.guna2TextBox5.Location = new System.Drawing.Point(20, 225);
+            this.guna2TextBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2TextBox5.Name = "guna2TextBox5";
             this.guna2TextBox5.PasswordChar = '●';
             this.guna2TextBox5.PlaceholderForeColor = System.Drawing.Color.Gray;
@@ -309,6 +312,7 @@
             this.guna2Button2.Size = new System.Drawing.Size(217, 45);
             this.guna2Button2.TabIndex = 13;
             this.guna2Button2.Text = "Tạo tài khoản";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click_1);
             // 
             // guna2HtmlLabel2
             // 
@@ -358,6 +362,7 @@
             this.guna2TextBox3.IconRightOffset = new System.Drawing.Point(8, 0);
             this.guna2TextBox3.IconRightSize = new System.Drawing.Size(22, 22);
             this.guna2TextBox3.Location = new System.Drawing.Point(20, 98);
+            this.guna2TextBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2TextBox3.Name = "guna2TextBox3";
             this.guna2TextBox3.PasswordChar = '\0';
             this.guna2TextBox3.PlaceholderForeColor = System.Drawing.Color.Gray;
@@ -385,6 +390,7 @@
             this.guna2TextBox4.IconRight = ((System.Drawing.Image)(resources.GetObject("guna2TextBox4.IconRight")));
             this.guna2TextBox4.IconRightOffset = new System.Drawing.Point(8, 0);
             this.guna2TextBox4.Location = new System.Drawing.Point(23, 160);
+            this.guna2TextBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2TextBox4.Name = "guna2TextBox4";
             this.guna2TextBox4.PasswordChar = '●';
             this.guna2TextBox4.PlaceholderForeColor = System.Drawing.Color.Gray;
@@ -432,6 +438,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.fDangNhap_Load);
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
             this.guna2ShadowPanel2.ResumeLayout(false);

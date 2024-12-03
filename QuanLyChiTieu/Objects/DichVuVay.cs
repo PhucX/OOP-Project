@@ -28,11 +28,19 @@ namespace QuanLyChiTieu.Objects
 
         public Dictionary<string, KhoanVay> DanhSachKhoanVay { get => danhSachKhoanVay; set => danhSachKhoanVay = value; }
 
-        public string GetIdKhoanVay()
+        public string GetIdKhoanNo()
         {
             for (int i = 0; i < 1e6; i++)
                 if (!danhSachKhoanVay.ContainsKey("debt" + i.ToString()))
                     return "debt" + i.ToString();
+            return "-1";
+        }
+
+        public string GetIdKhoanChoVay()
+        {
+            for (int i = 0; i < 1e6; i++)
+                if (!danhSachKhoanVay.ContainsKey("loan" + i.ToString()))
+                    return "loan" + i.ToString();
             return "-1";
         }
 
@@ -41,7 +49,7 @@ namespace QuanLyChiTieu.Objects
             if (id != "-1")
                 danhSachKhoanVay.Add(id, item);
             else
-                MessageBox.Show("Vui lòng xóa lịch sử giao dịch!", "Lỗi");
+                MessageBox.Show("Vui lòng xóa lịch sử khoản vay!", "Lỗi");
         }
 
         public override KhoanVay DocDanhSach(string id) { return new KhoanVay(); }
@@ -75,8 +83,10 @@ namespace QuanLyChiTieu.Objects
                 return true;
             return false;
         }
-
-
+        public int SoLuong()
+        {
+            return danhSachKhoanVay.Count;
+        }
         public List<KhoanVay> PhanLoaiGiaoDich(string id) { return new List<KhoanVay>(); }
     }
 }

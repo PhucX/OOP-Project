@@ -29,10 +29,14 @@ namespace QuanLyChiTieu.Modules
         // tạo các property cho các thuộc tính
         public string MaGiaoDich { get => maGiaoDich; set => maGiaoDich = value; }
 
+        public DateTime NgayGiaoDich { get => ngayGiaoDich; set => ngayGiaoDich = value; }
+
         public double SoTienGiaoDich{ get => soTienGiaoDich; set => soTienGiaoDich = value; }
 
         public string GhiChu      { get => ghiChu; set => ghiChu = value; }
 
         public string LoaiGiaoDich { get => loaiGiaoDich; set => loaiGiaoDich = value; }
+
+
     }
 }
