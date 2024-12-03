@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using QuanLyChiTieu.Modules;
+using QuanLyChiTieu.Objects;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +15,23 @@ namespace QuanLyChiTieu
 {
     public partial class fSuaGiaoDich : Form
     {
-
-        public fSuaGiaoDich()
+        private GiaoDich giaodich;
+        public fSuaGiaoDich(string magiaodich)
         {
             InitializeComponent();
+            bool laHopLe = DichVuGiaoDich.Instance.TimKiem(magiaodich);
+            if (laHopLe)
+                giaodich = DichVuGiaoDich.Instance.DanhSachGiaoDich[magiaodich];
+            List<string> items = new List<string>{ "Rút tiền", "Chuyển khoản", "Đầu tư", "Nạp tiền" };
+            foreach (string item in items)
+            {
+                guna2ComboBox1.Items.Add(item);
+            }
+            guna2ComboBox1.Text=giaodich.LoaiGiaoDich;
+            txbTSoTien.Text=giaodich.SoTienGiaoDich.ToString();
+            guna2TextBox1.Text = giaodich.GhiChu;
+            NgayGiaoDich.Text=giaodich.NgayGiaoDich.ToString();
+
         }
 
         private void fSuaGiaoDich_Load(object sender, EventArgs e)
@@ -26,6 +42,20 @@ namespace QuanLyChiTieu
         private void fSuaGiaoDich_Load_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            string idgiaodich = giaodich.MaGiaoDich;
+            DateTime ngaygiaodich = NgayGiaoDich.Value.Date;
+            Double sotien= Double.Parse(txbTSoTien.Text) ;
+            string loaigiaodich = guna2ComboBox1.Text;
+            string ghichu= guna2TextBox1.Text;
+
+            GiaoDich GIaoDich = new GiaoDich(idgiaodich,ngaygiaodich,sotien,loaigiaodich,ghichu);
+            DichVuGiaoDich.Instance.CapNhat(idgiaodich,GIaoDich);
+
+            this.Close();
         }
     }
 }

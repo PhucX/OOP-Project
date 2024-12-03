@@ -27,23 +27,51 @@ namespace QuanLyChiTieu.Objects
         }
 
         public Dictionary<string, GiaoDich> DanhSachGiaoDich { get => danhSachGiaoDich; set => danhSachGiaoDich = value; }
+
+        public string GetIdGiaoDich()
+        {
+            for (int i = 0; i < 1e6; i++)
+                if (!danhSachGiaoDich.ContainsKey("debt" + i.ToString()))
+                    return "debt" + i.ToString();
+            return "-1";
+        }
         public override void Them(string id, GiaoDich item) 
         {
             if (id != "-1")
-                danhSachGiaoDich.Add(id, item);
+                danhSachGiaoDich[id]=item;
             else
                 MessageBox.Show("Đã đủ số lượng tài khoản cho phép!", "Lỗi");
         }
 
         public override GiaoDich DocDanhSach(string id) { return new GiaoDich(); }
 
-        public override bool CapNhat(string id, GiaoDich item) { return false; }
+        public override bool CapNhat(string id, GiaoDich item) {
+            if (danhSachGiaoDich.ContainsKey(id))
+            {
+                danhSachGiaoDich[id] = item;
+                return true;
+            }
+            return false;
+        }
 
-        public override bool Xoa(string id) { return false; }
+        public override bool Xoa(string id) {
+            if (danhSachGiaoDich.ContainsKey(id))
+            {
+                danhSachGiaoDich.Remove(id);
+                return true;
+            }
+
+            return false;
+        }
 
         public override void HienThi() { }
         //public override GiaoDich TimKiem(string id) { }
-        public override bool TimKiem(string id) { return false; }
+        public override bool TimKiem(string id) {
+            if (danhSachGiaoDich.ContainsKey(id))
+                return true;
+            return false;
+
+        }
 
         public int SoLuong()
         {
