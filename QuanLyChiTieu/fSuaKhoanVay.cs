@@ -44,5 +44,10 @@ namespace QuanLyChiTieu
 
             this.Close();
         }
+
+        private void fSuaKhoanVay_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

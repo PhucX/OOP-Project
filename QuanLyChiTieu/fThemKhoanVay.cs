@@ -39,5 +39,10 @@ namespace QuanLyChiTieu
                 MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void fThemKhoanVay_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

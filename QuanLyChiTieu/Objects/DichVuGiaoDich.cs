@@ -1,4 +1,4 @@
-﻿using QuanLyChiTieu.Modules;
+using QuanLyChiTieu.Modules;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ namespace QuanLyChiTieu.Objects
     public class DichVuGiaoDich : BaseFunc<GiaoDich>
     {
         private static DichVuGiaoDich instance;
-        private Dictionary<string, GiaoDich> danhSachGiaoDich = new Dictionary<string, GiaoDich>();
+        private Dictionary<string, GiaoDich> danhSachGiaoDich = new Dictionary<string,GiaoDich>();
 
         // phương thức khởi tạo
         public static DichVuGiaoDich Instance
@@ -28,6 +28,7 @@ namespace QuanLyChiTieu.Objects
 
         public Dictionary<string, GiaoDich> DanhSachGiaoDich { get => danhSachGiaoDich; set => danhSachGiaoDich = value; }
 
+
         public string GetIdGiaoDich()
         {
             for (int i = 0; i < 1e6; i++)
@@ -40,9 +41,10 @@ namespace QuanLyChiTieu.Objects
             if (id != "-1")
                 danhSachGiaoDich[id]=item;
             else
-                MessageBox.Show("Đã đủ số lượng tài khoản cho phép!", "Lỗi");
+                MessageBox.Show("Thêm giao dịch lỗi, vui lòng thêm lại!", "Lỗi");
         }
 
+     
         public override GiaoDich DocDanhSach(string id) { return new GiaoDich(); }
 
         public override bool CapNhat(string id, GiaoDich item) {
@@ -70,7 +72,6 @@ namespace QuanLyChiTieu.Objects
             if (danhSachGiaoDich.ContainsKey(id))
                 return true;
             return false;
-
         }
 
         public int SoLuong()
