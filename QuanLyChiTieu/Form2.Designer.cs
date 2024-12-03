@@ -42,7 +42,6 @@
             this.btnTrangChu = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelDesktop = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
@@ -51,12 +50,13 @@
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnlThanhCongCu.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.panelDesktop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlThanhCongCu
@@ -122,7 +122,7 @@
             this.btnBaoCao.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnBaoCao.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnBaoCao.Click += new System.EventHandler(this.btnBaoCao_Click);
-            this.btnBaoCao.Leave += new System.EventHandler(this.btnBaoCao_Leave);
+            this.btnBaoCao.Leave += new System.EventHandler(this.btnTraCuuQuanLy_Leave);
             // 
             // btnTraCuuQuanLy
             // 
@@ -146,7 +146,7 @@
             this.btnTraCuuQuanLy.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnTraCuuQuanLy.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnTraCuuQuanLy.Click += new System.EventHandler(this.btnTraCuuQuanLy_Click);
-            this.btnBaoCao.Leave += new System.EventHandler(this.btnTraCuuQuanLy_Leave);
+            this.btnTraCuuQuanLy.Leave += new System.EventHandler(this.btnTraCuuQuanLy_Leave);
             // 
             // btnKhoanChoVay
             // 
@@ -170,6 +170,7 @@
             this.btnKhoanChoVay.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnKhoanChoVay.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnKhoanChoVay.Click += new System.EventHandler(this.btnKhoanChoVay_Click);
+            this.btnKhoanChoVay.Leave += new System.EventHandler(this.btnKhoanChoVay_Leave);
             // 
             // pnlThanhTruot
             // 
@@ -297,17 +298,6 @@
             this.guna2HtmlLabel1.TabIndex = 2;
             this.guna2HtmlLabel1.Text = "User\r\n name";
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(42, 12);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(68, 59);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
-            // 
             // panelDesktop
             // 
             this.panelDesktop.BackColor = System.Drawing.Color.White;
@@ -393,6 +383,18 @@
             this.guna2HtmlLabel2.TabIndex = 39;
             this.guna2HtmlLabel2.Text = "Phần mềm quản lý chi tiêu";
             // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(42, 12);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(68, 59);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 0;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
+            // 
             // fBangDieuKhien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -408,11 +410,11 @@
             this.pnlThanhCongCu.ResumeLayout(false);
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.panelDesktop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -424,7 +426,6 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Button btnThongTin;
         private Guna.UI2.WinForms.Guna2Button btnKhoanVay;
         private Guna.UI2.WinForms.Guna2Button btnGiaoDich;
@@ -439,5 +440,6 @@
         private Guna.UI2.WinForms.Guna2Button btnBaoCao;
         private Guna.UI2.WinForms.Guna2Button btnTraCuuQuanLy;
         private Guna.UI2.WinForms.Guna2Button btnKhoanChoVay;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }

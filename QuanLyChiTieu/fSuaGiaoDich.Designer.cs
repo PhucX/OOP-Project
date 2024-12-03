@@ -143,9 +143,10 @@
             this.btnLuu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(223)))), ((int)(((byte)(177)))));
             this.btnLuu.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(444, 306);
+            this.btnLuu.Location = new System.Drawing.Point(470, 317);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(117, 40);
+            this.btnLuu.Size = new System.Drawing.Size(88, 32);
             this.btnLuu.TabIndex = 67;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.guna2Button1_Click_1);

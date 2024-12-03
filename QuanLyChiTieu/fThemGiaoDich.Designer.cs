@@ -111,18 +111,20 @@
             // 
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.guna2HtmlLabel4.Location = new System.Drawing.Point(21, 98);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(127, 27);
             this.guna2HtmlLabel4.TabIndex = 49;
             this.guna2HtmlLabel4.Text = "Loại giao dịch";
+            this.guna2HtmlLabel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Cambria", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(160, 12);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(147, 12);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(286, 49);
             this.guna2HtmlLabel2.TabIndex = 48;
@@ -143,7 +145,7 @@
             this.guna2Panel1.ForeColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(591, 79);
+            this.guna2Panel1.Size = new System.Drawing.Size(606, 79);
             this.guna2Panel1.TabIndex = 56;
             // 
             // guna2ControlBox1
@@ -151,7 +153,7 @@
             this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(546, 0);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(561, 0);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox1.TabIndex = 49;
@@ -183,12 +185,13 @@
             this.btnLuu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(223)))), ((int)(((byte)(177)))));
             this.btnLuu.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(430, 297);
+            this.btnLuu.Location = new System.Drawing.Point(445, 313);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(117, 40);
+            this.btnLuu.Size = new System.Drawing.Size(88, 32);
             this.btnLuu.TabIndex = 58;
             this.btnLuu.Text = "Lưu";
-            this.btnLuu.Click += new System.EventHandler(this.guna2Button1_Click_1);
+            this.btnLuu.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // txbGhiChu
             // 
@@ -245,7 +248,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(591, 378);
+            this.ClientSize = new System.Drawing.Size(606, 385);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.guna2Separator2);
             this.Controls.Add(this.guna2Separator1);

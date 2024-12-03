@@ -1,6 +1,8 @@
-﻿using QuanLyChiTieu.Modules;
-using QuanLyChiTieu.Objects;
+
 using Guna.UI2.WinForms;
+using QuanLyChiTieu.Modules;
+using QuanLyChiTieu.Objects;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using DocumentFormat.OpenXml.Spreadsheet;
-//using DocumentFormat.OpenXml.Drawing.Charts;
+
 namespace QuanLyChiTieu
 {
     
@@ -69,9 +71,10 @@ namespace QuanLyChiTieu
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                object cellValue = dgvGiaoDich.Rows[e.RowIndex].Cells["Select"].Value;
-
-                if (cellValue != DBNull.Value)
+                var cellValue = dgvGiaoDich.Rows[e.RowIndex].Cells["Select"].Value;
+                queueIndex.Enqueue(e.RowIndex);
+                
+                if (e.ColumnIndex == dgvGiaoDich.Columns["xoaColumn"].Index)
                 {
                     // Kiểm tra nếu giá trị là kiểu CheckState
                     if (cellValue is CheckState)
@@ -120,17 +123,29 @@ namespace QuanLyChiTieu
                         "Xác nhận xóa",
                         MessageBoxButtons.YesNo,
                         MessageBoxIcon.Warning
-             );
+            );
             if (result == DialogResult.Yes)
             {
                 while (queueIndex.Count > 0)
                 {
-                    int index = queueIndex.Dequeue();
-                    string MaGiaoDich = dgvGiaoDich.Rows[index].Cells["Idgiaodich"].Value.ToString();
-                    DichVuGiaoDich.Instance.Xoa(MaGiaoDich);
+                    int rowIndex = queueIndex.Dequeue();
+                    string magiaodich = dgvGiaoDich.Rows[rowIndex].Cells["Idgiaodich"].Value.ToString();
+                    DichVuGiaoDich.Instance.Xoa(magiaodich);
+                    dgvGiaoDich.Rows.RemoveAt(rowIndex);
                 }
+                fGiaoDich_Load(sender, e);
             }
         }
+
+        //private void XoaKhoanVay()
+        //{
+        //    while (queueIndex.Count > 0)
+        //    {
+        //        int index = queueIndex.Dequeue();
+        //        string magiaodich = dgvGiaoDich.Rows[index].Cells["Idgiaodich"].Value.ToString();
+        //        DichVuVay.Instance.Xoa(magiaodich); // xóa theo mã giao dịch
+        //    }
+        //}
 
 
 
@@ -144,17 +159,47 @@ namespace QuanLyChiTieu
         }
 
 
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             fThemGiaoDich fThemGiaoDich = new fThemGiaoDich();
             fThemGiaoDich.ShowDialog();
-            fGiaoDich_Load(sender, e);
+            fGiaoDich_Load(sender,e);
+
+
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            XoaGiaoDich(sender,e);
-            fGiaoDich_Load(sender, e);
+            queueIndex.Clear();
+            for (int i = 0; i < dgvGiaoDich.Rows.Count; i++)
+            {
+                var cellValue = dgvGiaoDich.Rows[i].Cells["Select"].Value;
+                if (cellValue != null && cellValue is bool && (bool)cellValue)
+                {
+                    queueIndex.Enqueue(i); // Thêm chỉ số vào hàng đợi
+                }
+            }
+            DialogResult result = MessageBox.Show(
+                        $"Bạn có chắc chắn muốn xóa {queueIndex.Count} giao dịch này?",
+                        "Xác nhận xóa",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning
+                    );
+            if (result == DialogResult.Yes)
+            {
+                for (int i = dgvGiaoDich.Rows.Count - 1; i >= 0; i--) // Duyệt ngược từ cuối lên đầu
+                {
+                    if (dgvGiaoDich.Rows[i].Cells["chon"].Value != null &&
+                        (bool)dgvGiaoDich.Rows[i].Cells["chon"].Value) // Kiểm tra giá trị ô "chon"
+                    {
+                        string magiaodich = dgvGiaoDich.Rows[i].Cells["Idgiaodich"].Value.ToString();
+                        DichVuGiaoDich.Instance.Xoa(magiaodich);
+                        dgvGiaoDich.Rows.RemoveAt(i); // Xóa dòng
+                    }
+                }
+            }
+            
         }
 
 
@@ -162,31 +207,24 @@ namespace QuanLyChiTieu
         {
 
         }
+
         private void ptbTimKiem_Click(object sender, EventArgs e)
         {
-            string searchText = txbTimKiem.Text;
+            string searchText = txbTimKiem.Text.Trim();
             if (string.IsNullOrEmpty(searchText)) // kiểm tra văn bản có rỗng hay không
             {
                 fGiaoDich_Load(sender, e);
                 return;
             }
-            else
-                dgvGiaoDich.Rows.Clear(); // xóa bảng hiển thị trước khi tìm kiếm
-        
-            if (!DichVuGiaoDich.Instance.TimKiem(searchText))
-            {
-                foreach (var giaodich in DichVuGiaoDich.Instance.DanhSachGiaoDich)
-                {
-                    bool laMaGiaoDich = giaodich.Key.Contains(searchText);
-                    if (laMaGiaoDich)
-                        dgv_Them(giaodich.Value);
-                }
-            }
-            else
-            {
-                GiaoDich giaodich = DichVuGiaoDich.Instance.DanhSachGiaoDich[searchText];
+
+
+            dgvGiaoDich.Rows.Clear(); // xóa bảng hiển thị trước khi tìm kiếm
+
+            List<GiaoDich> giaTriThoaMan = DichVuGiaoDich.Instance.DanhSachGiaoDich.Where(giaodich => giaodich.Key.Contains(searchText) || (giaodich.Value.NgayGiaoDich).ToString().Contains(searchText)).Select(giaodich => (GiaoDich)giaodich.Value).ToList(); ;
+
+            // Thêm kết quả vào DataGridView
+            foreach (var giaodich in giaTriThoaMan)
                 dgv_Them(giaodich);
-            }
         }
     }
 }

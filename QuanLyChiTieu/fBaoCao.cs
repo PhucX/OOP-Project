@@ -16,5 +16,10 @@ namespace QuanLyChiTieu
         {
             InitializeComponent();
         }
+
+        private void fBaoCao_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

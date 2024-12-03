@@ -1,146 +1,23 @@
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\QuanLyChiTieu.exe.config
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\QuanLyChiTieu.exe
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\QuanLyChiTieu.pdb
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\ClosedXML.dll
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\ClosedXML.Parser.dll
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\DocumentFormat.OpenXml.dll
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\DocumentFormat.OpenXml.Framework.dll
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\ExcelNumberFormat.dll
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\Guna.UI2.dll
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\Microsoft.Bcl.HashCode.dll
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\Newtonsoft.Json.dll
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\RBush.dll
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\RestSharp.dll
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\SixLabors.Fonts.dll
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\System.Buffers.dll
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\System.CodeDom.dll
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\System.Memory.dll
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\System.Numerics.Vectors.dll
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\System.Text.Encodings.Web.dll
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\System.Text.Json.dll
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\System.Threading.Tasks.Extensions.dll
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\System.ValueTuple.dll
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\ClosedXML.pdb
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\ClosedXML.xml
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\ClosedXML.Parser.xml
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\DocumentFormat.OpenXml.xml
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\DocumentFormat.OpenXml.Framework.xml
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\ExcelNumberFormat.xml
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\Microsoft.Bcl.HashCode.xml
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\Newtonsoft.Json.xml
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\RBush.xml
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\RestSharp.xml
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\SixLabors.Fonts.xml
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\System.Buffers.xml
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\System.CodeDom.xml
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\System.Memory.xml
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\System.Numerics.Vectors.xml
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\System.Text.Encodings.Web.xml
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\System.Text.Json.xml
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\System.Threading.Tasks.Extensions.xml
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\System.ValueTuple.xml
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.AssemblyReference.cache
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.SuggestedBindingRedirects.cache
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.exe.config
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fGiaoDich.resources
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fKhoanVay.resources
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fDangNhap.resources
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fBangDieuKhien.resources
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fSuaGiaoDich.resources
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fSuaKhoanVay.resources
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fThemGiaoDich.resources
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fThemKhoanVay.resources
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fTrangChu.resources
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.Properties.Resources.resources
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.GenerateResource.cache
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.CoreCompileInputs.cache
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyCh.D9B58F0F.Up2Date
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.exe
-D:\Project\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.pdb
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.AssemblyReference.cache
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.SuggestedBindingRedirects.cache
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.exe.config
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fGiaoDich.resources
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fKhoanVay.resources
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fDangNhap.resources
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fBangDieuKhien.resources
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fSuaGiaoDich.resources
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fSuaKhoanVay.resources
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fThemGiaoDich.resources
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fThemKhoanVay.resources
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fTrangChu.resources
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.Properties.Resources.resources
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.GenerateResource.cache
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.CoreCompileInputs.cache
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.exe
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.pdb
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\QuanLyChiTieu.exe.config
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\QuanLyChiTieu.exe
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\QuanLyChiTieu.pdb
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\ClosedXML.dll
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\ClosedXML.Parser.dll
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\DocumentFormat.OpenXml.dll
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\DocumentFormat.OpenXml.Framework.dll
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\ExcelNumberFormat.dll
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\Guna.UI2.dll
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\Microsoft.Bcl.HashCode.dll
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\Newtonsoft.Json.dll
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\RBush.dll
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\RestSharp.dll
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\SixLabors.Fonts.dll
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\System.Buffers.dll
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\System.CodeDom.dll
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\System.Memory.dll
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\System.Text.Encodings.Web.dll
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\System.Text.Json.dll
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\System.ValueTuple.dll
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\ClosedXML.pdb
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\ClosedXML.xml
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\ClosedXML.Parser.xml
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\DocumentFormat.OpenXml.xml
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\DocumentFormat.OpenXml.Framework.xml
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\ExcelNumberFormat.xml
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\Microsoft.Bcl.HashCode.xml
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\Newtonsoft.Json.xml
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\RBush.xml
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\RestSharp.xml
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\SixLabors.Fonts.xml
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\System.Buffers.xml
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\System.CodeDom.xml
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\System.Memory.xml
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\System.Text.Encodings.Web.xml
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\System.Text.Json.xml
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\bin\Debug\System.ValueTuple.xml
-C:\Users\huynh\source\repos\new oop\QuanLyChiTieu\obj\Debug\QuanLyCh.D9B58F0F.Up2Date
 D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.AssemblyReference.cache
 D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.SuggestedBindingRedirects.cache
 D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.exe.config
+D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fBaoCao.resources
 D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fGiaoDich.resources
+D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fKhoanChoVay.resources
 D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fKhoanVay.resources
 D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fDangNhap.resources
 D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fBangDieuKhien.resources
+D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fTranCuuQuanLy.resources
 D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fSuaGiaoDich.resources
+D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fSuaKhoanChoVay.resources
 D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fSuaKhoanVay.resources
 D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fThemGiaoDich.resources
+D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fThemKhoanChoVay.resources
 D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fThemKhoanVay.resources
 D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fTrangChu.resources
 D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.Properties.Resources.resources
 D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.GenerateResource.cache
 D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.CoreCompileInputs.cache
-D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.exe
-D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.pdb
 D:\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\QuanLyChiTieu.exe.config
 D:\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\QuanLyChiTieu.exe
 D:\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\QuanLyChiTieu.pdb
@@ -187,8 +64,74 @@ D:\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\System.Text.Json.xml
 D:\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\OOP\OOP-Project\QuanLyChiTieu\bin\Debug\System.ValueTuple.xml
 D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyCh.D9B58F0F.Up2Date
-D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fKhoanChoVay.resources
-D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fSuaKhoanChoVay.resources
-D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fThemKhoanChoVay.resources
-D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fBaoCao.resources
-D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fTranCuuQuanLy.resources
+D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.exe
+D:\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.pdb
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\QuanLyChiTieu.exe.config
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\QuanLyChiTieu.exe
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\QuanLyChiTieu.pdb
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\ClosedXML.dll
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\ClosedXML.Parser.dll
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\DocumentFormat.OpenXml.dll
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\DocumentFormat.OpenXml.Framework.dll
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\ExcelNumberFormat.dll
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\Guna.UI2.dll
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\Microsoft.Bcl.HashCode.dll
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\Newtonsoft.Json.dll
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\RBush.dll
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\RestSharp.dll
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\SixLabors.Fonts.dll
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\System.Buffers.dll
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\System.CodeDom.dll
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\System.Memory.dll
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\System.Numerics.Vectors.dll
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\System.Text.Encodings.Web.dll
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\System.Text.Json.dll
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\System.ValueTuple.dll
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\ClosedXML.pdb
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\ClosedXML.xml
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\ClosedXML.Parser.xml
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\DocumentFormat.OpenXml.xml
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\DocumentFormat.OpenXml.Framework.xml
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\ExcelNumberFormat.xml
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\Microsoft.Bcl.HashCode.xml
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\Newtonsoft.Json.xml
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\RBush.xml
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\RestSharp.xml
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\SixLabors.Fonts.xml
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\System.Buffers.xml
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\System.CodeDom.xml
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\System.Memory.xml
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\System.Numerics.Vectors.xml
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\System.Text.Encodings.Web.xml
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\System.Text.Json.xml
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\New folder\v1\QuanLyChiTieu\bin\Debug\System.ValueTuple.xml
+D:\New folder\v1\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.AssemblyReference.cache
+D:\New folder\v1\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.SuggestedBindingRedirects.cache
+D:\New folder\v1\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.exe.config
+D:\New folder\v1\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fBaoCao.resources
+D:\New folder\v1\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fGiaoDich.resources
+D:\New folder\v1\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fKhoanChoVay.resources
+D:\New folder\v1\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fKhoanVay.resources
+D:\New folder\v1\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fDangNhap.resources
+D:\New folder\v1\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fBangDieuKhien.resources
+D:\New folder\v1\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fTranCuuQuanLy.resources
+D:\New folder\v1\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fSuaGiaoDich.resources
+D:\New folder\v1\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fSuaKhoanChoVay.resources
+D:\New folder\v1\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fSuaKhoanVay.resources
+D:\New folder\v1\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fThemGiaoDich.resources
+D:\New folder\v1\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fThemKhoanChoVay.resources
+D:\New folder\v1\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fThemKhoanVay.resources
+D:\New folder\v1\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fTrangChu.resources
+D:\New folder\v1\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.Properties.Resources.resources
+D:\New folder\v1\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.GenerateResource.cache
+D:\New folder\v1\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.CoreCompileInputs.cache
+D:\New folder\v1\QuanLyChiTieu\obj\Debug\QuanLyCh.D9B58F0F.Up2Date
+D:\New folder\v1\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.exe
+D:\New folder\v1\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.pdb
+D:\New folder\v1\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fNguoiDung.resources

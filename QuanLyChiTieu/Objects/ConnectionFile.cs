@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyChiTieu.Objects
 {
-    internal class Connection
+    internal class ConnectionFile
     {
         private static string stringConnection = $"{Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).FullName).FullName.ToString()}";
 

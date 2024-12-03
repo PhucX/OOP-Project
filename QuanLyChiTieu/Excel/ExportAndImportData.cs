@@ -107,13 +107,69 @@ namespace QuanLyChiTieu
 
     public interface IExporter
     {
-        void ExportKhoanVay(string taiKhoan, string filePath);
         void ExportNguoiDung(string tenTK, string mkTK, string filePath);
+        void ExportKhoanVay(string taiKhoan, string filePath);
+        void ExportGiaoDich(string taiKhoan, string filePath);
 
     }
 
     public class ExcelExporter : IExporter
     {
+        public void ExportGiaoDich(string taiKhoan, string filePath)
+        {
+            try
+            {
+                bool isNewFile = !File.Exists(filePath);  // Kiểm tra file có tồn tại không
+
+                using (XLWorkbook workbook = isNewFile ? new XLWorkbook() : new XLWorkbook(filePath))
+                {
+                    IXLWorksheet worksheet;
+                    int count = workbook.Worksheets.Count;
+                    if (count == 0)
+                        worksheet = workbook.Worksheets.Add(taiKhoan);
+                    else
+                    {
+                        bool isSheetExists = workbook.Worksheets.Contains(taiKhoan);
+
+                        if (!isSheetExists)
+                            worksheet = workbook.Worksheets.Add(taiKhoan, count + 1);
+                        else
+                            worksheet = workbook.Worksheets.Worksheet(taiKhoan);
+                    }
+
+                    // Thêm tiêu đề cột
+                    worksheet.Cell(1, 1).Value = "Mã giao dịch";
+                    worksheet.Cell(1, 2).Value = "Loại giao dịch";
+                    worksheet.Cell(1, 3).Value = "Ngày giao dịch";
+                    worksheet.Cell(1, 4).Value = "Số tiền";
+                    worksheet.Cell(1, 5).Value = "Ghi chú";
+
+                    int lastRowUsed = worksheet.RowsUsed().Count() + 1;
+
+                    foreach (var giaoDich in DichVuGiaoDich.Instance.DanhSachGiaoDich)
+                    {
+
+                        worksheet.Cell(lastRowUsed, 1).Value = giaoDich.Value.MaGiaoDich;
+                        worksheet.Cell(lastRowUsed, 2).Value = giaoDich.Value.LoaiGiaoDich;
+                        worksheet.Cell(lastRowUsed, 3).Value = giaoDich.Value.NgayGiaoDich.ToString();
+                        worksheet.Cell(lastRowUsed, 4).Value = giaoDich.Value.SoTienGiaoDich.ToString();
+                        worksheet.Cell(lastRowUsed, 5).Value = giaoDich.Value.GhiChu;
+
+                        lastRowUsed += 1; // tăng chỉ số hàng đã dùng thêm 1
+                    }
+
+                    FileInfo excelFile = new FileInfo(filePath);
+                    workbook.SaveAs(filePath);
+                }
+
+                MessageBox.Show("Dữ liệu đã được xuất ra file Excel thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         public void ExportKhoanVay(string taiKhoan, string filePath)
         {
             try
@@ -225,6 +281,11 @@ namespace QuanLyChiTieu
         {
             _exporter = exporter;
         }
+        public void ExportGiaoDich(string taiKhoan, string filePath)
+        {
+            _exporter.ExportGiaoDich(taiKhoan, filePath);
+        }
+
         public void ExportKhoanVay(string taiKhoan, string filePath)
         {
             _exporter.ExportKhoanVay(taiKhoan, filePath);
@@ -243,7 +304,6 @@ namespace QuanLyChiTieu
         {
             _importer.ImportKhoanVay(filePath, sheetName);
         }
-
 
         public void ImportGiaoDich(string filePath, string sheetName)
         {

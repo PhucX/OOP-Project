@@ -1,3 +1,6 @@
+
+﻿using Guna.UI2.WinForms;
+using QuanLyChiTieu.Modules;
 using QuanLyChiTieu.Objects;
 using System;
 using System.Collections.Generic;
@@ -16,31 +19,33 @@ namespace QuanLyChiTieu
         public fThemGiaoDich()
         {
             InitializeComponent();
-            List<string> loaiGiaoDich = new List<string>
+            List<string> items = new List<string> { "Rút tiền", "Chuyển khoản", "Đầu tư", "Nạp tiền" };
+            foreach (string item in items)
             {
-                "Nạp tiền",
-                "Chuyển tiền",
-                "Rút tiền",
-                "Đầu tư",
-                "Thanh toán"
-            };
-
-            // Gán danh sách vào ComboBox
-            guna2ComboBox1.DataSource = loaiGiaoDich;
-            guna2ComboBox1.Text= loaiGiaoDich[1];
+                guna2ComboBox1.Items.Add(item);
+            }
+            guna2ComboBox1.SelectedIndex = 0;
         }
 
-        private void guna2Button1_Click_1(object sender, EventArgs e)
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
-            string magiaodich = DichVuGiaoDich.Instance.GetIdGiaoDich();
-            Double SoTien = Double.Parse(txbTSoTien.Text);
-            string GhiChu = txbGhiChu.Text;
-            DateTime ngaygiaodich = NgayGiaoDich.Value.Date;
-            string loaigiaodich = guna2ComboBox1.SelectedItem.ToString();
+            try
+            {
+                string idgiaodich = DichVuGiaoDich.Instance.GetIdGiaoDich();
+                DateTime ngaygiaodich = NgayGiaoDich.Value.Date;
+                Double sotien = Double.Parse(txbTSoTien.Text);
+                string loaigiaodich = guna2ComboBox1.Text;
+                string ghichu = txbGhiChu.Text;
 
-            DichVuGiaoDich.Instance.Them(magiaodich, new Modules.GiaoDich(magiaodich, ngaygiaodich, SoTien, loaigiaodich, GhiChu));
+                GiaoDich GIaoDich = new GiaoDich(idgiaodich, ngaygiaodich, sotien, loaigiaodich, ghichu);
+                DichVuGiaoDich.Instance.Them(idgiaodich, GIaoDich);
 
-            this.Close();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

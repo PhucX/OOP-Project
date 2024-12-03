@@ -93,7 +93,10 @@ namespace QuanLyChiTieu
         {
             UpdatePanel(btnThongTin);
         }
-
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new fNguoiDung(), guna2PictureBox1);
+        }
         // Sự kiện rời khỏi nút
         private void btnTrangChu_Leave(object sender, EventArgs e)
         {
@@ -109,7 +112,10 @@ namespace QuanLyChiTieu
         {
             ResetButtonColor(btnKhoanVay);
         }
-
+        private void btnKhoanChoVay_Leave(object sender, EventArgs e)
+        {
+            ResetButtonColor(btnKhoanChoVay);
+        }
         private void btnTraCuuQuanLy_Leave(object sender, EventArgs e)
         {
             ResetButtonColor(btnTraCuuQuanLy);
@@ -135,6 +141,6 @@ namespace QuanLyChiTieu
 
         }
 
-        
+       
     }
 }

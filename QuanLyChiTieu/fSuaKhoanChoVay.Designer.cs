@@ -311,6 +311,7 @@
             this.Controls.Add(this.guna2HtmlLabel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fSuaKhoanChoVay";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fSuaKhoanChoVay";
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
