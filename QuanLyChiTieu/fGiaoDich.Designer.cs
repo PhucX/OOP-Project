@@ -32,9 +32,9 @@ namespace QuanLyChiTieu
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fGiaoDich));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -49,7 +49,7 @@ namespace QuanLyChiTieu
             this.ptbTimKiem = new Guna.UI2.WinForms.Guna2PictureBox();
             this.txbTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvGiaoDich = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.SelectColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Idgiaodich = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loaiGiaoDich = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayGiaoDich = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,7 +69,7 @@ namespace QuanLyChiTieu
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(41, 3);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(208, 34);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(263, 42);
             this.guna2HtmlLabel1.TabIndex = 39;
             this.guna2HtmlLabel1.Text = "Lịch sử giao dịch";
             // 
@@ -257,21 +257,21 @@ namespace QuanLyChiTieu
             // 
             this.dgvGiaoDich.AllowUserToAddRows = false;
             this.dgvGiaoDich.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.dgvGiaoDich.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.dgvGiaoDich.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvGiaoDich.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Cambria", 12F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvGiaoDich.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvGiaoDich.ColumnHeadersHeight = 20;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cambria", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvGiaoDich.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvGiaoDich.ColumnHeadersHeight = 50;
             this.dgvGiaoDich.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvGiaoDich.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Select,
+            this.SelectColumn,
             this.Idgiaodich,
             this.loaiGiaoDich,
             this.ngayGiaoDich,
@@ -279,14 +279,14 @@ namespace QuanLyChiTieu
             this.ghiChu,
             this.xoaColumn,
             this.suaColumn});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Cambria", 12F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvGiaoDich.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Cambria", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvGiaoDich.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvGiaoDich.Font = new System.Drawing.Font("Cambria", 12F);
             this.dgvGiaoDich.GridColor = System.Drawing.Color.Red;
             this.dgvGiaoDich.Location = new System.Drawing.Point(5, 60);
@@ -308,7 +308,7 @@ namespace QuanLyChiTieu
             this.dgvGiaoDich.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvGiaoDich.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvGiaoDich.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvGiaoDich.ThemeStyle.HeaderStyle.Height = 20;
+            this.dgvGiaoDich.ThemeStyle.HeaderStyle.Height = 50;
             this.dgvGiaoDich.ThemeStyle.ReadOnly = false;
             this.dgvGiaoDich.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvGiaoDich.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -320,16 +320,16 @@ namespace QuanLyChiTieu
             // 
             // Select
             // 
-            this.Select.DataPropertyName = "Id";
-            this.Select.FalseValue = "False";
-            this.Select.FillWeight = 35F;
-            this.Select.HeaderText = "#";
-            this.Select.IndeterminateValue = "False";
-            this.Select.MinimumWidth = 6;
-            this.Select.Name = "Select";
-            this.Select.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Select.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Select.TrueValue = "True";
+            this.SelectColumn.DataPropertyName = "Id";
+            this.SelectColumn.FalseValue = "False";
+            this.SelectColumn.FillWeight = 35F;
+            this.SelectColumn.HeaderText = "#";
+            this.SelectColumn.IndeterminateValue = "False";
+            this.SelectColumn.MinimumWidth = 6;
+            this.SelectColumn.Name = "Select";
+            this.SelectColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.SelectColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.SelectColumn.TrueValue = "True";
             // 
             // Idgiaodich
             // 
@@ -392,7 +392,7 @@ namespace QuanLyChiTieu
             // 
             // fGiaoDich
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(858, 586);
@@ -432,7 +432,7 @@ namespace QuanLyChiTieu
         private Guna.UI2.WinForms.Guna2PictureBox ptbTimKiem;
         private Guna.UI2.WinForms.Guna2TextBox txbTimKiem;
         private Guna.UI2.WinForms.Guna2DataGridView dgvGiaoDich;
-        private DataGridViewCheckBoxColumn Select;
+        private DataGridViewCheckBoxColumn SelectColumn;
         private DataGridViewTextBoxColumn Idgiaodich;
         private DataGridViewTextBoxColumn loaiGiaoDich;
         private DataGridViewTextBoxColumn ngayGiaoDich;
