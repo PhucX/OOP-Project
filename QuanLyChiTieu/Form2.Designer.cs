@@ -146,7 +146,7 @@
             this.btnTraCuuQuanLy.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnTraCuuQuanLy.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnTraCuuQuanLy.Click += new System.EventHandler(this.btnTraCuuQuanLy_Click);
-            this.btnBaoCao.Leave += new System.EventHandler(this.btnTraCuuQuanLy_Leave);
+            this.btnTraCuuQuanLy.Leave += new System.EventHandler(this.btnTraCuuQuanLy_Leave);
             // 
             // btnKhoanChoVay
             // 
@@ -170,6 +170,7 @@
             this.btnKhoanChoVay.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnKhoanChoVay.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnKhoanChoVay.Click += new System.EventHandler(this.btnKhoanChoVay_Click);
+            this.btnKhoanChoVay.Leave += new System.EventHandler(this.btnKhoanChoVay_Leave);
             // 
             // pnlThanhTruot
             // 
@@ -415,6 +416,11 @@
             this.guna2Panel1.PerformLayout();
             this.ResumeLayout(false);
 
+        }
+
+        private void BtnKhoanChoVay_Leave(object sender, System.EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
 
         #endregion

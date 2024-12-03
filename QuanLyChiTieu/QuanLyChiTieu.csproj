@@ -134,6 +134,12 @@
     <Compile Include="Excel\ExcelSearcher.cs" />
     <Compile Include="Excel\ExportAndImportData.cs" />
     <Compile Include="Excel\TaoFileExcel.cs" />
+    <Compile Include="fChuyenKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fChuyenKhoan.Designer.cs">
+      <DependentUpon>fChuyenKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="fBaoCao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +244,9 @@
     </Compile>
     <EmbeddedResource Include="fBaoCao.resx">
       <DependentUpon>fBaoCao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fChuyenKhoan.resx">
+      <DependentUpon>fChuyenKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fGiaoDich.resx">
       <DependentUpon>fGiaoDich.cs</DependentUpon>
