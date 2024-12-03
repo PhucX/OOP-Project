@@ -122,7 +122,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -133,10 +133,6 @@
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
@@ -144,7 +140,7 @@
               "RelativeDocumentMoniker": "QuanLyChiTieu\\Program.cs",
               "ToolTip": "D:\\c\u002B\u002B\\2\\QuanLyChiTieu\\Program.cs",
               "RelativeToolTip": "QuanLyChiTieu\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-03T17:51:10.251Z",
               "EditorCaption": ""
@@ -220,8 +216,8 @@
               "Title": "fGiaoDich.Designer.cs",
               "DocumentMoniker": "D:\\c\u002B\u002B\\2\\QuanLyChiTieu\\fGiaoDich.Designer.cs",
               "RelativeDocumentMoniker": "QuanLyChiTieu\\fGiaoDich.Designer.cs",
-              "ToolTip": "D:\\c\u002B\u002B\\2\\QuanLyChiTieu\\fGiaoDich.Designer.cs*",
-              "RelativeToolTip": "QuanLyChiTieu\\fGiaoDich.Designer.cs*",
+              "ToolTip": "D:\\c\u002B\u002B\\2\\QuanLyChiTieu\\fGiaoDich.Designer.cs",
+              "RelativeToolTip": "QuanLyChiTieu\\fGiaoDich.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMBAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-03T15:09:36.67Z",
