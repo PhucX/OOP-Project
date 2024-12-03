@@ -10,3 +10,5 @@ node_modules/
 # Loại trừ các tệp tạm của hệ điều hành
 Thumbs.db
 .DS_Store
+
+! .vs/QuanLyChiTieu/v17/.suo
