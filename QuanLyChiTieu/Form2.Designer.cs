@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fBangDieuKhien));
             this.pnlThanhCongCu = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnSoDu = new Guna.UI2.WinForms.Guna2Button();
             this.btnBaoCao = new Guna.UI2.WinForms.Guna2Button();
             this.btnTraCuuQuanLy = new Guna.UI2.WinForms.Guna2Button();
             this.btnKhoanChoVay = new Guna.UI2.WinForms.Guna2Button();
@@ -62,7 +61,6 @@
             // pnlThanhCongCu
             // 
             this.pnlThanhCongCu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(190)))), ((int)(((byte)(57)))));
-            this.pnlThanhCongCu.Controls.Add(this.btnSoDu);
             this.pnlThanhCongCu.Controls.Add(this.btnBaoCao);
             this.pnlThanhCongCu.Controls.Add(this.btnTraCuuQuanLy);
             this.pnlThanhCongCu.Controls.Add(this.btnKhoanChoVay);
@@ -77,28 +75,6 @@
             this.pnlThanhCongCu.Name = "pnlThanhCongCu";
             this.pnlThanhCongCu.Size = new System.Drawing.Size(220, 691);
             this.pnlThanhCongCu.TabIndex = 1;
-            // 
-            // btnSoDu
-            // 
-            this.btnSoDu.BorderColor = System.Drawing.Color.DarkGreen;
-            this.btnSoDu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSoDu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSoDu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSoDu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSoDu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSoDu.FillColor = System.Drawing.Color.Transparent;
-            this.btnSoDu.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSoDu.ForeColor = System.Drawing.Color.White;
-            this.btnSoDu.Image = ((System.Drawing.Image)(resources.GetObject("btnSoDu.Image")));
-            this.btnSoDu.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnSoDu.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnSoDu.Location = new System.Drawing.Point(0, 495);
-            this.btnSoDu.Name = "btnSoDu";
-            this.btnSoDu.Size = new System.Drawing.Size(220, 73);
-            this.btnSoDu.TabIndex = 20;
-            this.btnSoDu.Text = "SỐ DƯ";
-            this.btnSoDu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSoDu.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
             // btnBaoCao
             // 
@@ -308,6 +284,7 @@
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
             // panelDesktop
             // 
@@ -441,7 +418,6 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2Button btnSoDu;
         private Guna.UI2.WinForms.Guna2Button btnBaoCao;
         private Guna.UI2.WinForms.Guna2Button btnTraCuuQuanLy;
         private Guna.UI2.WinForms.Guna2Button btnKhoanChoVay;

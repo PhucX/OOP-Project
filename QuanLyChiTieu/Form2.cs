@@ -83,12 +83,10 @@ namespace QuanLyChiTieu
             UpdatePanel(btnBaoCao);
             OpenChildForm(new fBaoCao(), btnBaoCao);
         }
-
-        private void btnSoDu_Click(object sender, EventArgs e)
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
         {
-            UpdatePanel(btnSoDu);
+            OpenChildForm(new fNguoiDung(), guna2PictureBox1);
         }
-
         private void btnThongTin_Click(object sender, EventArgs e)
         {
             UpdatePanel(btnThongTin);
@@ -118,11 +116,6 @@ namespace QuanLyChiTieu
         private void btnBaoCao_Leave(object sender, EventArgs e)
         {
             ResetButtonColor(btnBaoCao);
-        }
-
-        private void btnSoDu_Leave(object sender, EventArgs e)
-        {
-            ResetButtonColor(btnSoDu);
         }
 
         private void btnThongTin_Leave(object sender, EventArgs e)
