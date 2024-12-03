@@ -140,7 +140,6 @@ namespace QuanLyChiTieu
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            
             queueIndex.Clear();
             for (int i = 0; i < dgvGiaoDich.Rows.Count; i++)
             {
@@ -176,7 +175,10 @@ namespace QuanLyChiTieu
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-
+            string taiKhoan = QuanLyChiTieu.Objects.ConnectionFile.currentAccount;
+            string childpath = QuanLyChiTieu.Objects.ConnectionFile.GetFileChildConnection("Transaction");
+            string filepath = QuanLyChiTieu.Objects.ConnectionFile.GetFileConnection(childpath);
+            new DataManager(new ExcelExporter()).ExportGiaoDich(taiKhoan, filepath);
         }
 
         private void ptbTimKiem_Click(object sender, EventArgs e)

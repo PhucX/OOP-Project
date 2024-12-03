@@ -44,7 +44,7 @@ namespace QuanLyChiTieu
         private void btnThemTaiKhoan_Click(object sender, EventArgs e)
         {
             string taiKhoan = txbTenVi.Text;
-            double soDu = double.Parse(txbSoDu.Text);
+            Double soDu = Double.Parse(txbSoDu.Text);
 
 
             if (!DichVuTaiKhoan.Instance.DanhSachTaiKhoan.ContainsKey(taiKhoan))
