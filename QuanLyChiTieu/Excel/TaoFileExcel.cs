@@ -31,10 +31,8 @@ namespace QuanLyChiTieu.Excel
                         IXLWorksheet worksheet = workbook.AddWorksheet(sheetName);
 
                         // Thêm tiêu đề cột
-                        worksheet.Cell(1, 1).Value = "Mã thẻ";
-                        worksheet.Cell(1, 2).Value = "Tên tài khoản";
-                        worksheet.Cell(1, 3).Value = "Loại tài khoản";
-                        worksheet.Cell(1, 4).Value = "Số dư";
+                        worksheet.Cell(1, 1).Value = "Tên tài khoản";
+                        worksheet.Cell(1, 2).Value = "Số dư";
 
                         // Lưu workbook vào file Excel
                         workbook.SaveAs(filePath);
@@ -98,14 +96,13 @@ namespace QuanLyChiTieu.Excel
                         IXLWorksheet worksheet = workbook.AddWorksheet(sheetName);
 
                         // Thêm tiêu đề cột
-                        worksheet.Cell(1, 1).Value = "Mã khoản nợ";
-                        worksheet.Cell(1, 2).Value = "Mã cho vay";
-                        worksheet.Cell(1, 3).Value = "Số tiền vay";
-                        worksheet.Cell(1, 4).Value = "Lãi suất";
-                        worksheet.Cell(1, 5).Value = "Ngày đến hạn";
-                        worksheet.Cell(1, 6).Value = "Trạng thái";
-                        worksheet.Cell(1, 7).Value = "Người cho vay";
-                        worksheet.Cell(1, 8).Value = "Người vay";
+                        worksheet.Cell(1, 1).Value = "Mã vay";
+                        worksheet.Cell(1, 2).Value = "Số tiền vay";
+                        worksheet.Cell(1, 3).Value = "Lãi suất";
+                        worksheet.Cell(1, 4).Value = "Ngày đến hạn";
+                        worksheet.Cell(1, 5).Value = "Trạng thái";
+                        worksheet.Cell(1, 6).Value = "Người cho vay";
+                        worksheet.Cell(1, 7).Value = "Người vay";
 
                         // Lưu workbook vào file Excel
                         workbook.SaveAs(filePath);
@@ -131,6 +128,25 @@ namespace QuanLyChiTieu.Excel
         public void TaoFile(string filePath, string sheetName)
         {
             _creator.TaoFile(filePath, sheetName);
+        }
+
+        public void ThemSheet(string filePath, string sheetName)
+        {
+            try
+            {
+                using (XLWorkbook workbook = new XLWorkbook(filePath))
+                {
+                    // Thêm một worksheet mới vào workbook
+                    IXLWorksheet worksheet = workbook.AddWorksheet(sheetName);
+
+                    // Lưu workbook vào file Excel
+                    workbook.Save();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi khi tạo file Excel: " + ex.Message);
+            }
         }
     }
 }

@@ -20,9 +20,9 @@ namespace QuanLyChiTieu
         public fSuaKhoanChoVay(string maVay)
         {
             InitializeComponent();
-            bool laHopLe = DichVuChoVay.Instance.TimKiem(maVay);
+            bool laHopLe = DichVuVay.Instance.TimKiem(maVay);
             if (laHopLe)
-                khoanChoVay = DichVuChoVay.Instance.DanhSachKhoanChoVay[maVay];
+                khoanChoVay = DichVuVay.Instance.DanhSachKhoanVay[maVay];
             
             KhoanChoVay _khoanChoVay = khoanChoVay as KhoanChoVay;
 
@@ -43,7 +43,7 @@ namespace QuanLyChiTieu
             DateTime ngayDenHan = NgayDenHan.Value.Date;
 
             KhoanChoVay _khoanChoVay = new KhoanChoVay(idVay, soTienVay, laiSuat, ngayDenHan, trangThai, nguoiChoVay);
-            DichVuChoVay.Instance.CapNhat(_khoanChoVay.IdKhoanVay, _khoanChoVay);
+            DichVuVay.Instance.CapNhat(_khoanChoVay.IdKhoanVay, _khoanChoVay);
 
             this.Close();
         }

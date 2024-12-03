@@ -28,20 +28,12 @@ namespace QuanLyChiTieu.Objects
 
         public Dictionary<string, TaiKhoan> DanhSachTaiKhoan { get => danhSachTaiKhoan; set => danhSachTaiKhoan = value; }
 
-        public string LayIdTaiKhoan()
-        {
-            for (int i = 0; i < 1e6; i++)
-                if (!danhSachTaiKhoan.ContainsKey("id" + i.ToString()))
-                    return "debt" + i.ToString();
-            return "-1";
-        }
-
         public override void Them(string id, TaiKhoan item) 
         {
-            if (id != "-1")
+            if (!danhSachTaiKhoan.ContainsKey(id))
                 danhSachTaiKhoan.Add(id, item);
             else
-                MessageBox.Show("Đã đủ số lượng tài khoản cho phép!", "Lỗi");
+                MessageBox.Show("Đã tồn tài tài khoản!", "Lỗi");
         }
 
         public override TaiKhoan DocDanhSach(string id) { return new TaiKhoan(); }

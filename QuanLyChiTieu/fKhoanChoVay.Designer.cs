@@ -40,8 +40,6 @@
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.ptbTimKiem = new Guna.UI2.WinForms.Guna2PictureBox();
             this.dgvKhoanChoVay = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.chon = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.maVay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nguoiVay = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +49,8 @@
             this.trangThai = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.xoaColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.suaColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlKhoanVay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTimKiem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhoanChoVay)).BeginInit();
@@ -71,22 +71,23 @@
             this.txbTimKiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txbTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbTimKiem.Location = new System.Drawing.Point(41, 81);
-            this.txbTimKiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txbTimKiem.Location = new System.Drawing.Point(55, 100);
+            this.txbTimKiem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbTimKiem.Name = "txbTimKiem";
             this.txbTimKiem.PasswordChar = '\0';
             this.txbTimKiem.PlaceholderText = "Search";
             this.txbTimKiem.SelectedText = "";
-            this.txbTimKiem.Size = new System.Drawing.Size(236, 37);
+            this.txbTimKiem.Size = new System.Drawing.Size(315, 46);
             this.txbTimKiem.TabIndex = 40;
             // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Cambria", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(41, 3);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(55, 4);
+            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(408, 49);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(509, 61);
             this.guna2HtmlLabel1.TabIndex = 39;
             this.guna2HtmlLabel1.Text = "Lịch sử khoản cho vay";
             // 
@@ -101,9 +102,10 @@
             this.pnlKhoanVay.Controls.Add(this.txbTimKiem);
             this.pnlKhoanVay.Controls.Add(this.guna2HtmlLabel1);
             this.pnlKhoanVay.Controls.Add(this.dgvKhoanChoVay);
-            this.pnlKhoanVay.Location = new System.Drawing.Point(37, 11);
+            this.pnlKhoanVay.Location = new System.Drawing.Point(49, 14);
+            this.pnlKhoanVay.Margin = new System.Windows.Forms.Padding(4);
             this.pnlKhoanVay.Name = "pnlKhoanVay";
-            this.pnlKhoanVay.Size = new System.Drawing.Size(842, 564);
+            this.pnlKhoanVay.Size = new System.Drawing.Size(1123, 694);
             this.pnlKhoanVay.TabIndex = 43;
             // 
             // btnLuu
@@ -120,10 +122,12 @@
             this.btnLuu.ForeColor = System.Drawing.Color.White;
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnLuu.Location = new System.Drawing.Point(741, 81);
+            this.btnLuu.Location = new System.Drawing.Point(988, 100);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(41, 40);
+            this.btnLuu.Size = new System.Drawing.Size(55, 49);
             this.btnLuu.TabIndex = 47;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoa
             // 
@@ -139,9 +143,10 @@
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnXoa.Location = new System.Drawing.Point(694, 81);
+            this.btnXoa.Location = new System.Drawing.Point(925, 100);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(41, 40);
+            this.btnXoa.Size = new System.Drawing.Size(55, 49);
             this.btnXoa.TabIndex = 46;
             // 
             // btnThem
@@ -158,9 +163,10 @@
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnThem.Location = new System.Drawing.Point(647, 81);
+            this.btnThem.Location = new System.Drawing.Point(863, 100);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(41, 40);
+            this.btnThem.Size = new System.Drawing.Size(55, 49);
             this.btnThem.TabIndex = 45;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -169,9 +175,10 @@
             this.ptbTimKiem.BackColor = System.Drawing.Color.Transparent;
             this.ptbTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("ptbTimKiem.Image")));
             this.ptbTimKiem.ImageRotate = 0F;
-            this.ptbTimKiem.Location = new System.Drawing.Point(283, 81);
+            this.ptbTimKiem.Location = new System.Drawing.Point(377, 100);
+            this.ptbTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.ptbTimKiem.Name = "ptbTimKiem";
-            this.ptbTimKiem.Size = new System.Drawing.Size(34, 37);
+            this.ptbTimKiem.Size = new System.Drawing.Size(45, 46);
             this.ptbTimKiem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbTimKiem.TabIndex = 42;
             this.ptbTimKiem.TabStop = false;
@@ -213,12 +220,13 @@
             this.dgvKhoanChoVay.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvKhoanChoVay.Font = new System.Drawing.Font("Cambria", 12F);
             this.dgvKhoanChoVay.GridColor = System.Drawing.Color.Red;
-            this.dgvKhoanChoVay.Location = new System.Drawing.Point(41, 124);
+            this.dgvKhoanChoVay.Location = new System.Drawing.Point(55, 153);
+            this.dgvKhoanChoVay.Margin = new System.Windows.Forms.Padding(4);
             this.dgvKhoanChoVay.Name = "dgvKhoanChoVay";
             this.dgvKhoanChoVay.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvKhoanChoVay.RowHeadersVisible = false;
             this.dgvKhoanChoVay.RowHeadersWidth = 51;
-            this.dgvKhoanChoVay.Size = new System.Drawing.Size(730, 414);
+            this.dgvKhoanChoVay.Size = new System.Drawing.Size(973, 510);
             this.dgvKhoanChoVay.TabIndex = 38;
             this.dgvKhoanChoVay.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvKhoanChoVay.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -243,27 +251,6 @@
             this.dgvKhoanChoVay.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvKhoanChoVay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhoanChoVay_CellClick);
             this.dgvKhoanChoVay.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvKhoanChoVay_CellFormatting);
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.FillWeight = 47.41153F;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::QuanLyChiTieu.Properties.Resources.delete_icon;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.Width = 48;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.FillWeight = 49.43225F;
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = global::QuanLyChiTieu.Properties.Resources.edit_icon;
-            this.dataGridViewImageColumn2.MinimumWidth = 6;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewImageColumn2.Width = 50;
             // 
             // chon
             // 
@@ -344,15 +331,38 @@
             this.suaColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.suaColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.FillWeight = 47.41153F;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::QuanLyChiTieu.Properties.Resources.delete_icon;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.Width = 48;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.FillWeight = 49.43225F;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::QuanLyChiTieu.Properties.Resources.edit_icon;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn2.Width = 50;
+            // 
             // fKhoanChoVay
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(917, 586);
+            this.ClientSize = new System.Drawing.Size(1223, 721);
             this.Controls.Add(this.pnlKhoanVay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fKhoanChoVay";
             this.Text = "fKhoanChoVay";
+            this.Load += new System.EventHandler(this.fKhoanChoVay_Load);
             this.pnlKhoanVay.ResumeLayout(false);
             this.pnlKhoanVay.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTimKiem)).EndInit();
