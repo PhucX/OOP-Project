@@ -23,6 +23,34 @@ namespace QuanLyChiTieu
         }
 
         private Queue<int> queueIndex = new Queue<int>(); // danh sách chứa các vị trí được chọn trong bảng
+        private int phan_trang = 10;
+        private int tong_so_trang = 0;
+        private int trang_hien_tai = 1;
+
+        private void CapNhatSoTrang()
+        {
+            tong_so_trang = DichVuVay.Instance.SoLuong() / phan_trang + 1;
+            gnLbSoTrang.Text = $"{trang_hien_tai} / {tong_so_trang}";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (trang_hien_tai < tong_so_trang)
+            {
+                trang_hien_tai += 1;
+                fKhoanVay_Load(sender, e);
+            }
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            if (trang_hien_tai > 1)
+            {
+                trang_hien_tai -= 1;
+                fKhoanVay_Load(sender, e);
+            }
+        }
+         
         private void dgv_Them(KhoanNo khoanNo)
         {
             dgvKhoanVay.Rows.Add(false, khoanNo.IdKhoanVay, khoanNo.NguoiChoVay, khoanNo.NgayDenHan.ToString(), khoanNo.SoTienVay.ToString(), khoanNo.LaiSuat.ToString(), khoanNo.TrangThai);
@@ -30,14 +58,23 @@ namespace QuanLyChiTieu
 
         private void fKhoanVay_Load(object sender, EventArgs e)
         {
+            CapNhatSoTrang();
             dgvKhoanVay.Rows.Clear();
+            int viTriBatDau = (trang_hien_tai - 1) * phan_trang;
+            int viTriKetThuc = trang_hien_tai * phan_trang;
+            int dem = 0;
+
 
             foreach (var khoanVay in DichVuVay.Instance.DanhSachKhoanVay)
             {
-                KhoanNo khoanNo = khoanVay.Value as KhoanNo;
+                if (dem >= viTriBatDau && dem < viTriKetThuc)
+                {
+                    KhoanNo khoanNo = khoanVay.Value as KhoanNo;
 
-                if (khoanNo != null)
-                    dgv_Them(khoanNo);
+                    if (khoanNo != null)
+                        dgv_Them(khoanNo);
+                }
+                ++dem;
             }
 
             new DataManager(new ExcelExporter()).ExportKhoanVay("nha123vo", ConnectionFile.GetFileConnection("\\Data\\nha123vo\\LoanAndDebt.xlsx"));
@@ -171,5 +208,6 @@ namespace QuanLyChiTieu
                 CapNhatDuLieu(rowData);
             }
         }
+
     }
 }
