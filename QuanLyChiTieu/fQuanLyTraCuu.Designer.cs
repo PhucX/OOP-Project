@@ -73,16 +73,6 @@
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(190)))), ((int)(((byte)(57)))));
             this.dgvViDienTu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvViDienTu.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-<<<<<<< HEAD
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(233)))), ((int)(((byte)(189)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvViDienTu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-=======
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(233)))), ((int)(((byte)(189)))));
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -91,7 +81,6 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvViDienTu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
->>>>>>> 200e396fee2966cc1233c88d58a0fceff7e1fce2
             this.dgvViDienTu.ColumnHeadersHeight = 30;
             this.dgvViDienTu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvViDienTu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -135,11 +124,7 @@
             this.dgvViDienTu.ThemeStyle.RowsStyle.Height = 22;
             this.dgvViDienTu.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvViDienTu.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-<<<<<<< HEAD
-            this.dgvViDienTu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvViDienTu_Load);
-=======
             this.dgvViDienTu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvViDienTu_CellClick);
->>>>>>> 200e396fee2966cc1233c88d58a0fceff7e1fce2
             // 
             // taiKhoan
             // 

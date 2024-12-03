@@ -20,12 +20,6 @@ namespace QuanLyChiTieu
             InitializeComponent();
         }
 
-<<<<<<< HEAD
-        private void dgvViDienTu_Load(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-=======
         private int index = -1;
 
         private void dgv_Them(TaiKhoan taiKhoan)
@@ -103,6 +97,5 @@ namespace QuanLyChiTieu
             if (e.RowIndex >= 0)
                 index = e.RowIndex;
         }
->>>>>>> 200e396fee2966cc1233c88d58a0fceff7e1fce2
     }
 }

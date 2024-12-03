@@ -140,3 +140,4 @@ D:\Project\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyCh.D9B58F0F.Up2Date
 D:\Project\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.exe
 D:\Project\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.pdb
 >>>>>>> 200e396fee2966cc1233c88d58a0fceff7e1fce2
+D:\Project\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fNguoiDung.resources

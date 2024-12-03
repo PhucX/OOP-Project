@@ -161,8 +161,7 @@
         QmCC
 </value>
   </data>
-<<<<<<< HEAD
-=======
+
   <data name="btnXoa.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -211,7 +210,6 @@
         349j/Na8jS9vzUv3kd++9WN46FKr/Z6Fsf4HPHFUZTd1lAcAAAAASUVORK5CYII=
 </value>
   </data>
->>>>>>> 200e396fee2966cc1233c88d58a0fceff7e1fce2
   <data name="ptbTimKiem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
