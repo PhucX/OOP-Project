@@ -1,4 +1,5 @@
-﻿using QuanLyChiTieu.Modules;
+﻿using DocumentFormat.OpenXml.Spreadsheet;
+using QuanLyChiTieu.Modules;
 using QuanLyChiTieu.Objects;
 using System;
 using System.Collections.Generic;
@@ -39,7 +40,7 @@ namespace QuanLyChiTieu
                     dgv_Them(khoanNo);
             }
 
-            new DataManager(new ExcelExporter()).ExportKhoanVay("nha123vo", Connection.GetFileConnection("\\Data\\nha123vo\\LoanAndDebt.xlsx"));
+            new DataManager(new ExcelExporter()).ExportKhoanVay("nha123vo", ConnectionFile.GetFileConnection("\\Data\\nha123vo\\LoanAndDebt.xlsx"));
         }
 
         private void dgvKhoanVay_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -101,6 +102,10 @@ namespace QuanLyChiTieu
                     fSuaKhoanVay.ShowDialog();
                     fKhoanVay_Load(sender, e);
                 }
+                else if(e.ColumnIndex == dgvKhoanVay.Columns["chon"].Index)
+                {
+                    //MessageBox.Show("abc");
+                }
             }
         }
 
@@ -133,6 +138,38 @@ namespace QuanLyChiTieu
         {
             XoaKhoanVay();
             fKhoanVay_Load(sender, e);
+        }
+
+        private void CapNhatDuLieu(List<object> rowData)
+        {
+            try
+            {
+                KhoanNo khoanNo = new KhoanNo(rowData[1].ToString(), double.Parse(rowData[4].ToString()), double.Parse(rowData[5].ToString()), DateTime.Parse(rowData[3].ToString()), rowData[6].ToString(), rowData[2].ToString());
+
+                DichVuVay.Instance.CapNhat(rowData[1].ToString(), khoanNo);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgvKhoanVay_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            // Kiểm tra nếu là ô cần thiết (ví dụ: ô dữ liệu thay đổi)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // Lấy hàng đã thay đổi
+                DataGridViewRow row = dgvKhoanVay.Rows[e.RowIndex];
+
+                // Duyệt qua tất cả các ô trong hàng và lấy giá trị
+                List<object> rowData = new List<object>();
+
+                foreach (DataGridViewCell cell in row.Cells)
+                    rowData.Add(cell.Value); // Thêm giá trị của mỗi ô vào danh sách rowData
+
+                CapNhatDuLieu(rowData);
+            }
         }
     }
 }

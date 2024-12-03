@@ -53,6 +53,8 @@ namespace QuanLyChiTieu
             this.ghiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.xoaColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.suaColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlGiaoDich.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTimKiem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiaoDich)).BeginInit();
@@ -319,6 +321,7 @@ namespace QuanLyChiTieu
             this.ghiChu.HeaderText = "Ghi Chú ";
             this.ghiChu.MinimumWidth = 6;
             this.ghiChu.Name = "ghiChu";
+
             this.ghiChu.ReadOnly = true;
             this.ghiChu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
@@ -340,9 +343,29 @@ namespace QuanLyChiTieu
             this.suaColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.suaColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.FillWeight = 71.472F;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::QuanLyChiTieu.Properties.Resources.delete_icon;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.Width = 84;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::QuanLyChiTieu.Properties.Resources.edit_icon;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn2.Width = 117;
+            // 
             // fGiaoDich
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(858, 586);

@@ -27,12 +27,7 @@ namespace QuanLyChiTieu.Objects
         }
 
         public Dictionary<string, GiaoDich> DanhSachGiaoDich { get => danhSachGiaoDich; set => danhSachGiaoDich = value; }
-        public override void Them(string id, GiaoDich item) {
-            if (id != "-1")
-                danhSachGiaoDich.Add(id, item);
-            else
-                MessageBox.Show("Thêm giao dịch lỗi, vui lòng thêm lại!", "Lỗi");
-        }
+
 
         public string GetIdGiaoDich()
         {
@@ -41,7 +36,15 @@ namespace QuanLyChiTieu.Objects
                     return "debt" + i.ToString();
             return "-1";
         }
+        public override void Them(string id, GiaoDich item) 
+        {
+            if (id != "-1")
+                danhSachGiaoDich[id]=item;
+            else
+                MessageBox.Show("Thêm giao dịch lỗi, vui lòng thêm lại!", "Lỗi");
+        }
 
+     
         public override GiaoDich DocDanhSach(string id) { return new GiaoDich(); }
 
         public override bool CapNhat(string id, GiaoDich item) {
@@ -59,6 +62,7 @@ namespace QuanLyChiTieu.Objects
                 danhSachGiaoDich.Remove(id);
                 return true;
             }
+
             return false;
         }
 

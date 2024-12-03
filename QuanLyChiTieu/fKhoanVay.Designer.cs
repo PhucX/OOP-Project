@@ -184,6 +184,8 @@
             this.dgvKhoanVay.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.dgvKhoanVay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+        this.dgvKhoanVay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
+
             this.dgvKhoanVay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -245,6 +247,7 @@
             this.dgvKhoanVay.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvKhoanVay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgbKhoanVay_CellClick);
             this.dgvKhoanVay.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvKhoanVay_CellFormatting);
+            this.dgvKhoanVay.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhoanVay_CellValueChanged);
             // 
             // chon
             // 

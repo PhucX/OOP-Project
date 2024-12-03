@@ -36,7 +36,7 @@ namespace QuanLyChiTieu
                     dgv_Them(_khoanChoVay);
             }
 
-            new DataManager(new ExcelExporter()).ExportKhoanVay("nha123vo", Connection.GetFileConnection("\\Data\\nha123vo\\LoanAndDebt.xlsx"));
+            new DataManager(new ExcelExporter()).ExportKhoanVay("nha123vo", ConnectionFile.GetFileConnection("\\Data\\nha123vo\\LoanAndDebt.xlsx"));
         }
         private void dgvKhoanChoVay_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {

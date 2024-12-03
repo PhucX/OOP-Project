@@ -225,8 +225,8 @@
     <Compile Include="Modules\KhoanVay.cs" />
     <Compile Include="Modules\TaiKhoan.cs" />
     <Compile Include="Objects\BaseFunc.cs" />
-    <Compile Include="Objects\Connection.cs" />
     <Compile Include="Objects\DichVuChoVay.cs" />
+    <Compile Include="Objects\ConnectionFile.cs" />
     <Compile Include="Objects\DichVuGiaoDich.cs" />
     <Compile Include="Objects\DichVuTaiKhoan.cs" />
     <Compile Include="Objects\DichVuVay.cs" />
