@@ -21,14 +21,14 @@ namespace QuanLyChiTieu
 
         private void btnLuu_click(object sender, EventArgs e)
         {
-            string idVay = DichVuChoVay.Instance.GetIdKhoanVay();
+            string idVay = DichVuVay.Instance.GetIdKhoanChoVay();
             string nguoiChoVay = txbNguoiChoVay.Text;
             double soTienVay = double.Parse(txbSoTienVay.Text);
             double laiSuat = double.Parse(txbLaiSuat.Text);
             string trangThai = cbxTrangThai.SelectedItem.ToString();
             DateTime ngayDenHan = NgayDenHan.Value.Date;
 
-            DichVuChoVay.Instance.Them(idVay, new Modules.KhoanChoVay(idVay, soTienVay, laiSuat, ngayDenHan, trangThai, nguoiChoVay));
+            DichVuVay.Instance.Them(idVay, new Modules.KhoanChoVay(idVay, soTienVay, laiSuat, ngayDenHan, trangThai, nguoiChoVay));
 
             this.Close();
         }

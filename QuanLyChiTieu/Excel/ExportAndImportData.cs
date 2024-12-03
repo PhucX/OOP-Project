@@ -33,8 +33,8 @@ namespace QuanLyChiTieu
 
                     foreach (IXLRow row in worksheet.RowsUsed().Skip(1))
                     {
-                        string maThe = row.Cell(1).Value.ToString();
-                        DichVuTaiKhoan.Instance.Them(maThe, new TaiKhoan(maThe, row.Cell(2).Value.ToString(), row.Cell(3).Value.ToString(), double.Parse(row.Cell(4).Value.ToString())));
+                        string tenThe = row.Cell(1).Value.ToString();
+                        DichVuTaiKhoan.Instance.Them(tenThe, new TaiKhoan(tenThe, double.Parse(row.Cell(2).Value.ToString())));
                     }
                 }
             }
@@ -56,19 +56,22 @@ namespace QuanLyChiTieu
                     {
                         string maVay = row.Cell(1).Value.ToString();
 
-                        DichVuVay.Instance.Them(maVay, new KhoanNo(maVay,
+                        if (maVay.Contains("debt"))
+                        {
+                            DichVuVay.Instance.Them(maVay, new KhoanNo(maVay,
+                            double.Parse(row.Cell(2).Value.ToString()),
                             double.Parse(row.Cell(3).Value.ToString()),
-                            double.Parse(row.Cell(4).Value.ToString()),
-                            DateTime.Parse(row.Cell(5).Value.ToString()),
-                            row.Cell(6).Value.ToString(), row.Cell(7).Value.ToString()));
-
-                        maVay = row.Cell(2).Value.ToString();
-
-                        DichVuVay.Instance.Them(maVay, new KhoanChoVay(maVay,
+                            DateTime.Parse(row.Cell(4).Value.ToString()),
+                            row.Cell(5).Value.ToString(), row.Cell(6).Value.ToString()));
+                        }
+                        else if(maVay.Contains("loan"))
+                        {
+                            DichVuVay.Instance.Them(maVay, new KhoanChoVay(maVay,
+                            double.Parse(row.Cell(2).Value.ToString()),
                             double.Parse(row.Cell(3).Value.ToString()),
-                            double.Parse(row.Cell(4).Value.ToString()),
-                            DateTime.Parse(row.Cell(5).Value.ToString()),
-                            row.Cell(6).Value.ToString(), row.Cell(8).Value.ToString()));
+                            DateTime.Parse(row.Cell(4).Value.ToString()),
+                            row.Cell(5).Value.ToString(), row.Cell(7).Value.ToString()));
+                        }
                     }
                 }
             }
@@ -108,6 +111,8 @@ namespace QuanLyChiTieu
     public interface IExporter
     {
         void ExportNguoiDung(string tenTK, string mkTK, string filePath);
+        void ExportTaiKhoan(string filePath);
+
         void ExportKhoanVay(string taiKhoan, string filePath);
         void ExportGiaoDich(string taiKhoan, string filePath);
 
@@ -115,6 +120,41 @@ namespace QuanLyChiTieu
 
     public class ExcelExporter : IExporter
     {
+        public void ExportTaiKhoan(string filePath)
+        {
+            try
+            {
+
+                using (XLWorkbook workbook = new XLWorkbook(filePath))
+                {
+                    // Nếu là file mới thì thêm worksheet
+                    IXLWorksheet worksheet = workbook.Worksheets.Worksheet(1);
+                    worksheet.Clear();
+
+                    worksheet.Cell(1, 1).Value = "Tên tài khoản";
+                    worksheet.Cell(1, 2).Value = "Số dư";
+
+                    int lastRowUsed = worksheet.RowsUsed().Count() + 1;
+
+                    // ghi đè bản Excel
+                    foreach (var taiKhoan in DichVuTaiKhoan.Instance.DanhSachTaiKhoan)
+                    {
+                        worksheet.Cell(lastRowUsed, 1).Value = taiKhoan.Value.TenTaiKhoan;
+                        worksheet.Cell(lastRowUsed, 2).Value = taiKhoan.Value.SoDu.ToString();
+                        lastRowUsed++;
+                    }
+                    // Lưu lại file và ghi đè lên file gốc
+                    workbook.SaveAs(filePath);
+                }
+
+                MessageBox.Show("Đăng ký thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
         public void ExportGiaoDich(string taiKhoan, string filePath)
         {
             try
@@ -136,6 +176,7 @@ namespace QuanLyChiTieu
                         else
                             worksheet = workbook.Worksheets.Worksheet(taiKhoan);
                     }
+                    worksheet.Clear();
 
                     // Thêm tiêu đề cột
                     worksheet.Cell(1, 1).Value = "Mã giao dịch";
@@ -191,31 +232,42 @@ namespace QuanLyChiTieu
                         else
                             worksheet = workbook.Worksheets.Worksheet(taiKhoan);
                     }
+                    worksheet.Clear();
 
                     // Thêm tiêu đề cột
-                    worksheet.Cell(1, 1).Value = "Mã khoản nợ";
-                    worksheet.Cell(1, 2).Value = "Mã cho vay";
-                    worksheet.Cell(1, 3).Value = "Số tiền vay";
-                    worksheet.Cell(1, 4).Value = "Lãi suất";
-                    worksheet.Cell(1, 5).Value = "Ngày đến hạn";
-                    worksheet.Cell(1, 6).Value = "Trạng thái";
-                    worksheet.Cell(1, 7).Value = "Người cho vay";
-                    worksheet.Cell(1, 8).Value = "Người vay";
+                    worksheet.Cell(1, 1).Value = "Mã vay";
+                    worksheet.Cell(1, 2).Value = "Số tiền vay";
+                    worksheet.Cell(1, 3).Value = "Lãi suất";
+                    worksheet.Cell(1, 4).Value = "Ngày đến hạn";
+                    worksheet.Cell(1, 5).Value = "Trạng thái";
+                    worksheet.Cell(1, 6).Value = "Người cho vay";
+                    worksheet.Cell(1, 7).Value = "Người vay";
 
                     int lastRowUsed = worksheet.RowsUsed().Count() + 1;
                     
-                    foreach (var khoanVay in DichVuVay.Instance.DanhSachKhoanVay.Where(khoanNo => khoanNo.Value is KhoanNo).ToList())
+                    foreach (var khoanVay in DichVuVay.Instance.DanhSachKhoanVay)
                     {
-                        KhoanNo khoanNo = khoanVay.Value as KhoanNo;
+                        worksheet.Cell(lastRowUsed, 1).Value = khoanVay.Value.IdKhoanVay;
+                        worksheet.Cell(lastRowUsed, 2).Value = khoanVay.Value.SoTienVay.ToString();
+                        worksheet.Cell(lastRowUsed, 3).Value = khoanVay.Value.LaiSuat.ToString();
+                        worksheet.Cell(lastRowUsed, 4).Value = khoanVay.Value.NgayDenHan.ToString();
+                        worksheet.Cell(lastRowUsed, 5).Value = khoanVay.Value.TrangThai;
+                        
 
-                        worksheet.Cell(lastRowUsed, 1).Value = khoanNo.IdKhoanVay.ToString();
-                        worksheet.Cell(lastRowUsed, 2).Value = "loan" + khoanNo.IdKhoanVay.Substring(4);
-                        worksheet.Cell(lastRowUsed, 3).Value = khoanNo.SoTienVay.ToString();
-                        worksheet.Cell(lastRowUsed, 4).Value = khoanNo.LaiSuat.ToString();
-                        worksheet.Cell(lastRowUsed, 5).Value = khoanNo.NgayDenHan.ToString();
-                        worksheet.Cell(lastRowUsed, 6).Value = khoanNo.TrangThai.ToString();
-                        worksheet.Cell(lastRowUsed, 7).Value = khoanNo.NguoiChoVay.ToString();
-                        worksheet.Cell(lastRowUsed, 8).Value = taiKhoan;
+                        if (khoanVay.Value is KhoanNo)
+                        {
+                            KhoanNo khoanNo = (KhoanNo)khoanVay.Value; // nếu khoản vay là nợ
+
+                            worksheet.Cell(lastRowUsed, 6).Value = khoanNo.NguoiChoVay;
+                            worksheet.Cell(lastRowUsed, 7).Value = taiKhoan;
+                        }
+                        else
+                        {
+                            KhoanChoVay khoanChoVay = (KhoanChoVay)khoanVay.Value; // khoản vay là cho vay
+
+                            worksheet.Cell(lastRowUsed, 6).Value = taiKhoan;
+                            worksheet.Cell(lastRowUsed, 7).Value = khoanChoVay.NguoiVay;
+                        }
 
                         lastRowUsed += 1; // tăng chỉ số hàng đã dùng thêm 1
                     }
@@ -281,6 +333,11 @@ namespace QuanLyChiTieu
         {
             _exporter = exporter;
         }
+        public void ExportTaiKhoan(string filePath)
+        {
+            _exporter.ExportTaiKhoan(filePath);
+        }
+
         public void ExportGiaoDich(string taiKhoan, string filePath)
         {
             _exporter.ExportGiaoDich(taiKhoan, filePath);

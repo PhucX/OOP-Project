@@ -26,30 +26,6 @@ namespace QuanLyChiTieu
         private int phan_trang = 10;
         private int tong_so_trang = 0;
         private int trang_hien_tai = 1;
-
-        private void CapNhatSoTrang()
-        {
-            tong_so_trang = DichVuVay.Instance.SoLuong() / phan_trang + 1;
-            gnLbSoTrang.Text = $"{trang_hien_tai} / {tong_so_trang}";
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (trang_hien_tai < tong_so_trang)
-            {
-                trang_hien_tai += 1;
-                fKhoanVay_Load(sender, e);
-            }
-        }
-
-        private void btnPrevious_Click(object sender, EventArgs e)
-        {
-            if (trang_hien_tai > 1)
-            {
-                trang_hien_tai -= 1;
-                fKhoanVay_Load(sender, e);
-            }
-        }
          
         private void dgv_Them(KhoanNo khoanNo)
         {
@@ -58,7 +34,6 @@ namespace QuanLyChiTieu
 
         private void fKhoanVay_Load(object sender, EventArgs e)
         {
-            CapNhatSoTrang();
             dgvKhoanVay.Rows.Clear();
             int viTriBatDau = (trang_hien_tai - 1) * phan_trang;
             int viTriKetThuc = trang_hien_tai * phan_trang;
@@ -76,8 +51,6 @@ namespace QuanLyChiTieu
                 }
                 ++dem;
             }
-
-            new DataManager(new ExcelExporter()).ExportKhoanVay("nha123vo", ConnectionFile.GetFileConnection("\\Data\\nha123vo\\LoanAndDebt.xlsx"));
         }
 
         private void dgvKhoanVay_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -209,5 +182,12 @@ namespace QuanLyChiTieu
             }
         }
 
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            string taiKhoan = QuanLyChiTieu.Objects.ConnectionFile.currentAccount;
+            string childpath = QuanLyChiTieu.Objects.ConnectionFile.GetFileChildConnection("LoanAndDebt");
+            string filepath = QuanLyChiTieu.Objects.ConnectionFile.GetFileConnection(childpath);
+            new DataManager(new ExcelExporter()).ExportKhoanVay(taiKhoan, filepath);
+        }
     }
 }
