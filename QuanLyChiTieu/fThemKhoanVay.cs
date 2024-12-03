@@ -22,7 +22,7 @@ namespace QuanLyChiTieu
         {
             try
             {
-                string idVay = DichVuVay.Instance.GetIdKhoanVay();
+                string idVay = DichVuVay.Instance.GetIdKhoanNo();
                 string nguoiChoVay = txbNguoiChoVay.Text;
                 double soTienVay = double.Parse(txbSoTienVay.Text);
                 double laiSuat = double.Parse(txbLaiSuat.Text);

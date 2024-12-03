@@ -28,11 +28,19 @@ namespace QuanLyChiTieu.Objects
 
         public Dictionary<string, KhoanVay> DanhSachKhoanVay { get => danhSachKhoanVay; set => danhSachKhoanVay = value; }
 
-        public string GetIdKhoanVay()
+        public string GetIdKhoanNo()
         {
             for (int i = 0; i < 1e6; i++)
                 if (!danhSachKhoanVay.ContainsKey("debt" + i.ToString()))
                     return "debt" + i.ToString();
+            return "-1";
+        }
+
+        public string GetIdKhoanChoVay()
+        {
+            for (int i = 0; i < 1e6; i++)
+                if (!danhSachKhoanVay.ContainsKey("loan" + i.ToString()))
+                    return "loan" + i.ToString();
             return "-1";
         }
 

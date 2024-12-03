@@ -23,21 +23,19 @@ namespace QuanLyChiTieu
         {
             dgvKhoanChoVay.Rows.Add(false, _khoanChoVay.IdKhoanVay, _khoanChoVay.NguoiVay, _khoanChoVay.NgayDenHan.ToString(), _khoanChoVay.SoTienVay.ToString(), _khoanChoVay.LaiSuat.ToString(), _khoanChoVay.TrangThai);
         }
-
         private void fKhoanChoVay_Load(object sender, EventArgs e)
         {
             dgvKhoanChoVay.Rows.Clear();
 
-            foreach (var khoanChoVay in DichVuChoVay.Instance.DanhSachKhoanChoVay)
+            foreach (var khoanChoVay in DichVuVay.Instance.DanhSachKhoanVay)
             {
                 KhoanChoVay _khoanChoVay = khoanChoVay.Value as KhoanChoVay;
 
                 if (_khoanChoVay != null)
                     dgv_Them(_khoanChoVay);
             }
-
-            new DataManager(new ExcelExporter()).ExportKhoanVay("nha123vo", ConnectionFile.GetFileConnection("\\Data\\nha123vo\\LoanAndDebt.xlsx"));
         }
+
         private void dgvKhoanChoVay_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // Kiểm tra nếu cột là "xoaColumn" hoặc "suaColumn"
@@ -94,7 +92,7 @@ namespace QuanLyChiTieu
             {
                 int index = queueIndex.Dequeue();
                 string maVay = dgvKhoanChoVay.Rows[index].Cells["maVay"].Value.ToString();
-                DichVuChoVay.Instance.Xoa(maVay); // xóa theo mã vay
+                DichVuVay.Instance.Xoa(maVay); // xóa theo mã vay
             }
         }
         private void btnThem_Click(object sender, EventArgs e)
@@ -114,7 +112,7 @@ namespace QuanLyChiTieu
 
             dgvKhoanChoVay.Rows.Clear(); // xóa bảng hiển thị trước khi tìm kiếm
 
-            List<KhoanChoVay> giaTriThoaMan = DichVuChoVay.Instance.DanhSachKhoanChoVay.Where(khoanChoVay => khoanChoVay.Key.Contains(searchText) || ((KhoanChoVay)khoanChoVay.Value).NguoiVay.Contains(searchText)).Select(khoanChoVay => (KhoanChoVay)khoanChoVay.Value).ToList();
+            List<KhoanChoVay> giaTriThoaMan = DichVuVay.Instance.DanhSachKhoanVay.Where(khoanChoVay => khoanChoVay.Key.Contains(searchText) || ((KhoanChoVay)khoanChoVay.Value).NguoiVay.Contains(searchText)).Select(khoanChoVay => (KhoanChoVay)khoanChoVay.Value).ToList();
 
             // Thêm kết quả vào DataGridView
             foreach (var khoanChoVay in giaTriThoaMan)
@@ -125,6 +123,14 @@ namespace QuanLyChiTieu
         {
             XoaKhoanChoVay();
             fKhoanChoVay_Load(sender, e);
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            string taiKhoan = QuanLyChiTieu.Objects.ConnectionFile.currentAccount;
+            string childpath = QuanLyChiTieu.Objects.ConnectionFile.GetFileChildConnection("LoanAndDebt");
+            string filepath = QuanLyChiTieu.Objects.ConnectionFile.GetFileConnection(childpath);
+            new DataManager(new ExcelExporter()).ExportKhoanVay(taiKhoan, filepath);
         }
     }
 }

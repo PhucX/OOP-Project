@@ -109,6 +109,9 @@ namespace QuanLyChiTieu
             {
                 MessageBox.Show("Đăng nhập thành công");
                 this.Hide();
+                QuanLyChiTieu.Objects.ConnectionFile.currentUser = taiKhoan; // lưu người dùng hiện tại
+                // lưu tài khoản của người dùng hiện tại
+                QuanLyChiTieu.Objects.ConnectionFile.currentAccount = taiKhoan;
 
                 // Lấy dữ liệu các tài khoản tại folder user
                 new DataManager(new ExcelImporter()).ImportTaiKhoan(ConnectionFile.GetFileConnection($"\\Data\\{txbTaiKhoan.Text}\\Accounts.xlsx"));
@@ -152,13 +155,15 @@ namespace QuanLyChiTieu
                         new DataManager(new ExcelExporter()).ExportNguoiDung(taiKhoanMoi, matKhauMoi, ConnectionFile.GetFileConnection("\\Data\\Account.xlsx"));
 
                         // tạo file excel để lưu trữ dữ liệu cho tài khoản mới
-                        new DataCreator(new TaoFileTaiKhoan()).TaoFile(ConnectionFile.GetFileConnection($"\\Data\\{taiKhoanMoi}\\Accounts.xlsx"), taiKhoanMoi);
+                        new DataCreator(new TaoFileTaiKhoan()).TaoFile(ConnectionFile.GetFileConnection($"\\Data\\{taiKhoanMoi}\\Accounts.xlsx"), "sheet1");
 
                         // tạo file excel lưu trữ các cuộc giao dịch
                         new DataCreator(new TaoFileGiaoDich()).TaoFile(ConnectionFile.GetFileConnection($"\\Data\\{taiKhoanMoi}\\Transaction.xlsx"), taiKhoanMoi);
 
                         // tạo file excel lưu trữ các khoản vay
                         new DataCreator(new TaoFileKhoanVay()).TaoFile(ConnectionFile.GetFileConnection($"\\Data\\{taiKhoanMoi}\\LoanAndDebt.xlsx"), taiKhoanMoi);
+
+                        DichVuTaiKhoan.Instance.Them(taiKhoanMoi, new TaiKhoan(taiKhoanMoi, 0));
 
                         guna2ShadowPanel1.Visible = true;
                     }
