@@ -26,6 +26,30 @@ namespace QuanLyChiTieu.Objects
             set => instance = value;
         }
 
+        public Double Tongthunhap(DateTime Ngaybatdau, DateTime Ngayketthuc)
+        {
+            Double tong = 0;
+            foreach (GiaoDich giaodich in DanhSachGiaoDich.Values) {
+                if (giaodich.NgayGiaoDich >= Ngaybatdau && giaodich.NgayGiaoDich <= Ngayketthuc) {
+                    if (giaodich.LoaiGiaoDich == "Nạp tiền")
+                        tong += giaodich.SoTienGiaoDich;
+                }
+            }
+            return tong;
+        }
+        public Double Tongchitieu(DateTime Ngaybatdau, DateTime Ngayketthuc)
+        {
+            Double tong = 0;
+            foreach (GiaoDich giaodich in DanhSachGiaoDich.Values)
+            {
+                if (giaodich.NgayGiaoDich >= Ngaybatdau && giaodich.NgayGiaoDich <= Ngayketthuc)
+                {
+                    if (giaodich.LoaiGiaoDich != "Nạp tiền")
+                        tong += giaodich.SoTienGiaoDich;
+                }
+            }
+            return tong;
+        }
         public Dictionary<string, GiaoDich> DanhSachGiaoDich { get => danhSachGiaoDich; set => danhSachGiaoDich = value; }
 
 

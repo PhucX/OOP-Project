@@ -31,6 +31,8 @@ namespace QuanLyChiTieu
         }
         private Queue<int> queueIndex = new Queue<int>();
         
+
+
         private void dgv_Them(GiaoDich giaodich)
         {
             dgvGiaoDich.Rows.Add(false, giaodich.MaGiaoDich, giaodich.LoaiGiaoDich, giaodich.NgayGiaoDich.ToString(), giaodich.SoTienGiaoDich.ToString(), giaodich.GhiChu);

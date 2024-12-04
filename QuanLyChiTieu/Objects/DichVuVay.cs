@@ -25,6 +25,35 @@ namespace QuanLyChiTieu.Objects
 
             set => instance = value;
         }
+        public Double Tongthunhap(DateTime Ngaybatdau, DateTime Ngayketthuc)
+        {
+            Double tong = 0;
+            foreach (KhoanVay khoanvay in DanhSachKhoanVay.Values)
+            {
+                if(khoanvay.NgayVay>=Ngaybatdau && khoanvay.NgayVay <= Ngayketthuc)
+                {
+                    if (khoanvay.IdKhoanVay.Contains("debt"))
+                        tong += khoanvay.SoTienVay;
+                }
+              
+            }
+            return tong;
+        }
+
+        public Double Tongchitieu(DateTime Ngaybatdau, DateTime Ngayketthuc)
+        {
+            Double tong = 0;
+            foreach (KhoanVay khoanvay in DanhSachKhoanVay.Values)
+            {
+                if (khoanvay.NgayVay >= Ngaybatdau && khoanvay.NgayVay <= Ngayketthuc)
+                {
+                    if (khoanvay.IdKhoanVay.Contains("loan"))
+                        tong += khoanvay.SoTienVay;
+                }
+
+            }
+            return tong;
+        }
 
         public Dictionary<string, KhoanVay> DanhSachKhoanVay { get => danhSachKhoanVay; set => danhSachKhoanVay = value; }
 
