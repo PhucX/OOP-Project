@@ -349,3 +349,4 @@ D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyCh.D9B58F0F.Up2Date
 D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.exe
 D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.pdb
 >>>>>>> a0bed2ae8c2c34b0295cd131415093501a6c7187
+D:\New folder\mới nhất\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fDoiMatKhau.resources
