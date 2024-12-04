@@ -20,7 +20,17 @@ namespace QuanLyChiTieu
             label2.Text = (QuanLyChiTieu.Objects.DichVuGiaoDich.Instance.TongchitieuAll() + QuanLyChiTieu.Objects.DichVuVay.Instance.TongchitieuAll()).ToString();
 
             btnSoTinThongBao.Text = DichVuVay.Instance.DanhSachKhoanVay.Count(khoanVay => (-khoanVay.Value.NgayVay.Day + DateTime.Now.Day) <= 7).ToString();
-        
+            guna2DataGridView1.Rows.Clear();
+            foreach (var giaodich in DichVuGiaoDich.Instance.DanhSachGiaoDich)
+            {
+                if (giaodich.Value != null)
+                {
+                    if (giaodich.Value.LoaiGiaoDich == "Chi tiêu")
+                    {
+                        guna2DataGridView1.Rows.Add(giaodich.Value.NgayGiaoDich.ToString(), giaodich.Value.SoTienGiaoDich.ToString(), giaodich.Value.ViDienTu, giaodich.Value.GhiChu);
+                    }
+                }
+            }
         }
 
         private bool isFirstClick = true;
@@ -30,7 +40,7 @@ namespace QuanLyChiTieu
             
             if (isFirstClick)
             {
-                lbTongSoDu.Text += QuanLyChiTieu.Objects.DichVuTaiKhoan.Instance.DanhSachTaiKhoan[taiKhoan].SoDu.ToString();
+                lbTongSoDu.Text = QuanLyChiTieu.Objects.DichVuTaiKhoan.Instance.DanhSachTaiKhoan[taiKhoan].SoDu.ToString();
                 lbTongSoDu.Text += " VND";
                 isFirstClick = false;
             }
