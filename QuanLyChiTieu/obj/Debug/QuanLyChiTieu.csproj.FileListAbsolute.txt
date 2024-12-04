@@ -206,6 +206,7 @@ D:\Code\Backup\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyCh.D9B58F0F.Up2Date
 D:\Code\Backup\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.exe
 D:\Code\Backup\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.pdb
 D:\Code\Backup\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fNguoiDung.resources
+<<<<<<< HEAD
 D:\New folder\mới nhất\OOP-Project\QuanLyChiTieu\bin\Debug\QuanLyChiTieu.exe.config
 D:\New folder\mới nhất\OOP-Project\QuanLyChiTieu\bin\Debug\QuanLyChiTieu.exe
 D:\New folder\mới nhất\OOP-Project\QuanLyChiTieu\bin\Debug\QuanLyChiTieu.pdb
@@ -276,3 +277,75 @@ D:\New folder\mới nhất\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csp
 D:\New folder\mới nhất\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyCh.D9B58F0F.Up2Date
 D:\New folder\mới nhất\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.exe
 D:\New folder\mới nhất\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.pdb
+=======
+D:\c++\5\QuanLyChiTieu\bin\Debug\QuanLyChiTieu.exe.config
+D:\c++\5\QuanLyChiTieu\bin\Debug\QuanLyChiTieu.exe
+D:\c++\5\QuanLyChiTieu\bin\Debug\QuanLyChiTieu.pdb
+D:\c++\5\QuanLyChiTieu\bin\Debug\ClosedXML.dll
+D:\c++\5\QuanLyChiTieu\bin\Debug\ClosedXML.Parser.dll
+D:\c++\5\QuanLyChiTieu\bin\Debug\DocumentFormat.OpenXml.dll
+D:\c++\5\QuanLyChiTieu\bin\Debug\DocumentFormat.OpenXml.Framework.dll
+D:\c++\5\QuanLyChiTieu\bin\Debug\ExcelNumberFormat.dll
+D:\c++\5\QuanLyChiTieu\bin\Debug\Guna.UI2.dll
+D:\c++\5\QuanLyChiTieu\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\c++\5\QuanLyChiTieu\bin\Debug\Microsoft.Bcl.HashCode.dll
+D:\c++\5\QuanLyChiTieu\bin\Debug\Newtonsoft.Json.dll
+D:\c++\5\QuanLyChiTieu\bin\Debug\RBush.dll
+D:\c++\5\QuanLyChiTieu\bin\Debug\RestSharp.dll
+D:\c++\5\QuanLyChiTieu\bin\Debug\SixLabors.Fonts.dll
+D:\c++\5\QuanLyChiTieu\bin\Debug\System.Buffers.dll
+D:\c++\5\QuanLyChiTieu\bin\Debug\System.CodeDom.dll
+D:\c++\5\QuanLyChiTieu\bin\Debug\System.Memory.dll
+D:\c++\5\QuanLyChiTieu\bin\Debug\System.Numerics.Vectors.dll
+D:\c++\5\QuanLyChiTieu\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\c++\5\QuanLyChiTieu\bin\Debug\System.Text.Encodings.Web.dll
+D:\c++\5\QuanLyChiTieu\bin\Debug\System.Text.Json.dll
+D:\c++\5\QuanLyChiTieu\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\c++\5\QuanLyChiTieu\bin\Debug\System.ValueTuple.dll
+D:\c++\5\QuanLyChiTieu\bin\Debug\ClosedXML.pdb
+D:\c++\5\QuanLyChiTieu\bin\Debug\ClosedXML.xml
+D:\c++\5\QuanLyChiTieu\bin\Debug\ClosedXML.Parser.xml
+D:\c++\5\QuanLyChiTieu\bin\Debug\DocumentFormat.OpenXml.xml
+D:\c++\5\QuanLyChiTieu\bin\Debug\DocumentFormat.OpenXml.Framework.xml
+D:\c++\5\QuanLyChiTieu\bin\Debug\ExcelNumberFormat.xml
+D:\c++\5\QuanLyChiTieu\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\c++\5\QuanLyChiTieu\bin\Debug\Microsoft.Bcl.HashCode.xml
+D:\c++\5\QuanLyChiTieu\bin\Debug\Newtonsoft.Json.xml
+D:\c++\5\QuanLyChiTieu\bin\Debug\RBush.xml
+D:\c++\5\QuanLyChiTieu\bin\Debug\RestSharp.xml
+D:\c++\5\QuanLyChiTieu\bin\Debug\SixLabors.Fonts.xml
+D:\c++\5\QuanLyChiTieu\bin\Debug\System.Buffers.xml
+D:\c++\5\QuanLyChiTieu\bin\Debug\System.CodeDom.xml
+D:\c++\5\QuanLyChiTieu\bin\Debug\System.Memory.xml
+D:\c++\5\QuanLyChiTieu\bin\Debug\System.Numerics.Vectors.xml
+D:\c++\5\QuanLyChiTieu\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\c++\5\QuanLyChiTieu\bin\Debug\System.Text.Encodings.Web.xml
+D:\c++\5\QuanLyChiTieu\bin\Debug\System.Text.Json.xml
+D:\c++\5\QuanLyChiTieu\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\c++\5\QuanLyChiTieu\bin\Debug\System.ValueTuple.xml
+D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.AssemblyReference.cache
+D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.SuggestedBindingRedirects.cache
+D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.exe.config
+D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fBaoCao.resources
+D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fChuyenKhoan.resources
+D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fGiaoDich.resources
+D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fKhoanChoVay.resources
+D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fKhoanVay.resources
+D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fNguoiDung.resources
+D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fDangNhap.resources
+D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fBangDieuKhien.resources
+D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fTranCuuQuanLy.resources
+D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fSuaGiaoDich.resources
+D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fSuaKhoanChoVay.resources
+D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fSuaKhoanVay.resources
+D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fThemGiaoDich.resources
+D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fThemKhoanChoVay.resources
+D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fThemKhoanVay.resources
+D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fTrangChu.resources
+D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.Properties.Resources.resources
+D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.GenerateResource.cache
+D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.CoreCompileInputs.cache
+D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyCh.D9B58F0F.Up2Date
+D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.exe
+D:\c++\5\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.pdb
+>>>>>>> a0bed2ae8c2c34b0295cd131415093501a6c7187

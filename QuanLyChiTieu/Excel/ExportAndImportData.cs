@@ -108,9 +108,9 @@ namespace QuanLyChiTieu
                         string maVay = row.Cell(1).Value.ToString();
                         
                         DichVuGiaoDich.Instance.Them(maVay, new GiaoDich(maVay,
-                            DateTime.Parse(row.Cell(2).Value.ToString()),
-                            double.Parse(row.Cell(3).Value.ToString()),
-                            row.Cell(4).Value.ToString(),
+                            DateTime.Parse(row.Cell(3).Value.ToString()),
+                            double.Parse(row.Cell(4).Value.ToString()),
+                            row.Cell(2).Value.ToString(),
                             row.Cell(5).Value.ToString()));
                     }
                 }

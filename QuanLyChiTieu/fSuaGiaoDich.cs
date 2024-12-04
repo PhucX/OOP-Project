@@ -54,27 +54,13 @@ namespace QuanLyChiTieu
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
-            string magiaodich = DichVuGiaoDich.Instance.GetIdGiaoDich();
+            string magiaodich = giaodich.MaGiaoDich;
             Double SoTien = Double.Parse(txbTSoTien.Text);
             string GhiChu = guna2TextBox1.Text;
             DateTime ngaygiaodich = NgayGiaoDich.Value.Date;
             string loaigiaodich = guna2ComboBox1.SelectedItem.ToString();
 
             DichVuGiaoDich.Instance.CapNhat(magiaodich, new Modules.GiaoDich(magiaodich, ngaygiaodich, SoTien, loaigiaodich, GhiChu));
-
-            this.Close();
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            string idgiaodich = giaodich.MaGiaoDich;
-            DateTime ngaygiaodich = NgayGiaoDich.Value.Date;
-            Double sotien= Double.Parse(txbTSoTien.Text) ;
-            string loaigiaodich = guna2ComboBox1.Text;
-            string ghichu= guna2TextBox1.Text;
-
-            GiaoDich GIaoDich = new GiaoDich(idgiaodich,ngaygiaodich,sotien,loaigiaodich,ghichu);
-            DichVuGiaoDich.Instance.CapNhat(idgiaodich,GIaoDich);
 
             this.Close();
         }
