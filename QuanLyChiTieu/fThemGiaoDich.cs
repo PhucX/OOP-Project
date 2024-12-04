@@ -44,7 +44,12 @@ namespace QuanLyChiTieu
                 string viDienTu = cbxViDienTu.Text;
                 GiaoDich GIaoDich = new GiaoDich(idgiaodich, ngaygiaodich, sotien, loaigiaodich, ghichu, viDienTu);
                 DichVuGiaoDich.Instance.Them(idgiaodich, GIaoDich);
+                string taiKhoan = QuanLyChiTieu.Objects.ConnectionFile.currentAccount;
 
+                if (loaigiaodich == "Thu nhập")
+                    QuanLyChiTieu.Objects.DichVuTaiKhoan.Instance.DanhSachTaiKhoan[taiKhoan].SoDu +=sotien;
+                else
+                    QuanLyChiTieu.Objects.DichVuTaiKhoan.Instance.DanhSachTaiKhoan[taiKhoan].SoDu -= sotien;
                 this.Close();
             }
             catch (Exception ex)

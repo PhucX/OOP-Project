@@ -60,6 +60,15 @@ namespace QuanLyChiTieu
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            string taiKhoan = QuanLyChiTieu.Objects.ConnectionFile.currentAccount;
+            if (giaodich.LoaiGiaoDich != cbxLoaiGiaoDich.SelectedIndex.ToString())
+            {
+                if (giaodich.LoaiGiaoDich == "Thu nhập")
+                    QuanLyChiTieu.Objects.DichVuTaiKhoan.Instance.DanhSachTaiKhoan[taiKhoan].SoDu += Double.Parse(txbTSoTien.Text);
+                else
+                    QuanLyChiTieu.Objects.DichVuTaiKhoan.Instance.DanhSachTaiKhoan[taiKhoan].SoDu -= Double.Parse(txbTSoTien.Text);
+            }
+            
             string magiaodich = giaodich.MaGiaoDich;
             Double SoTien = Double.Parse(txbTSoTien.Text);
             string GhiChu = txbGhiChu.Text;
@@ -71,7 +80,7 @@ namespace QuanLyChiTieu
                 MessageBox.Show("Please select an item from the Vi Dien Tu ComboBox.");
                 return;
             }
-
+            
             DichVuGiaoDich.Instance.CapNhat(magiaodich, new Modules.GiaoDich(magiaodich, ngaygiaodich, SoTien, loaigiaodich, GhiChu, viDienTu));
 
             this.Close();

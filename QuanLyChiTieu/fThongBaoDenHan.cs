@@ -38,7 +38,6 @@ namespace QuanLyChiTieu
                 }
 
             }
-            dgvThongBao.Rows.Add((stt++).ToString(), "Cho vay", $"Cách ngày đến hạn còn {2} ngày");
         }
     }
 }
