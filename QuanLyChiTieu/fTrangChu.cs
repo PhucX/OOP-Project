@@ -20,10 +20,10 @@ namespace QuanLyChiTieu
         private bool isFirstClick = true;
         private void guna2PictureBox3_Click(object sender, EventArgs e)
         {
-
+            string taiKhoan = QuanLyChiTieu.Objects.ConnectionFile.currentAccount;
             if (isFirstClick)
             {
-                lbTongSoDu.Text = 123.ToString();
+                lbTongSoDu.Text = QuanLyChiTieu.Objects.DichVuTaiKhoan.Instance.DanhSachTaiKhoan[taiKhoan].SoDu.ToString();
                 lbTongSoDu.Text += " VND";
                 isFirstClick = false;
             }
