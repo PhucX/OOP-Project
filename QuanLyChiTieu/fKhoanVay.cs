@@ -196,30 +196,33 @@ namespace QuanLyChiTieu
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            string maVay = dgvKhoanVay.Rows[index].Cells["maVay"].Value.ToString();
-            KhoanNo khoanNo = DichVuVay.Instance.DanhSachKhoanVay[maVay] as KhoanNo;
+            //string maVay = dgvKhoanVay.Rows[index].Cells["maVay"].Value.ToString();
+            //KhoanNo khoanNo = DichVuVay.Instance.DanhSachKhoanVay[maVay] as KhoanNo;
 
-            try
-            {
-                double soTienTra = double.Parse(gn2txbSoTien.ToString());
-                khoanNo.ThanhToan(soTienTra);
+            //try
+            //{
+            //    ;
+            //    khoanNo.ThanhToan(soTienTra);
 
-                DichVuVay.Instance.DanhSachKhoanVay[maVay] = khoanNo;
+            //    DichVuVay.Instance.DanhSachKhoanVay[maVay] = khoanNo;
 
-                if(khoanNo.SoDuNo == 0)
-                {
-                    DichVuVay.Instance.Xoa(maVay);
-                    MessageBox.Show("Đã trả hết nợ.", "Thông báo");
-                }
+            //    if(khoanNo.SoDuNo == 0)
+            //    {
+            //        DichVuVay.Instance.Xoa(maVay);
+            //        MessageBox.Show("Đã trả hết nợ.", "Thông báo");
+            //    }
 
-                dgvDaThanhToan_Load();
-            }
-            catch(Exception ex) 
-            {
+            //    dgvDaThanhToan_Load();
+            //}
+            //catch(Exception ex) 
+            //{
                 
-            }
+            //}
         }
 
-       
+        private void gn2txbSoTien_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
