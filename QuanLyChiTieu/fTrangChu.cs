@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyChiTieu.Objects;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,8 +17,8 @@ namespace QuanLyChiTieu
         {
             InitializeComponent();
             label2.Text = (QuanLyChiTieu.Objects.DichVuGiaoDich.Instance.TongchitieuAll() + QuanLyChiTieu.Objects.DichVuVay.Instance.TongchitieuAll()).ToString();
-        
-        
+            btnSoTinThongBao.Text= DichVuVay.Instance.DanhSachKhoanVay.Count(khoanVay => (-khoanVay.Value.NgayVay.Day + DateTime.Now.Day) <= 7).ToString();
+
         }
 
         private bool isFirstClick = true;
