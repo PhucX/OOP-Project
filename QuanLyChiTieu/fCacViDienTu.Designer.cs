@@ -1,6 +1,6 @@
 ﻿namespace QuanLyChiTieu
 {
-    partial class fTranCuuQuanLy
+    partial class fCacViDienTu
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fTranCuuQuanLy));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fCacViDienTu));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -356,7 +356,7 @@
             this.guna2ComboBoxLoaiThe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.guna2ComboBoxLoaiThe.ItemHeight = 30;
             this.guna2ComboBoxLoaiThe.Location = new System.Drawing.Point(101, 25);
-            this.guna2ComboBoxLoaiThe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2ComboBoxLoaiThe.Margin = new System.Windows.Forms.Padding(2);
             this.guna2ComboBoxLoaiThe.Name = "guna2ComboBoxLoaiThe";
             this.guna2ComboBoxLoaiThe.Size = new System.Drawing.Size(213, 36);
             this.guna2ComboBoxLoaiThe.TabIndex = 3;
@@ -386,7 +386,8 @@
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvViDienTu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvViDienTu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvViDienTu.ColumnHeadersHeight = 21;
+            this.dgvViDienTu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvViDienTu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.taiKhoan,
             this.soTien,
@@ -416,7 +417,7 @@
             this.dgvViDienTu.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvViDienTu.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvViDienTu.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvViDienTu.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvViDienTu.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvViDienTu.ThemeStyle.HeaderStyle.Height = 21;
             this.dgvViDienTu.ThemeStyle.ReadOnly = false;
             this.dgvViDienTu.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
@@ -442,7 +443,7 @@
             this.loaiThe.HeaderText = "Loại thẻ";
             this.loaiThe.Name = "loaiThe";
             // 
-            // fTranCuuQuanLy
+            // fCacViDienTu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -460,8 +461,8 @@
             this.Controls.Add(this.guna2DataGridView4);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "fTranCuuQuanLy";
-            this.Text = "fQuanLyTraCuu";
+            this.Name = "fCacViDienTu";
+            this.Text = "fCacViDienTu";
             this.Load += new System.EventHandler(this.fTranCuuQuanLy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView4)).EndInit();
             this.guna2Panel1.ResumeLayout(false);

@@ -73,10 +73,10 @@ namespace QuanLyChiTieu
             UpdatePanel(btnKhoanChoVay);
             OpenChildForm(new fKhoanChoVay(), btnKhoanChoVay);
         }
-        private void btnTraCuuQuanLy_Click(object sender, EventArgs e)
+        private void btnCacViDienTu_Click(object sender, EventArgs e)
         {
-            UpdatePanel(btnTraCuuQuanLy);
-            OpenChildForm(new fTranCuuQuanLy(), btnTraCuuQuanLy);
+            UpdatePanel(btnCacViDienTu);
+            OpenChildForm(new fCacViDienTu(), btnCacViDienTu);
         }
 
         private void btnBaoCao_Click(object sender, EventArgs e)
@@ -85,10 +85,7 @@ namespace QuanLyChiTieu
             OpenChildForm(new fBaoCao(), btnBaoCao);
         }
 
-        private void btnSoDu_Click(object sender, EventArgs e)
-        {
-            UpdatePanel(btnSoDu);
-        }
+       
 
         private void btnThongTin_Click(object sender, EventArgs e)
         {
@@ -114,9 +111,9 @@ namespace QuanLyChiTieu
             ResetButtonColor(btnKhoanVay);
         }
 
-        private void btnTraCuuQuanLy_Leave(object sender, EventArgs e)
+        private void btnCacViDienTu_Leave(object sender, EventArgs e)
         {
-            ResetButtonColor(btnTraCuuQuanLy);
+            ResetButtonColor(btnCacViDienTu);
         }
 
         private void btnBaoCao_Leave(object sender, EventArgs e)
@@ -124,10 +121,7 @@ namespace QuanLyChiTieu
             ResetButtonColor(btnBaoCao);
         }
 
-        private void btnSoDu_Leave(object sender, EventArgs e)
-        {
-            ResetButtonColor(btnSoDu);
-        }
+      
 
         private void btnThongTin_Leave(object sender, EventArgs e)
         {

@@ -198,7 +198,6 @@ D:\New folder\đang dùng\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fKhoanVay.resour
 D:\New folder\đang dùng\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fNguoiDung.resources
 D:\New folder\đang dùng\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fDangNhap.resources
 D:\New folder\đang dùng\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fBangDieuKhien.resources
-D:\New folder\đang dùng\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fTranCuuQuanLy.resources
 D:\New folder\đang dùng\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fSuaGiaoDich.resources
 D:\New folder\đang dùng\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fSuaKhoanChoVay.resources
 D:\New folder\đang dùng\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fSuaKhoanVay.resources
@@ -214,3 +213,4 @@ D:\New folder\đang dùng\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.CoreCompi
 D:\New folder\đang dùng\QuanLyChiTieu\obj\Debug\QuanLyCh.D9B58F0F.Up2Date
 D:\New folder\đang dùng\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.exe
 D:\New folder\đang dùng\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.pdb
+D:\New folder\đang dùng\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fCacViDienTu.resources

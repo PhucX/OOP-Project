@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace QuanLyChiTieu
 {
-    public partial class fTranCuuQuanLy : Form
+    public partial class fCacViDienTu : Form
     {
-        public fTranCuuQuanLy()
+        public fCacViDienTu()
         {
             InitializeComponent();
         }

@@ -114,6 +114,7 @@ namespace QuanLyChiTieu
                 // Mở form sửa
                 fSuaGiaoDich fSuaGiaoDich = new fSuaGiaoDich(dgvGiaoDich.Rows[e.RowIndex].Cells["Idgiaodich"].Value.ToString());
                 fSuaGiaoDich.ShowDialog();
+                fGiaoDich_Load(sender, e);
             }
         }
 
@@ -133,7 +134,6 @@ namespace QuanLyChiTieu
             fThemGiaoDich fThemGiaoDich = new fThemGiaoDich();
             fThemGiaoDich.ShowDialog();
             fGiaoDich_Load(sender,e);
-
 
         }
 

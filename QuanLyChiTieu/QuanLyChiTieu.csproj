@@ -189,11 +189,11 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="fQuanLyTraCuu.cs">
+    <Compile Include="fCacViDienTu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fQuanLyTraCuu.Designer.cs">
-      <DependentUpon>fQuanLyTraCuu.cs</DependentUpon>
+    <Compile Include="fCacViDienTu.Designer.cs">
+      <DependentUpon>fCacViDienTu.cs</DependentUpon>
     </Compile>
     <Compile Include="fSuaGiaoDich.cs">
       <SubType>Form</SubType>
@@ -296,8 +296,8 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fQuanLyTraCuu.resx">
-      <DependentUpon>fQuanLyTraCuu.cs</DependentUpon>
+    <EmbeddedResource Include="fCacViDienTu.resx">
+      <DependentUpon>fCacViDienTu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fSuaGiaoDich.resx">
       <DependentUpon>fSuaGiaoDich.cs</DependentUpon>
