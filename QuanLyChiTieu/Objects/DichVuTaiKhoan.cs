@@ -39,7 +39,15 @@ namespace QuanLyChiTieu.Objects
         public override TaiKhoan DocDanhSach(string id) { return new TaiKhoan(); }
 
         public override bool CapNhat(string id, TaiKhoan item) { return false; }
-        public override bool Xoa(string id) { return false; }
+        public override bool Xoa(string id) 
+        {
+            if(danhSachTaiKhoan.ContainsKey(id))
+            {
+                danhSachTaiKhoan.Remove(id);
+                return true;
+            }    
+            return false; 
+        }
 
         public override void HienThi() { }
 

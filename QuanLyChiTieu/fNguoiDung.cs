@@ -21,6 +21,9 @@ namespace QuanLyChiTieu
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            // cập nhật các tài khoản
+            SaveData.SaveDataAccount();
+
             // cập nhật các khoản vay
             SaveData.SaveDataLoan();
 
@@ -30,7 +33,7 @@ namespace QuanLyChiTieu
 
         private void fNguoiDung_Load(object sender, EventArgs e)
         {
-            foreach(TaiKhoan taiKhoan in DichVuTaiKhoan.Instance.DanhSachTaiKhoan.Values)
+            foreach (TaiKhoan taiKhoan in DichVuTaiKhoan.Instance.DanhSachTaiKhoan.Values.Where(the => the.LoaiThe == "Tiền mặt"))
                 dgvViDienTu.Rows.Add(taiKhoan.TenTaiKhoan, taiKhoan.SoDu.ToString());
 
             guna2HtmlLabel12.Text = NguoiDung.TenNguoiDung;
@@ -47,6 +50,11 @@ namespace QuanLyChiTieu
             SaveData.SaveDataUser();
 
             fNguoiDung_Load(sender, e);
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            new fDoiMatKhau().ShowDialog();
         }
     }
 }

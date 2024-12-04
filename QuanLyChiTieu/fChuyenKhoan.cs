@@ -1,4 +1,5 @@
 ﻿using Guna.UI2.WinForms;
+using QuanLyChiTieu.Modules;
 using QuanLyChiTieu.Objects;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,11 @@ namespace QuanLyChiTieu
             taiKhoanHienTai = guna2HtmlLabel8.Text;
 
             // Truyền danh sách vào ComboBox
-            guna2ComboBox2.DataSource = DichVuTaiKhoan.Instance.DanhSachTaiKhoan.ToList();
+            foreach (TaiKhoan taiKhoan in DichVuTaiKhoan.Instance.DanhSachTaiKhoan.Values)
+            {
+                if(taiKhoan.TenTaiKhoan != ConnectionFile.currentAccount && taiKhoan.LoaiThe != "Tiền mặt")
+                    guna2ComboBox2.Items.Add(taiKhoan.TenTaiKhoan);
+            }
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
