@@ -37,7 +37,7 @@ namespace QuanLyChiTieu.Objects
         {
             string currentAccount = QuanLyChiTieu.Objects.ConnectionFile.currentAccount;
             string filepath = QuanLyChiTieu.Objects.ConnectionFile.GetFileConnection("LoanAndDebt");
-            new DataManager(new ExcelImporter()).ImportGiaoDich(filepath, currentAccount);
+            new DataManager(new ExcelImporter()).ImportKhoanVay(filepath, currentAccount);
         }
     }
 }

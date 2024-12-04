@@ -59,6 +59,7 @@
             this.ngayTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soTienConNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gn2txbSoTien = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTimKiem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhoanVay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDaThanhToan)).BeginInit();
@@ -442,12 +443,33 @@
             this.soTienConNo.MinimumWidth = 6;
             this.soTienConNo.Name = "soTienConNo";
             // 
+            // gn2txbSoTien
+            // 
+            this.gn2txbSoTien.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.gn2txbSoTien.DefaultText = "";
+            this.gn2txbSoTien.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.gn2txbSoTien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.gn2txbSoTien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.gn2txbSoTien.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.gn2txbSoTien.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.gn2txbSoTien.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gn2txbSoTien.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.gn2txbSoTien.Location = new System.Drawing.Point(758, 416);
+            this.gn2txbSoTien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gn2txbSoTien.Name = "gn2txbSoTien";
+            this.gn2txbSoTien.PasswordChar = '\0';
+            this.gn2txbSoTien.PlaceholderText = "";
+            this.gn2txbSoTien.SelectedText = "";
+            this.gn2txbSoTien.Size = new System.Drawing.Size(299, 48);
+            this.gn2txbSoTien.TabIndex = 62;
+            // 
             // fKhoanVay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1240, 721);
+            this.Controls.Add(this.gn2txbSoTien);
             this.Controls.Add(this.guna2HtmlLabel3);
             this.Controls.Add(this.dgvDaThanhToan);
             this.Controls.Add(this.btnThanhToan);
@@ -497,5 +519,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayTra;
         private System.Windows.Forms.DataGridViewTextBoxColumn soTien;
         private System.Windows.Forms.DataGridViewTextBoxColumn soTienConNo;
+        private Guna.UI2.WinForms.Guna2TextBox gn2txbSoTien;
     }
 }
