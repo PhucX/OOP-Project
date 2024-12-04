@@ -13,10 +13,11 @@ namespace QuanLyChiTieu.Modules
         private DateTime ngayGiaoDich;
         private string ghiChu;
         private string loaiGiaoDich;
+        private string viDienTu;
 
         // phương thức khởi tạo
         public GiaoDich() { }
-        public GiaoDich(string maGiaoDich, DateTime ngayGiaoDich, double soTienGiaoDich, string loaiGiaoDich, string ghiChu)
+        public GiaoDich(string maGiaoDich, DateTime ngayGiaoDich, double soTienGiaoDich, string loaiGiaoDich, string ghiChu, string viDienTu)
         {
             
             this.maGiaoDich = maGiaoDich;
@@ -24,6 +25,7 @@ namespace QuanLyChiTieu.Modules
             this.ngayGiaoDich = ngayGiaoDich;
             this.ghiChu = ghiChu;
             this.loaiGiaoDich = loaiGiaoDich;
+            this.viDienTu = viDienTu;
         }
 
         // tạo các property cho các thuộc tính
@@ -37,6 +39,6 @@ namespace QuanLyChiTieu.Modules
 
         public string LoaiGiaoDich { get => loaiGiaoDich; set => loaiGiaoDich = value; }
 
-
+        public string ViDienTu { get => viDienTu; set => viDienTu = value; }
     }
 }

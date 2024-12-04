@@ -23,15 +23,21 @@ namespace QuanLyChiTieu
             bool laHopLe = DichVuGiaoDich.Instance.TimKiem(magiaodich);
             if (laHopLe)
                 giaodich = DichVuGiaoDich.Instance.DanhSachGiaoDich[magiaodich];
-            List<string> items = new List<string>{ "Rút tiền", "Chuyển khoản", "Đầu tư", "Nạp tiền" };
+            List<string> items = new List<string>{ "Thu nhập", "Chi tiêu" };
             foreach (string item in items)
             {
-                guna2ComboBox1.Items.Add(item);
+                cbxLoaiGiaoDich.Items.Add(item);
             }
-            guna2ComboBox1.Text=giaodich.LoaiGiaoDich;
+
+            foreach (var taikhoan in DichVuTaiKhoan.Instance.DanhSachTaiKhoan)
+            {
+                cbxViDienTu.Items.Add(taikhoan.Value.TenTaiKhoan);
+            }
+            cbxLoaiGiaoDich.Text=giaodich.LoaiGiaoDich;
             txbTSoTien.Text=giaodich.SoTienGiaoDich.ToString();
-            guna2TextBox1.Text = giaodich.GhiChu;
+            txbGhiChu.Text = giaodich.GhiChu;
             NgayGiaoDich.Text=giaodich.NgayGiaoDich.ToString();
+            cbxViDienTu.Text = giaodich.ViDienTu.ToString();
 
         }
         private void fSuaGiaoDich_Load_1(object sender, EventArgs e)
@@ -46,7 +52,7 @@ namespace QuanLyChiTieu
 
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedValue = guna2ComboBox1.SelectedItem.ToString();
+            string selectedValue = cbxLoaiGiaoDich.SelectedItem.ToString();
 
             // Hiển thị loại giao dịch được chọn (ví dụ)
             MessageBox.Show("Bạn đã chọn: " + selectedValue);
@@ -56,13 +62,24 @@ namespace QuanLyChiTieu
         {
             string magiaodich = giaodich.MaGiaoDich;
             Double SoTien = Double.Parse(txbTSoTien.Text);
-            string GhiChu = guna2TextBox1.Text;
+            string GhiChu = txbGhiChu.Text;
             DateTime ngaygiaodich = NgayGiaoDich.Value.Date;
-            string loaigiaodich = guna2ComboBox1.SelectedItem.ToString();
+            string loaigiaodich = cbxLoaiGiaoDich.SelectedItem.ToString();
+            string viDienTu = cbxViDienTu.SelectedItem.ToString();
+            if (viDienTu == null)
+            {
+                MessageBox.Show("Please select an item from the Vi Dien Tu ComboBox.");
+                return;
+            }
 
-            DichVuGiaoDich.Instance.CapNhat(magiaodich, new Modules.GiaoDich(magiaodich, ngaygiaodich, SoTien, loaigiaodich, GhiChu));
+            DichVuGiaoDich.Instance.CapNhat(magiaodich, new Modules.GiaoDich(magiaodich, ngaygiaodich, SoTien, loaigiaodich, GhiChu, viDienTu));
 
             this.Close();
+        }
+
+        private void guna2ComboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

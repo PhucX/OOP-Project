@@ -19,12 +19,17 @@ namespace QuanLyChiTieu
         public fThemGiaoDich()
         {
             InitializeComponent();
-            List<string> items = new List<string> { "Rút tiền", "Chuyển khoản", "Đầu tư", "Nạp tiền" };
+            List<string> items = new List<string> { "Thu nhập", "Chi tiêu" };
             foreach (string item in items)
             {
-                guna2ComboBox1.Items.Add(item);
+                cbxLoaiGiaoDich.Items.Add(item);
             }
-            guna2ComboBox1.SelectedIndex = 0;
+            cbxLoaiGiaoDich.SelectedIndex = 0;
+
+            foreach (var taikhoan in DichVuTaiKhoan.Instance.DanhSachTaiKhoan)
+            {
+                cbxViDienTu.Items.Add(taikhoan.Value.TenTaiKhoan);
+            }
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -34,10 +39,10 @@ namespace QuanLyChiTieu
                 string idgiaodich = DichVuGiaoDich.Instance.GetIdGiaoDich();
                 DateTime ngaygiaodich = NgayGiaoDich.Value.Date;
                 Double sotien = Double.Parse(txbTSoTien.Text);
-                string loaigiaodich = guna2ComboBox1.Text;
+                string loaigiaodich = cbxLoaiGiaoDich.Text;
                 string ghichu = txbGhiChu.Text;
-
-                GiaoDich GIaoDich = new GiaoDich(idgiaodich, ngaygiaodich, sotien, loaigiaodich, ghichu);
+                string viDienTu = cbxViDienTu.Text;
+                GiaoDich GIaoDich = new GiaoDich(idgiaodich, ngaygiaodich, sotien, loaigiaodich, ghichu, viDienTu);
                 DichVuGiaoDich.Instance.Them(idgiaodich, GIaoDich);
 
                 this.Close();
@@ -46,6 +51,11 @@ namespace QuanLyChiTieu
             {
                 MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void fThemGiaoDich_Load(object sender, EventArgs e)
+        {
+            
+            
         }
     }
 }

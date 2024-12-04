@@ -134,7 +134,8 @@ namespace QuanLyChiTieu
                             DateTime.Parse(row.Cell(3).Value.ToString()),
                             double.Parse(row.Cell(4).Value.ToString()),
                             row.Cell(2).Value.ToString(),
-                            row.Cell(5).Value.ToString()));
+                            row.Cell(5).Value.ToString(),
+                            row.Cell(6).Value.ToString()));
                     }
                 }
             }
