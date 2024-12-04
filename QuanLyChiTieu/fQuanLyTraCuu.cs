@@ -86,6 +86,9 @@ namespace QuanLyChiTieu
                 UsedData.UsedDataLoan(); // lấy dữ liệu khoản vay
                 UsedData.UsedDataTran(); // lấy dữ liệu giao dịch
 
+                DichVuGiaoDich.Instance.DanhSachGiaoDich.Clear();
+                DichVuVay.Instance.DanhSachKhoanVay.Clear();
+
                 MessageBox.Show("Đã chuyển tài khoản thành công.", "Thông báo");
             }
         }

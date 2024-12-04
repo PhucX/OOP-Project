@@ -36,7 +36,7 @@ namespace QuanLyChiTieu.Excel
                             else
                                 return false; // Mật khẩu không đúng
                         }
-                    }               
+                    }
                 }
                 return false;
             }
@@ -47,5 +47,31 @@ namespace QuanLyChiTieu.Excel
                 return false;
             }
         }
+
+        public bool SearchUser(string filePath, string taiKhoan)
+        {
+            try
+            {
+                using (XLWorkbook workbook = new XLWorkbook(filePath))
+                {
+                    IXLWorksheet worksheet = workbook.Worksheet(1);
+                    foreach (IXLRow row in worksheet.RowsUsed().Skip(1))
+                    {
+                        // Kiểm tra ô tài khoản có tồn tại không
+                        string taiKhoan2 = row.Cell(1).GetValue<string>(); // Tài khoản ở cột 1
+
+                        // Kiểm tra tài khoản có tồn tại không
+                        if (taiKhoan2 == taiKhoan)
+                            return true;
+                    }
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        } 
     }
 }

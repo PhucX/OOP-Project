@@ -198,11 +198,26 @@ namespace QuanLyChiTieu
         {
             string maVay = dgvKhoanVay.Rows[index].Cells["maVay"].Value.ToString();
             KhoanNo khoanNo = DichVuVay.Instance.DanhSachKhoanVay[maVay] as KhoanNo;
-            khoanNo.ThanhToan(50000);
 
-            DichVuVay.Instance.DanhSachKhoanVay[maVay] = khoanNo;
+            try
+            {
+                double soTienTra = double.Parse(gn2txbSoTien.ToString());
+                khoanNo.ThanhToan(soTienTra);
 
-            dgvDaThanhToan_Load();
+                DichVuVay.Instance.DanhSachKhoanVay[maVay] = khoanNo;
+
+                if(khoanNo.SoDuNo == 0)
+                {
+                    DichVuVay.Instance.Xoa(maVay);
+                    MessageBox.Show("Đã trả hết nợ.", "Thông báo");
+                }
+
+                dgvDaThanhToan_Load();
+            }
+            catch(Exception ex) 
+            {
+                
+            }
         }
 
        

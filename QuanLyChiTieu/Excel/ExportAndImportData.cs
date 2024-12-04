@@ -99,15 +99,16 @@ namespace QuanLyChiTieu
                         }
 
                         int cnt = 9;
-                        var cellValue = row.Cell(8).Value.ToString().Trim();
+                        var cellValue = row.Cell(9).Value.ToString().Trim();
                         while (!string.IsNullOrEmpty(cellValue)) // Kiểm tra cột kế tiếp
                         {
                             string[] parts = cellValue.Split(',');
                             if (parts.Length < 2)
                                 break;
 
-                            DichVuVay.Instance.DanhSachKhoanVay[maVay].ThemDanhSach(new ThanhToan(double.Parse(parts[0]), DateTime.Parse(parts[1].Trim())));
-                            cellValue = row.Cell(cnt++).Value.ToString();
+                            DichVuVay.Instance.DanhSachKhoanVay[maVay].ThemDanhSach(new ThanhToan(double.Parse(parts[0]), DateTime.Parse(parts[1].ToString())));
+
+                            cellValue = row.Cell(++cnt).Value.ToString();
                         }    
                     }
                 }

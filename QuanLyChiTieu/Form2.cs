@@ -1,4 +1,5 @@
 ﻿using Guna.UI2.WinForms;
+using QuanLyChiTieu.Objects;
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
@@ -146,6 +147,12 @@ namespace QuanLyChiTieu
             new fNguoiDung().ShowDialog();
         }
 
-        
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+            //SaveData.SaveDataUser();
+            //SaveData.SaveDataAccount();
+            //SaveData.SaveDataLoan();
+            //SaveData.SaveDataTran();
+        }
     }
 }

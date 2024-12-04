@@ -1,4 +1,6 @@
 ﻿using Guna.UI2.WinForms;
+using QuanLyChiTieu.Excel;
+using QuanLyChiTieu.Modules;
 using QuanLyChiTieu.Objects;
 using System;
 using System.Collections.Generic;
@@ -22,15 +24,24 @@ namespace QuanLyChiTieu
         private void btnLuu_click(object sender, EventArgs e)
         {
             string idVay = DichVuVay.Instance.GetIdKhoanChoVay();
-            string nguoiChoVay = txbNguoiChoVay.Text;
+            string nguoiVay = txbNguoiChoVay.Text;
             double soTienVay = double.Parse(txbSoTienVay.Text);
             double laiSuat = double.Parse(txbLaiSuat.Text);
             string trangThai = cbxTrangThai.SelectedItem.ToString();
             DateTime ngayDenHan = NgayDenHan.Value.Date;
 
-            DichVuVay.Instance.Them(idVay, new Modules.KhoanChoVay(idVay, soTienVay, laiSuat, DateTime.Now, ngayDenHan, trangThai, nguoiChoVay));
+            if (new Excel.ExcelSearcher().SearchUser(Objects.ConnectionFile.GetFileConnectionAccount(), nguoiVay))
+            {
+                DichVuVay.Instance.Them(idVay, new Modules.KhoanChoVay(idVay, soTienVay, laiSuat, DateTime.Now, ngayDenHan, trangThai, nguoiVay));
+                KhoanChoVay khoanChoVay = new KhoanChoVay(idVay, soTienVay, laiSuat, DateTime.Now, ngayDenHan, trangThai, nguoiVay);
+                DichVuVay.Instance.Them(idVay, khoanChoVay);
 
-            this.Close();
+                new DataCreator(new TaoFileKhoanVay()).ThemKhoanChoVay(Objects.ConnectionFile.StringConnection + $"\\Data\\{nguoiVay}\\LoanAndDebt.xlsx", nguoiVay, khoanChoVay);
+
+                this.Close();
+            }
+            else
+                MessageBox.Show("Người dùng không tồn tại.", "Thông báo");
         }
     }
 }

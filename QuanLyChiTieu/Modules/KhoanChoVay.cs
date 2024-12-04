@@ -1,4 +1,5 @@
 ﻿using DocumentFormat.OpenXml.Presentation;
+using QuanLyChiTieu.Objects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,13 @@ namespace QuanLyChiTieu.Modules
             if (ketqua < 0)
             {
                 MessageBox.Show("Lố số tiền cần trả", "Cảnh báo");
+                return;
+            }
+
+            if (ketqua == 0)
+            {
+                DichVuVay.Instance.Xoa(this.IdKhoanVay);
+                MessageBox.Show("Đã được hoàn trả đầy đủ", "Thông báo");
                 return;
             }
 
