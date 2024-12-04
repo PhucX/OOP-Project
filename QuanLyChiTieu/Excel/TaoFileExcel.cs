@@ -149,5 +149,10 @@ namespace QuanLyChiTieu.Excel
                 MessageBox.Show("Có lỗi khi tạo file Excel: " + ex.Message);
             }
         }
+
+        public void XoaSheet(string filePath, string sheetName)
+        {
+
+        }
     }
 }

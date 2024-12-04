@@ -248,6 +248,8 @@
     <Compile Include="Objects\DichVuGiaoDich.cs" />
     <Compile Include="Objects\DichVuTaiKhoan.cs" />
     <Compile Include="Objects\DichVuVay.cs" />
+    <Compile Include="Objects\SaveData.cs" />
+    <Compile Include="Objects\UsedData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
