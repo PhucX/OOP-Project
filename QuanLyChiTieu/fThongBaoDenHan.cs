@@ -24,9 +24,9 @@ namespace QuanLyChiTieu
 
             foreach (var khoanVay in DichVuVay.Instance.DanhSachKhoanVay)
             {
-                if ((-khoanVay.Value.NgayVay.Day + DateTime.Now.Day) <= 7)
+                if ((khoanVay.Value.NgayDenHan.Day-DateTime.Now.Day) <= 7 && khoanVay.Value.TrangThai!="Đã thanh toán")
                 {
-                    khoangcach = -khoanVay.Value.NgayVay.Day + DateTime.Now.Day;
+                    khoangcach = khoanVay.Value.NgayDenHan.Day - DateTime.Now.Day;
                     if (khoanVay.Value.IdKhoanVay.Contains("debt"))
                     {
                         dgvThongBao.Rows.Add((stt++).ToString(), "Nợ", $"Cách ngày đến hạn còn {khoangcach} ngày");

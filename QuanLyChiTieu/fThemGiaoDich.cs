@@ -37,6 +37,11 @@ namespace QuanLyChiTieu
         {
             try
             {
+                if (Double.Parse(txbTSoTien.Text) < 0)
+                {
+                    MessageBox.Show("Không được nhập số âm", "Lỗi");
+                    return;
+                }
                 string idgiaodich = DichVuGiaoDich.Instance.GetIdGiaoDich();
                 DateTime ngaygiaodich = NgayGiaoDich.Value.Date;
                 Double sotien = Double.Parse(txbTSoTien.Text);

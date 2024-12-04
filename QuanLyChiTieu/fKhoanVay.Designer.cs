@@ -58,7 +58,7 @@
             this.dgvDaThanhToan = new Guna.UI2.WinForms.Guna2DataGridView();
             this.ngayTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soTienConNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taiKhoanSuDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTimKiem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhoanVay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDaThanhToan)).BeginInit();
@@ -376,7 +376,7 @@
             this.dgvDaThanhToan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ngayTra,
             this.soTien,
-            this.soTienConNo});
+            this.taiKhoanSuDung});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Cambria", 12F);
@@ -432,11 +432,11 @@
             this.soTien.Name = "soTien";
             this.soTien.ReadOnly = true;
             // 
-            // soTienConNo
+            // taiKhoanSuDung
             // 
-            this.soTienConNo.HeaderText = "Số tiền còn nợ";
-            this.soTienConNo.MinimumWidth = 6;
-            this.soTienConNo.Name = "soTienConNo";
+            this.taiKhoanSuDung.HeaderText = "Tài khoản sử dụng";
+            this.taiKhoanSuDung.MinimumWidth = 6;
+            this.taiKhoanSuDung.Name = "taiKhoanSuDung";
             // 
             // fKhoanVay
             // 
@@ -491,6 +491,6 @@
         private Guna.UI2.WinForms.Guna2DataGridView dgvDaThanhToan;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayTra;
         private System.Windows.Forms.DataGridViewTextBoxColumn soTien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soTienConNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn taiKhoanSuDung;
     }
 }

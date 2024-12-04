@@ -103,10 +103,10 @@ namespace QuanLyChiTieu
                         while (!string.IsNullOrEmpty(cellValue)) // Kiểm tra cột kế tiếp
                         {
                             string[] parts = cellValue.Split(',');
-                            if (parts.Length < 2)
+                            if (parts.Length < 3)
                                 break;
 
-                            DichVuVay.Instance.DanhSachKhoanVay[maVay].ThemDanhSach(new ThanhToan(double.Parse(parts[0]), DateTime.Parse(parts[1].ToString())));
+                            DichVuVay.Instance.DanhSachKhoanVay[maVay].ThemDanhSach(new ThanhToan(double.Parse(parts[0]), DateTime.Parse(parts[1].ToString()), parts[3].ToString()));
 
                             cellValue = row.Cell(++cnt).Value.ToString();
                         }    
@@ -318,7 +318,7 @@ namespace QuanLyChiTieu
                         int cnt = 9;
                         for (int i = 0; i < cellValue.SoLuongThanhToan();i++)
                         {
-                            worksheet.Cell(lastRowUsed, cnt++).Value = cellValue.DanhSachThanhToan[i].SoTienThanhToan.ToString() + "," + cellValue.DanhSachThanhToan[i].NgayThanhToan.ToString();
+                            worksheet.Cell(lastRowUsed, cnt++).Value = $"{cellValue.DanhSachThanhToan[i].SoTienThanhToan},{cellValue.DanhSachThanhToan[i].NgayThanhToan},{cellValue.DanhSachThanhToan[i].TaiKhoanDaThanhToan}";
                         }
                         lastRowUsed += 1; // tăng chỉ số hàng đã dùng thêm 1
                     }

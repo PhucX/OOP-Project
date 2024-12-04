@@ -24,6 +24,11 @@ namespace QuanLyChiTieu
         {
             try
             {
+                if (Double.Parse(txbSoTienVay.Text) < 0)
+                {
+                    MessageBox.Show("Không được nhập số âm", "Lỗi");
+                    return;
+                }
                 string idVay = DichVuVay.Instance.GetIdKhoanNo();
                 string nguoiChoVay = txbNguoiChoVay.Text;
                 double soTienVay = double.Parse(txbSoTienVay.Text);
@@ -31,17 +36,8 @@ namespace QuanLyChiTieu
                 string trangThai = guna2ComboBox1.SelectedItem.ToString();
                 DateTime ngayDenHan = NgayDenHan.Value.Date;
 
-
-
-                if (new Excel.ExcelSearcher().SearchUser(Objects.ConnectionFile.GetFileConnectionAccount(), nguoiChoVay))
-                {
-                    KhoanNo khoanNo = new KhoanNo(idVay, soTienVay, laiSuat, DateTime.Now, ngayDenHan, trangThai, nguoiChoVay);
-                    DichVuVay.Instance.Them(idVay, khoanNo);
-
-                    new DataCreator(new TaoFileKhoanVay()).ThemKhoanNo(Objects.ConnectionFile.StringConnection + $"\\Data\\{nguoiChoVay}\\LoanAndDebt.xlsx", nguoiChoVay, khoanNo);
-                }
-                else
-                    MessageBox.Show("Người dùng không tồn tại.", "Thông báo");
+                KhoanNo khoanNo = new KhoanNo(idVay, soTienVay, laiSuat, DateTime.Now, ngayDenHan, trangThai, nguoiChoVay);
+                DichVuVay.Instance.Them(idVay, khoanNo);
 
                 this.Close();
             }

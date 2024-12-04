@@ -63,6 +63,11 @@ namespace QuanLyChiTieu
         {
             try
             {
+                if (Double.Parse(txbTSoTien.Text) < 0)
+                {
+                    MessageBox.Show("Không được nhập số âm", "Lỗi");
+                    return;
+                }
                 string magiaodich = giaodich.MaGiaoDich;
                 double SoTien = double.Parse(txbTSoTien.Text);
                 string GhiChu = txbGhiChu.Text;

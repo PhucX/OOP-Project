@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading.Tasks;
+using QuanLyChiTieu.Modules;
 
 namespace QuanLyChiTieu.Objects
 {
@@ -35,7 +36,7 @@ namespace QuanLyChiTieu.Objects
         // lấy dữ liệu khoản vay
         public static void UsedDataLoan()
         {
-            string currentAccount = QuanLyChiTieu.Objects.ConnectionFile.currentAccount;
+            string currentAccount = NguoiDung.TaiKhoanNguoiDung;
             string filepath = QuanLyChiTieu.Objects.ConnectionFile.GetFileConnection("LoanAndDebt");
             new DataManager(new ExcelImporter()).ImportKhoanVay(filepath, currentAccount);
         }

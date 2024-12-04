@@ -16,10 +16,11 @@ namespace QuanLyChiTieu
         public fTrangChu()
         {
             InitializeComponent();
+           
             label2.Text = (QuanLyChiTieu.Objects.DichVuGiaoDich.Instance.TongchitieuAll() + QuanLyChiTieu.Objects.DichVuVay.Instance.TongchitieuAll()).ToString();
-            
-            btnSoTinThongBao.Text=DichVuVay.Instance.DanhSachKhoanVay.Count(khoanVay => (-khoanVay.Value.NgayVay.Day + DateTime.Now.Day) <= 7).ToString();
 
+            btnSoTinThongBao.Text = DichVuVay.Instance.DanhSachKhoanVay.Count(khoanVay => (-khoanVay.Value.NgayVay.Day + DateTime.Now.Day) <= 7).ToString();
+        
         }
 
         private bool isFirstClick = true;
