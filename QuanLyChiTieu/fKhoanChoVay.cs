@@ -18,7 +18,6 @@ namespace QuanLyChiTieu
         {
             InitializeComponent();
         }
-        private Queue<int> queueIndex = new Queue<int>(); // danh sách chứa các vị trí được chọn trong bảng
         private void dgv_Them(KhoanChoVay _khoanChoVay)
         {
             dgvKhoanChoVay.Rows.Add(false, _khoanChoVay.IdKhoanVay, _khoanChoVay.NguoiVay, _khoanChoVay.NgayDenHan.ToString(), _khoanChoVay.SoTienVay.ToString(), _khoanChoVay.LaiSuat.ToString(), _khoanChoVay.TrangThai);
@@ -62,8 +61,6 @@ namespace QuanLyChiTieu
         {
             if (e.RowIndex >= 0) // Kiểm tra có click vào vùng dữ liệu
             {
-                queueIndex.Enqueue(e.RowIndex);
-
                 if (e.ColumnIndex == dgvKhoanChoVay.Columns["xoaColumn"].Index)
                 {
                     // Xác nhận trước khi xóa
@@ -88,11 +85,18 @@ namespace QuanLyChiTieu
         }
         private void XoaKhoanChoVay()
         {
-            while (queueIndex.Count > 0)
+            foreach (DataGridViewRow row in dgvKhoanChoVay.Rows)
             {
-                int index = queueIndex.Dequeue();
-                string maVay = dgvKhoanChoVay.Rows[index].Cells["maVay"].Value.ToString();
-                DichVuVay.Instance.Xoa(maVay); // xóa theo mã vay
+                // Kiểm tra xem dòng có phải là dòng data (không phải dòng tiêu đề hoặc dòng mới)
+                if (!row.IsNewRow)
+                {
+                    // Lấy giá trị từ cột đầu tiên (chỉ số cột là 0)
+                    var cellValue = row.Cells[0].Value;
+
+                    // Kiểm tra trạng thái của checkbox
+                    if (bool.Parse(cellValue.ToString()))
+                        DichVuVay.Instance.Xoa(row.Cells[1].Value.ToString()); // xóa theo mã vay
+                }
             }
         }
         private void btnThem_Click(object sender, EventArgs e)

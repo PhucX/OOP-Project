@@ -35,7 +35,8 @@ namespace QuanLyChiTieu
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.pnlGiaoDich = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
@@ -43,8 +44,6 @@ namespace QuanLyChiTieu
             this.txbTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dgvGiaoDich = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Idgiaodich = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loaiGiaoDich = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,28 +52,29 @@ namespace QuanLyChiTieu
             this.ghiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.xoaColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.suaColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pnlGiaoDich.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTimKiem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiaoDich)).BeginInit();
             this.SuspendLayout();
             // 
-            // pnlGiaoDich
+            // dataGridViewImageColumn1
             // 
-            this.pnlGiaoDich.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnlGiaoDich.BorderRadius = 40;
-            this.pnlGiaoDich.Controls.Add(this.btnLuu);
-            this.pnlGiaoDich.Controls.Add(this.btnXoa);
-            this.pnlGiaoDich.Controls.Add(this.btnThem);
-            this.pnlGiaoDich.Controls.Add(this.ptbTimKiem);
-            this.pnlGiaoDich.Controls.Add(this.txbTimKiem);
-            this.pnlGiaoDich.Controls.Add(this.guna2HtmlLabel1);
-            this.pnlGiaoDich.Controls.Add(this.dgvGiaoDich);
-            this.pnlGiaoDich.Location = new System.Drawing.Point(22, 12);
-            this.pnlGiaoDich.Name = "pnlGiaoDich";
-            this.pnlGiaoDich.Size = new System.Drawing.Size(824, 564);
-            this.pnlGiaoDich.TabIndex = 41;
+            this.dataGridViewImageColumn1.FillWeight = 71.472F;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::QuanLyChiTieu.Properties.Resources.delete_icon;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.Width = 84;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::QuanLyChiTieu.Properties.Resources.edit_icon;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn2.Width = 117;
             // 
             // btnLuu
             // 
@@ -90,11 +90,10 @@ namespace QuanLyChiTieu
             this.btnLuu.ForeColor = System.Drawing.Color.White;
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnLuu.Location = new System.Drawing.Point(701, 81);
+            this.btnLuu.Location = new System.Drawing.Point(759, 53);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(39, 40);
-            this.btnLuu.TabIndex = 47;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            this.btnLuu.TabIndex = 54;
             // 
             // btnXoa
             // 
@@ -110,11 +109,10 @@ namespace QuanLyChiTieu
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnXoa.Location = new System.Drawing.Point(655, 81);
+            this.btnXoa.Location = new System.Drawing.Point(713, 53);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(39, 40);
-            this.btnXoa.TabIndex = 46;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            this.btnXoa.TabIndex = 53;
             // 
             // btnThem
             // 
@@ -130,24 +128,22 @@ namespace QuanLyChiTieu
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnThem.Location = new System.Drawing.Point(607, 81);
+            this.btnThem.Location = new System.Drawing.Point(665, 53);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(39, 40);
-            this.btnThem.TabIndex = 45;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            this.btnThem.TabIndex = 52;
             // 
             // ptbTimKiem
             // 
             this.ptbTimKiem.BackColor = System.Drawing.Color.Transparent;
             this.ptbTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("ptbTimKiem.Image")));
             this.ptbTimKiem.ImageRotate = 0F;
-            this.ptbTimKiem.Location = new System.Drawing.Point(283, 81);
+            this.ptbTimKiem.Location = new System.Drawing.Point(254, 53);
             this.ptbTimKiem.Name = "ptbTimKiem";
             this.ptbTimKiem.Size = new System.Drawing.Size(34, 37);
             this.ptbTimKiem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ptbTimKiem.TabIndex = 42;
+            this.ptbTimKiem.TabIndex = 51;
             this.ptbTimKiem.TabStop = false;
-            this.ptbTimKiem.Click += new System.EventHandler(this.ptbTimKiem_Click);
             // 
             // txbTimKiem
             // 
@@ -164,23 +160,23 @@ namespace QuanLyChiTieu
             this.txbTimKiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txbTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbTimKiem.Location = new System.Drawing.Point(41, 81);
+            this.txbTimKiem.Location = new System.Drawing.Point(12, 53);
             this.txbTimKiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbTimKiem.Name = "txbTimKiem";
             this.txbTimKiem.PasswordChar = '\0';
             this.txbTimKiem.PlaceholderText = "Search";
             this.txbTimKiem.SelectedText = "";
             this.txbTimKiem.Size = new System.Drawing.Size(236, 37);
-            this.txbTimKiem.TabIndex = 40;
+            this.txbTimKiem.TabIndex = 50;
             // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Cambria", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(41, 3);
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Cambria", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(12, 12);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(312, 49);
-            this.guna2HtmlLabel1.TabIndex = 39;
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(208, 34);
+            this.guna2HtmlLabel1.TabIndex = 49;
             this.guna2HtmlLabel1.Text = "Lịch sử giao dịch";
             // 
             // dgvGiaoDich
@@ -219,13 +215,13 @@ namespace QuanLyChiTieu
             this.dgvGiaoDich.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvGiaoDich.Font = new System.Drawing.Font("Cambria", 12F);
             this.dgvGiaoDich.GridColor = System.Drawing.Color.Red;
-            this.dgvGiaoDich.Location = new System.Drawing.Point(41, 125);
+            this.dgvGiaoDich.Location = new System.Drawing.Point(12, 99);
             this.dgvGiaoDich.Name = "dgvGiaoDich";
             this.dgvGiaoDich.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvGiaoDich.RowHeadersVisible = false;
             this.dgvGiaoDich.RowHeadersWidth = 51;
-            this.dgvGiaoDich.Size = new System.Drawing.Size(699, 405);
-            this.dgvGiaoDich.TabIndex = 38;
+            this.dgvGiaoDich.Size = new System.Drawing.Size(792, 426);
+            this.dgvGiaoDich.TabIndex = 48;
             this.dgvGiaoDich.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvGiaoDich.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.dgvGiaoDich.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
@@ -247,28 +243,6 @@ namespace QuanLyChiTieu
             this.dgvGiaoDich.ThemeStyle.RowsStyle.Height = 22;
             this.dgvGiaoDich.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvGiaoDich.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvGiaoDich.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiaoDich_CellClick);
-            this.dgvGiaoDich.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvGiaoDich_CellFormatting);
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.FillWeight = 71.472F;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::QuanLyChiTieu.Properties.Resources.delete_icon;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.Width = 84;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = global::QuanLyChiTieu.Properties.Resources.edit_icon;
-            this.dataGridViewImageColumn2.MinimumWidth = 6;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewImageColumn2.Width = 117;
             // 
             // Select
             // 
@@ -321,7 +295,6 @@ namespace QuanLyChiTieu
             this.ghiChu.HeaderText = "Ghi Chú ";
             this.ghiChu.MinimumWidth = 6;
             this.ghiChu.Name = "ghiChu";
-
             this.ghiChu.ReadOnly = true;
             this.ghiChu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
@@ -343,33 +316,19 @@ namespace QuanLyChiTieu
             this.suaColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.suaColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.FillWeight = 71.472F;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::QuanLyChiTieu.Properties.Resources.delete_icon;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.Width = 84;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = global::QuanLyChiTieu.Properties.Resources.edit_icon;
-            this.dataGridViewImageColumn2.MinimumWidth = 6;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewImageColumn2.Width = 117;
-            // 
             // fGiaoDich
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(858, 586);
-            this.Controls.Add(this.pnlGiaoDich);
+            this.Controls.Add(this.btnLuu);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnThem);
+            this.Controls.Add(this.ptbTimKiem);
+            this.Controls.Add(this.txbTimKiem);
+            this.Controls.Add(this.guna2HtmlLabel1);
+            this.Controls.Add(this.dgvGiaoDich);
             this.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6);
@@ -377,25 +336,23 @@ namespace QuanLyChiTieu
             this.ShowIcon = false;
             this.Text = "fGiaoDich";
             this.Load += new System.EventHandler(this.fGiaoDich_Load);
-            this.pnlGiaoDich.ResumeLayout(false);
-            this.pnlGiaoDich.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTimKiem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiaoDich)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlGiaoDich;
+        private DataGridViewImageColumn dataGridViewImageColumn1;
+        private DataGridViewImageColumn dataGridViewImageColumn2;
+        private Guna.UI2.WinForms.Guna2Button btnLuu;
+        private Guna.UI2.WinForms.Guna2Button btnXoa;
+        private Guna.UI2.WinForms.Guna2Button btnThem;
         private Guna.UI2.WinForms.Guna2PictureBox ptbTimKiem;
         private Guna.UI2.WinForms.Guna2TextBox txbTimKiem;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2DataGridView dgvGiaoDich;
-        private Guna.UI2.WinForms.Guna2Button btnXoa;
-        private Guna.UI2.WinForms.Guna2Button btnThem;
-        private Guna.UI2.WinForms.Guna2Button btnLuu;
-        private DataGridViewImageColumn dataGridViewImageColumn1;
-        private DataGridViewImageColumn dataGridViewImageColumn2;
         private DataGridViewCheckBoxColumn Select;
         private DataGridViewTextBoxColumn Idgiaodich;
         private DataGridViewTextBoxColumn loaiGiaoDich;
