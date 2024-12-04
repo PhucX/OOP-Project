@@ -35,6 +35,11 @@ namespace QuanLyChiTieu
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (Double.Parse(txbSoTienVay.Text) < 0)
+            {
+                MessageBox.Show("Không được nhập số âm", "Lỗi");
+                return;
+            }
             string idVay = khoanChoVay.IdKhoanVay;
             string nguoiChoVay = txbNguoiVay.Text;
             double soTienVay = double.Parse(txbSoTienVay.Text);

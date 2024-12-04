@@ -24,6 +24,11 @@ namespace QuanLyChiTieu
         {
             try
             {
+                if (Double.Parse(txbSoTienVay.Text) < 0)
+                {
+                    MessageBox.Show("Không được nhập số âm", "Lỗi");
+                    return;
+                }
                 string idVay = DichVuVay.Instance.GetIdKhoanNo();
                 string nguoiChoVay = txbNguoiChoVay.Text;
                 double soTienVay = double.Parse(txbSoTienVay.Text);
