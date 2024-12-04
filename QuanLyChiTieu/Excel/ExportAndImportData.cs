@@ -15,14 +15,37 @@ namespace QuanLyChiTieu
     public interface IImporter
     {
 
+        void ImportNguoiDung(string taiKhoan, string filePath); // lấy thông tin người dùng
         void ImportTaiKhoan(string filePath); // lấy dữ liệu cho tài khoản người dùng
-
         void ImportGiaoDich(string filePath, string sheetName); // lấy dữ liệu cho tài khoản người dùng
         void ImportKhoanVay(string filePath, string sheetName); // lấy dữ liệu khoản vay cho người dùng
     }
 
     public class ExcelImporter : IImporter
     {
+        public void ImportNguoiDung(string taiKhoan, string filePath)
+        {
+            try
+            {
+                using (XLWorkbook workbook = new XLWorkbook(filePath))
+                {
+                    IXLWorksheet worksheet = workbook.Worksheet(1);
+
+                    foreach (IXLRow row in worksheet.RowsUsed().Skip(1))
+                    {
+                        if(row.Cell(1).Value.ToString() == taiKhoan)
+                        {
+                            NguoiDung nguoiDung = new NguoiDung(taiKhoan, row.Cell(2).ToString(), row.Cell(3).ToString(), row.Cell(4).ToString(), row.Cell(5).ToString());
+                            break;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         public void ImportTaiKhoan(string filePath)
         {
             try
@@ -124,7 +147,7 @@ namespace QuanLyChiTieu
 
     public interface IExporter
     {
-        void ExportNguoiDung(string tenTK, string mkTK, string filePath);
+        void ExportNguoiDung(string filePath);
         void ExportTaiKhoan(string filePath);
 
         void ExportKhoanVay(string taiKhoan, string filePath);
@@ -307,7 +330,7 @@ namespace QuanLyChiTieu
             }
         }
 
-        public void ExportNguoiDung(string tenTK, string mkTK, string filePath)
+        public void ExportNguoiDung(string filePath)
         {
             try
             {
@@ -321,9 +344,11 @@ namespace QuanLyChiTieu
                     // Xác định vị trí dòng cuối cùng của sheet
                     int lastRow = worksheet.RowsUsed().Count();
 
-                    // Thêm dữ liệu từ DataGridView vào cuối sheet
-                    worksheet.Cell(lastRow + 1, 1).Value = tenTK;
-                    worksheet.Cell(lastRow + 1, 2).Value = mkTK;
+                    worksheet.Cell(lastRow + 1, 1).Value = NguoiDung.TaiKhoanNguoiDung;
+                    worksheet.Cell(lastRow + 1, 2).Value = NguoiDung.MatKhau;
+                    worksheet.Cell(lastRow + 1, 3).Value = NguoiDung.TenNguoiDung;
+                    worksheet.Cell(lastRow + 1, 4).Value = NguoiDung.SoDienThoai;
+                    worksheet.Cell(lastRow + 1, 5).Value = NguoiDung.DiaChi;
 
                     // Lưu lại file Excel
                     if (isNewFile)
@@ -371,9 +396,13 @@ namespace QuanLyChiTieu
             _exporter.ExportKhoanVay(taiKhoan, filePath);
         }
 
-        public void ExportNguoiDung(string tenTk, string mkTK, string filePath)
+        public void ExportNguoiDung(string filePath)
         {
-            _exporter.ExportNguoiDung(tenTk, mkTK, filePath);
+            _exporter.ExportNguoiDung(filePath);
+        }
+        public void ImportNguoiDung(string taiKhoan, string filePath)
+        {
+            _importer.ImportNguoiDung(taiKhoan, filePath);
         }
         public void ImportTaiKhoan(string filePath)
         {

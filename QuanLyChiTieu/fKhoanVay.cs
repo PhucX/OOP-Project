@@ -22,11 +22,6 @@ namespace QuanLyChiTieu
             InitializeComponent();
             dgvKhoanVay.MultiSelect = true;
         }
-
-        private Queue<int> queueIndex = new Queue<int>(); // danh sách chứa các vị trí được chọn trong bảng
-        private int phan_trang = 10;
-        private int tong_so_trang = 0;
-        private int trang_hien_tai = 1;
          
         private void dgv_Them(KhoanNo khoanNo)
         {
@@ -36,21 +31,14 @@ namespace QuanLyChiTieu
         private void fKhoanVay_Load(object sender, EventArgs e)
         {
             dgvKhoanVay.Rows.Clear();
-            int viTriBatDau = (trang_hien_tai - 1) * phan_trang;
-            int viTriKetThuc = trang_hien_tai * phan_trang;
-            int dem = 0;
 
 
             foreach (var khoanVay in DichVuVay.Instance.DanhSachKhoanVay)
             {
-                if (dem >= viTriBatDau && dem < viTriKetThuc)
-                {
-                    KhoanNo khoanNo = khoanVay.Value as KhoanNo;
+                KhoanNo khoanNo = khoanVay.Value as KhoanNo;
 
-                    if (khoanNo != null)
-                        dgv_Them(khoanNo);
-                }
-                ++dem;
+                if (khoanNo != null)
+                    dgv_Them(khoanNo);
             }
         }
 
@@ -98,8 +86,6 @@ namespace QuanLyChiTieu
         {
             if (e.RowIndex >= 0) // Kiểm tra có click vào vùng dữ liệu
             {
-                queueIndex.Enqueue(e.RowIndex);
-
                 if (e.ColumnIndex == dgvKhoanVay.Columns["xoaColumn"].Index)
                 {
                     // Xác nhận trước khi xóa

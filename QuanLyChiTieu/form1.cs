@@ -109,9 +109,11 @@ namespace QuanLyChiTieu
             {
                 MessageBox.Show("Đăng nhập thành công");
                 this.Hide();
-                QuanLyChiTieu.Objects.ConnectionFile.currentUser = taiKhoan; // lưu người dùng hiện tại
                 // lưu tài khoản của người dùng hiện tại
                 QuanLyChiTieu.Objects.ConnectionFile.currentAccount = taiKhoan;
+
+                // lưu thông tin người dùng
+                new DataManager(new ExcelImporter()).ImportNguoiDung(taiKhoan, ConnectionFile.GetFileConnection($"\\Data\\Account.xlsx"));
 
                 // Lấy dữ liệu các tài khoản tại folder user
                 new DataManager(new ExcelImporter()).ImportTaiKhoan(ConnectionFile.GetFileConnection($"\\Data\\{txbTaiKhoan.Text}\\Accounts.xlsx"));
@@ -135,6 +137,8 @@ namespace QuanLyChiTieu
         {
             string taiKhoanMoi = guna2TextBox3.Text;
             string matKhauMoi = guna2TextBox4.Text;
+            NguoiDung nguoiDung = new NguoiDung(taiKhoanMoi, matKhauMoi);
+
             if (!IsValidAccount(taiKhoanMoi))
             {
                 MessageBox.Show("Tài khoản không hợp lệ" + " !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -152,7 +156,7 @@ namespace QuanLyChiTieu
                     if (matKhauMoi == matKhau2)
                     {
                         // lưu tài khoản mới đăng ký vào
-                        new DataManager(new ExcelExporter()).ExportNguoiDung(taiKhoanMoi, matKhauMoi, ConnectionFile.GetFileConnection("\\Data\\Account.xlsx"));
+                        new DataManager(new ExcelExporter()).ExportNguoiDung(ConnectionFile.GetFileConnection("\\Data\\Account.xlsx"));
 
                         // tạo file excel để lưu trữ dữ liệu cho tài khoản mới
                         new DataCreator(new TaoFileTaiKhoan()).TaoFile(ConnectionFile.GetFileConnection($"\\Data\\{taiKhoanMoi}\\Accounts.xlsx"), "sheet1");

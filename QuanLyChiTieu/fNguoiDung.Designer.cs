@@ -156,6 +156,7 @@
             this.btnCapNhatThongTin.Size = new System.Drawing.Size(169, 45);
             this.btnCapNhatThongTin.TabIndex = 3;
             this.btnCapNhatThongTin.Text = "Cập nhật thông tin";
+            this.btnCapNhatThongTin.Click += new System.EventHandler(this.btnCapNhatThongTin_Click);
             // 
             // guna2HtmlLabel6
             // 
