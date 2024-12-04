@@ -35,7 +35,7 @@ namespace QuanLyChiTieu
 
         private void dgv_Them(GiaoDich giaodich)
         {
-            dgvGiaoDich.Rows.Add(false, giaodich.MaGiaoDich, giaodich.LoaiGiaoDich, giaodich.NgayGiaoDich.ToString(), giaodich.SoTienGiaoDich.ToString(), giaodich.GhiChu);
+            dgvGiaoDich.Rows.Add(false, giaodich.MaGiaoDich, giaodich.LoaiGiaoDich,giaodich.ViDienTu, giaodich.NgayGiaoDich.ToString(), giaodich.SoTienGiaoDich.ToString(), giaodich.GhiChu);
         
         }
         private void fGiaoDich_Load(object sender, EventArgs e)

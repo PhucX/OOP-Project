@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -60,21 +61,28 @@ namespace QuanLyChiTieu
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            string magiaodich = giaodich.MaGiaoDich;
-            Double SoTien = Double.Parse(txbTSoTien.Text);
-            string GhiChu = txbGhiChu.Text;
-            DateTime ngaygiaodich = NgayGiaoDich.Value.Date;
-            string loaigiaodich = cbxLoaiGiaoDich.SelectedItem.ToString();
-            string viDienTu = cbxViDienTu.SelectedItem.ToString();
-            if (viDienTu == null)
+            try
             {
-                MessageBox.Show("Please select an item from the Vi Dien Tu ComboBox.");
-                return;
+                string magiaodich = giaodich.MaGiaoDich;
+                double SoTien = double.Parse(txbTSoTien.Text);
+                string GhiChu = txbGhiChu.Text;
+                DateTime ngaygiaodich = NgayGiaoDich.Value.Date;
+                string loaigiaodich = cbxLoaiGiaoDich.SelectedItem.ToString();
+                string viDienTu = cbxViDienTu.SelectedItem.ToString();
+                if (string.IsNullOrEmpty(viDienTu))
+                {
+                    MessageBox.Show("Please select an item from the Vi Dien Tu ComboBox.");
+                    return;
+                }
+
+                DichVuGiaoDich.Instance.CapNhat(magiaodich, new GiaoDich(magiaodich, ngaygiaodich, SoTien, loaigiaodich, GhiChu, viDienTu));
+
+                this.Close();
             }
-
-            DichVuGiaoDich.Instance.CapNhat(magiaodich, new Modules.GiaoDich(magiaodich, ngaygiaodich, SoTien, loaigiaodich, GhiChu, viDienTu));
-
-            this.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void guna2ComboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
