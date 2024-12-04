@@ -1,10 +1,13 @@
-﻿using QuanLyChiTieu.Modules;
+﻿using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Spreadsheet;
+using QuanLyChiTieu.Modules;
 using QuanLyChiTieu.Objects;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +20,10 @@ namespace QuanLyChiTieu
         public fKhoanChoVay()
         {
             InitializeComponent();
+            dgvKhoanChoVay.MultiSelect = true;
         }
+
+        private int index;
         private void dgv_Them(KhoanChoVay _khoanChoVay)
         {
             dgvKhoanChoVay.Rows.Add(false, _khoanChoVay.IdKhoanVay, _khoanChoVay.NguoiVay, _khoanChoVay.NgayDenHan.ToString(), _khoanChoVay.SoTienVay.ToString(), _khoanChoVay.LaiSuat.ToString(), _khoanChoVay.TrangThai);
@@ -61,6 +67,9 @@ namespace QuanLyChiTieu
         {
             if (e.RowIndex >= 0) // Kiểm tra có click vào vùng dữ liệu
             {
+                index = e.RowIndex;
+                dgvDaThanhToan_Load();
+
                 if (e.ColumnIndex == dgvKhoanChoVay.Columns["xoaColumn"].Index)
                 {
                     // Xác nhận trước khi xóa
@@ -99,6 +108,40 @@ namespace QuanLyChiTieu
                 }
             }
         }
+
+        private void CapNhatDuLieu(List<object> rowData)
+        {
+            try
+            {
+                DateTime ngayVay = DichVuVay.Instance.DanhSachKhoanVay[rowData[1].ToString()].NgayVay;
+                KhoanChoVay khoanNo = new KhoanChoVay(rowData[1].ToString(), double.Parse(rowData[4].ToString()), double.Parse(rowData[5].ToString()), ngayVay, DateTime.Parse(rowData[3].ToString()), rowData[6].ToString(), rowData[2].ToString());
+
+                DichVuVay.Instance.CapNhat(rowData[1].ToString(), khoanNo);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgvKhoanVay_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            // Kiểm tra nếu là ô cần thiết (ví dụ: ô dữ liệu thay đổi)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // Lấy hàng đã thay đổi
+                DataGridViewRow row = dgvKhoanChoVay.Rows[e.RowIndex];
+
+                // Duyệt qua tất cả các ô trong hàng và lấy giá trị
+                List<object> rowData = new List<object>();
+
+                foreach (DataGridViewCell cell in row.Cells)
+                    rowData.Add(cell.Value); // Thêm giá trị của mỗi ô vào danh sách rowData
+
+                CapNhatDuLieu(rowData);
+            }
+        }
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             fThemKhoanChoVay fThemKhoanChoVay = new fThemKhoanChoVay();
@@ -131,10 +174,29 @@ namespace QuanLyChiTieu
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            string taiKhoan = QuanLyChiTieu.Objects.ConnectionFile.currentAccount;
-            string childpath = QuanLyChiTieu.Objects.ConnectionFile.GetFileChildConnection("LoanAndDebt");
-            string filepath = QuanLyChiTieu.Objects.ConnectionFile.GetFileConnection(childpath);
-            new DataManager(new ExcelExporter()).ExportKhoanVay(taiKhoan, filepath);
+            SaveData.SaveDataLoan();
+        }
+
+        private void dgvDaThanhToan_Load()
+        {
+            dgvDaThanhToan.Rows.Clear();
+            string maVay = dgvKhoanChoVay.Rows[index].Cells["maVay"].Value.ToString();
+            KhoanNo khoanNo = (KhoanNo)DichVuVay.Instance.DanhSachKhoanVay[maVay];
+            List<ThanhToan> cacKhoanVay = khoanNo.DanhSachThanhToan;
+
+            for (int i = 0; i < cacKhoanVay.Count; i++)
+                dgvDaThanhToan.Rows.Add(cacKhoanVay[i].NgayThanhToan.ToString(), cacKhoanVay[i].SoTienThanhToan.ToString(), khoanNo.SoDuNo.ToString());
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            string maVay = dgvKhoanChoVay.Rows[index].Cells["maVay"].Value.ToString();
+            KhoanNo khoanNo = DichVuVay.Instance.DanhSachKhoanVay[maVay] as KhoanNo;
+            khoanNo.ThanhToan(50000);
+
+            DichVuVay.Instance.DanhSachKhoanVay[maVay] = khoanNo;
+
+            dgvDaThanhToan_Load();
         }
     }
 }

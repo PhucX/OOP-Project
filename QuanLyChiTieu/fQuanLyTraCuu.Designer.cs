@@ -397,6 +397,7 @@
             this.btnXoaTaiKhoan.Size = new System.Drawing.Size(227, 55);
             this.btnXoaTaiKhoan.TabIndex = 8;
             this.btnXoaTaiKhoan.Text = "Xóa tài khoản";
+            this.btnXoaTaiKhoan.Click += new System.EventHandler(this.btnXoaTaiKhoan_Click);
             // 
             // btnThemTaiKhoan
             // 

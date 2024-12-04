@@ -22,7 +22,9 @@ namespace QuanLyChiTieu
             InitializeComponent();
             dgvKhoanVay.MultiSelect = true;
         }
-         
+
+        private int index;
+
         private void dgv_Them(KhoanNo khoanNo)
         {
             dgvKhoanVay.Rows.Add(false, khoanNo.IdKhoanVay, khoanNo.NguoiChoVay, khoanNo.NgayDenHan.ToString(), khoanNo.SoTienVay.ToString(), khoanNo.LaiSuat.ToString(), khoanNo.TrangThai);
@@ -86,6 +88,9 @@ namespace QuanLyChiTieu
         {
             if (e.RowIndex >= 0) // Kiểm tra có click vào vùng dữ liệu
             {
+                index = e.RowIndex;
+                dgvDaThanhToan_Load();
+
                 if (e.ColumnIndex == dgvKhoanVay.Columns["xoaColumn"].Index)
                 {
                     // Xác nhận trước khi xóa
@@ -175,10 +180,29 @@ namespace QuanLyChiTieu
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            string taiKhoan = QuanLyChiTieu.Objects.ConnectionFile.currentAccount;
-            string childpath = QuanLyChiTieu.Objects.ConnectionFile.GetFileChildConnection("LoanAndDebt");
-            string filepath = QuanLyChiTieu.Objects.ConnectionFile.GetFileConnection(childpath);
-            new DataManager(new ExcelExporter()).ExportKhoanVay(taiKhoan, filepath);
+            SaveData.SaveDataLoan();
+        }
+
+        private void dgvDaThanhToan_Load()
+        {
+            dgvDaThanhToan.Rows.Clear();
+            string maVay = dgvKhoanVay.Rows[index].Cells["maVay"].Value.ToString();
+            KhoanNo khoanNo = (KhoanNo)DichVuVay.Instance.DanhSachKhoanVay[maVay];
+            List<ThanhToan> cacKhoanVay = khoanNo.DanhSachThanhToan;
+
+            for (int i = 0; i < cacKhoanVay.Count; i++)
+                dgvDaThanhToan.Rows.Add(cacKhoanVay[i].NgayThanhToan.ToString(), cacKhoanVay[i].SoTienThanhToan.ToString(), khoanNo.SoDuNo.ToString());
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            string maVay = dgvKhoanVay.Rows[index].Cells["maVay"].Value.ToString();
+            KhoanNo khoanNo = DichVuVay.Instance.DanhSachKhoanVay[maVay] as KhoanNo;
+            khoanNo.ThanhToan(50000);
+
+            DichVuVay.Instance.DanhSachKhoanVay[maVay] = khoanNo;
+
+            dgvDaThanhToan_Load();
         }
 
        

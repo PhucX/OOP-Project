@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
+using System.Windows.Forms;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,15 +14,15 @@ namespace QuanLyChiTieu.Objects
     {
         public static string currentAccount;
         private static string stringConnection = $"{Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).FullName).FullName.ToString()}";
-
-        public static string GetFileConnection(string fileChildPath)
+        
+        public static string GetFileConnection(string currentPath)
         {
-            return stringConnection + fileChildPath;
+            return stringConnection + $"\\Data\\{NguoiDung.TaiKhoanNguoiDung}\\{currentPath}.xlsx";
         }
 
-        public static string GetFileChildConnection(string currentAccount)
+        public static string GetFileConnectionAccount()
         {
-            return $"\\Data\\{NguoiDung.TaiKhoanNguoiDung}\\{currentAccount}.xlsx";
+            return $"{stringConnection}\\Data\\Account.xlsx";
         }
     }
 }
