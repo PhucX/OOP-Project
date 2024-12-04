@@ -31,7 +31,7 @@ namespace QuanLyChiTieu.Objects
             Double tong = 0;
             foreach (GiaoDich giaodich in DanhSachGiaoDich.Values) {
                 if (giaodich.NgayGiaoDich >= Ngaybatdau && giaodich.NgayGiaoDich <= Ngayketthuc) {
-                    if (giaodich.LoaiGiaoDich == "Nạp tiền")
+                    if (giaodich.LoaiGiaoDich == "Thu nhập")
                         tong += giaodich.SoTienGiaoDich;
                 }
             }
@@ -44,7 +44,7 @@ namespace QuanLyChiTieu.Objects
             {
                 if (giaodich.NgayGiaoDich >= Ngaybatdau && giaodich.NgayGiaoDich <= Ngayketthuc)
                 {
-                    if (giaodich.LoaiGiaoDich != "Nạp tiền")
+                    if (giaodich.LoaiGiaoDich != "Thu nhập")
                         tong += giaodich.SoTienGiaoDich;
                 }
             }
@@ -55,7 +55,7 @@ namespace QuanLyChiTieu.Objects
             Double tong = 0;
             foreach (GiaoDich giaodich in DanhSachGiaoDich.Values)
             {
-                if (giaodich.LoaiGiaoDich != "Nạp tiền")
+                if (giaodich.LoaiGiaoDich != "Thu nhập")
                     tong += giaodich.SoTienGiaoDich;
             }
             return tong;

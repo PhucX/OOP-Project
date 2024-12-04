@@ -15,6 +15,9 @@ namespace QuanLyChiTieu
         public fTrangChu()
         {
             InitializeComponent();
+            label2.Text = (QuanLyChiTieu.Objects.DichVuGiaoDich.Instance.TongchitieuAll() + QuanLyChiTieu.Objects.DichVuVay.Instance.TongchitieuAll()).ToString();
+        
+        
         }
 
         private bool isFirstClick = true;
@@ -38,6 +41,16 @@ namespace QuanLyChiTieu
         {
             fThongBaoDenHan f = new fThongBaoDenHan();
             f.ShowDialog();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnSoTinThongBao_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
