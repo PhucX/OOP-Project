@@ -32,7 +32,7 @@ namespace QuanLyChiTieu.Objects
         // lưu dữ liệu khoản vay
         public static void SaveDataLoan()
         {
-            string taiKhoan = QuanLyChiTieu.Objects.ConnectionFile.currentAccount;
+            string taiKhoan = NguoiDung.TaiKhoanNguoiDung;
             string filepath = QuanLyChiTieu.Objects.ConnectionFile.GetFileConnection("LoanAndDebt");
             new DataManager(new ExcelExporter()).ExportKhoanVay(taiKhoan, filepath);
         }

@@ -26,24 +26,10 @@ namespace QuanLyChiTieu.Modules
 
         public double SoTienBiThieu { get => soTienBiThieu; set => soTienBiThieu = value; }
 
-        public void ThanhToan(double soTienTra)
+        public double ThanhToan(double soTienTra)
         {
-            double ketqua = soTienBiThieu - soTienTra;
-            if (ketqua < 0)
-            {
-                MessageBox.Show("Lố số tiền cần trả", "Cảnh báo");
-                return;
-            }
-
-            if (ketqua == 0)
-            {
-                DichVuVay.Instance.Xoa(this.IdKhoanVay);
-                MessageBox.Show("Đã được hoàn trả đầy đủ", "Thông báo");
-                return;
-            }
-
-            soTienBiThieu = ketqua;
-            DanhSachThanhToan.Add(new Modules.ThanhToan(soTienTra, DateTime.Now));
+            soTienBiThieu -= soTienTra;
+            return soTienBiThieu;
         }
     }
 }

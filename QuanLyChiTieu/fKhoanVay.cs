@@ -23,7 +23,7 @@ namespace QuanLyChiTieu
             dgvKhoanVay.MultiSelect = true;
         }
 
-        private int index;
+        private static int index = -1;
 
         private void dgv_Them(KhoanNo khoanNo)
         {
@@ -183,43 +183,31 @@ namespace QuanLyChiTieu
             SaveData.SaveDataLoan();
         }
 
+        // Cập nhật lại trang hiển thị
         private void dgvDaThanhToan_Load()
         {
             dgvDaThanhToan.Rows.Clear();
             string maVay = dgvKhoanVay.Rows[index].Cells["maVay"].Value.ToString();
             KhoanNo khoanNo = (KhoanNo)DichVuVay.Instance.DanhSachKhoanVay[maVay];
             List<ThanhToan> cacKhoanVay = khoanNo.DanhSachThanhToan;
+            double soDuNo = khoanNo.SoDuNo;
 
             for (int i = 0; i < cacKhoanVay.Count; i++)
-                dgvDaThanhToan.Rows.Add(cacKhoanVay[i].NgayThanhToan.ToString(), cacKhoanVay[i].SoTienThanhToan.ToString(), khoanNo.SoDuNo.ToString());
+            {
+                dgvDaThanhToan.Rows.Add(cacKhoanVay[i].NgayThanhToan.ToString(), cacKhoanVay[i].SoTienThanhToan.ToString(), cacKhoanVay[i].TaiKhoanDaThanhToan);
+            }
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            string maVay = dgvKhoanVay.Rows[index].Cells["maVay"].Value.ToString();
-            KhoanNo khoanNo = DichVuVay.Instance.DanhSachKhoanVay[maVay] as KhoanNo;
-
-            try
+            if (index != -1)
             {
-                double soTienTra = double.Parse(gn2txbSoTien.ToString());
-                khoanNo.ThanhToan(soTienTra);
-
-                DichVuVay.Instance.DanhSachKhoanVay[maVay] = khoanNo;
-
-                if(khoanNo.SoDuNo == 0)
-                {
-                    DichVuVay.Instance.Xoa(maVay);
-                    MessageBox.Show("Đã trả hết nợ.", "Thông báo");
-                }
-
+                string maVay = dgvKhoanVay.Rows[index].Cells["maVay"].Value.ToString();
+                new fThanhToan(maVay).ShowDialog();
                 dgvDaThanhToan_Load();
             }
-            catch(Exception ex) 
-            {
-                
-            }
+            else
+                MessageBox.Show("Có lỗi xảy ra", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
-       
     }
 }

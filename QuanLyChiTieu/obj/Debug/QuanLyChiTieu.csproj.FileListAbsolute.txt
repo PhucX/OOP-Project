@@ -214,3 +214,5 @@ D:\New folder\đang dùng\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.CoreCompi
 D:\New folder\đang dùng\QuanLyChiTieu\obj\Debug\QuanLyCh.D9B58F0F.Up2Date
 D:\New folder\đang dùng\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.exe
 D:\New folder\đang dùng\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.pdb
+D:\Project\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fThanhToan.resources
+D:\Project\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fThongBaoDenHan.resources
