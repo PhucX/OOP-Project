@@ -169,8 +169,6 @@ namespace QuanLyChiTieu
             }
             
         }
-
-
         private void btnLuu_Click(object sender, EventArgs e)
         {
             SaveData.SaveDataTran();
@@ -194,9 +192,5 @@ namespace QuanLyChiTieu
             foreach (var giaodich in giaTriThoaMan)
                 dgv_Them(giaodich);
         }
-
-       
-
-        
     }
 }

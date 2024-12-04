@@ -33,6 +33,8 @@ namespace QuanLyChiTieu
 
         private void fNguoiDung_Load(object sender, EventArgs e)
         {
+            dgvViDienTu.Rows.Clear();
+
             foreach (TaiKhoan taiKhoan in DichVuTaiKhoan.Instance.DanhSachTaiKhoan.Values.Where(the => the.LoaiThe == "Tiền mặt"))
                 dgvViDienTu.Rows.Add(taiKhoan.TenTaiKhoan, taiKhoan.SoDu.ToString());
 
@@ -55,6 +57,12 @@ namespace QuanLyChiTieu
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             new fDoiMatKhau().ShowDialog();
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            new fDangNhap().ShowDialog();
         }
     }
 }

@@ -35,7 +35,7 @@ namespace QuanLyChiTieu.Modules
 
         public double SoTienGiaoDich{ get => soTienGiaoDich; set => soTienGiaoDich = value; }
 
-        public string GhiChu      { get => ghiChu; set => ghiChu = value; }
+        public string GhiChu { get => ghiChu; set => ghiChu = value; }
 
         public string LoaiGiaoDich { get => loaiGiaoDich; set => loaiGiaoDich = value; }
 

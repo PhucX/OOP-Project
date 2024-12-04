@@ -19,6 +19,7 @@ namespace QuanLyChiTieu.Modules
         public KhoanChoVay(string idKhoanVay, double soTienVay, double laiSuat, DateTime ngayVay, DateTime ngayDenHan, string trangThai, string nguoiVay) : base(idKhoanVay, soTienVay, laiSuat, ngayVay, ngayDenHan, trangThai)
         {
             this.nguoiVay = nguoiVay;
+            this.soTienBiThieu = soTienVay;
         }
 
         // tạo các property cho các thuộc tính

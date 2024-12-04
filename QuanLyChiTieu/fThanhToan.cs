@@ -118,7 +118,6 @@ namespace QuanLyChiTieu
                 }
             }
         }
-
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
             if (maVay.Contains("debt"))

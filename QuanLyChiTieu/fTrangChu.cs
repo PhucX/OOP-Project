@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLyChiTieu.Modules;
+using QuanLyChiTieu.Objects;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -51,6 +53,17 @@ namespace QuanLyChiTieu
         private void btnSoTinThongBao_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void fTrangChu_Load(object sender, EventArgs e)
+        {
+            dgvGiaoDich.Rows.Clear();
+
+            foreach (var giaodich in DichVuGiaoDich.Instance.DanhSachGiaoDich.Values)
+            {
+                if (giaodich.LoaiGiaoDich == "Chuyển khoản")
+                    dgvGiaoDich.Rows.Add(giaodich.MaGiaoDich, giaodich.LoaiGiaoDich, giaodich.ViDienTu, giaodich.NgayGiaoDich.ToString(), giaodich.SoTienGiaoDich.ToString(), giaodich.GhiChu);
+            }
         }
     }
 }
