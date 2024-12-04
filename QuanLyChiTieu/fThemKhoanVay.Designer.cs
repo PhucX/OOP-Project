@@ -89,7 +89,7 @@
             // 
             // guna2Separator1
             // 
-            this.guna2Separator1.FillColor = System.Drawing.Color.Black;
+            this.guna2Separator1.FillColor = System.Drawing.Color.White;
             this.guna2Separator1.Location = new System.Drawing.Point(25, 296);
             this.guna2Separator1.Name = "guna2Separator1";
             this.guna2Separator1.Size = new System.Drawing.Size(236, 10);
@@ -97,18 +97,18 @@
             // 
             // txbSoTienVay
             // 
-            this.txbSoTienVay.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txbSoTienVay.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.txbSoTienVay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(77)))));
+            this.txbSoTienVay.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(77)))));
             this.txbSoTienVay.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbSoTienVay.DefaultText = "";
             this.txbSoTienVay.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txbSoTienVay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txbSoTienVay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbSoTienVay.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txbSoTienVay.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.txbSoTienVay.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(77)))));
             this.txbSoTienVay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbSoTienVay.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSoTienVay.ForeColor = System.Drawing.Color.Black;
+            this.txbSoTienVay.ForeColor = System.Drawing.Color.White;
             this.txbSoTienVay.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbSoTienVay.Location = new System.Drawing.Point(25, 264);
             this.txbSoTienVay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -123,6 +123,7 @@
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel5.Location = new System.Drawing.Point(31, 230);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(101, 27);
@@ -131,7 +132,7 @@
             // 
             // guna2Separator2
             // 
-            this.guna2Separator2.FillColor = System.Drawing.Color.Black;
+            this.guna2Separator2.FillColor = System.Drawing.Color.White;
             this.guna2Separator2.Location = new System.Drawing.Point(25, 175);
             this.guna2Separator2.Name = "guna2Separator2";
             this.guna2Separator2.Size = new System.Drawing.Size(236, 10);
@@ -139,18 +140,18 @@
             // 
             // txbNguoiChoVay
             // 
-            this.txbNguoiChoVay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txbNguoiChoVay.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.txbNguoiChoVay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(77)))));
+            this.txbNguoiChoVay.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(77)))));
             this.txbNguoiChoVay.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbNguoiChoVay.DefaultText = "";
             this.txbNguoiChoVay.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txbNguoiChoVay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txbNguoiChoVay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbNguoiChoVay.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txbNguoiChoVay.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.txbNguoiChoVay.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(77)))));
             this.txbNguoiChoVay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbNguoiChoVay.Font = new System.Drawing.Font("Cambria", 12F);
-            this.txbNguoiChoVay.ForeColor = System.Drawing.Color.Black;
+            this.txbNguoiChoVay.ForeColor = System.Drawing.Color.White;
             this.txbNguoiChoVay.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbNguoiChoVay.Location = new System.Drawing.Point(25, 143);
             this.txbNguoiChoVay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -166,6 +167,7 @@
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(31, 109);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(133, 27);
@@ -176,6 +178,7 @@
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(328, 250);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(126, 27);
@@ -186,7 +189,7 @@
             // 
             this.NgayDenHan.BorderRadius = 15;
             this.NgayDenHan.Checked = true;
-            this.NgayDenHan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(223)))), ((int)(((byte)(177)))));
+            this.NgayDenHan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(144)))), ((int)(((byte)(154)))));
             this.NgayDenHan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.NgayDenHan.ForeColor = System.Drawing.Color.White;
             this.NgayDenHan.Format = System.Windows.Forms.DateTimePickerFormat.Long;
@@ -200,7 +203,7 @@
             // 
             // guna2Separator3
             // 
-            this.guna2Separator3.FillColor = System.Drawing.Color.Black;
+            this.guna2Separator3.FillColor = System.Drawing.Color.White;
             this.guna2Separator3.Location = new System.Drawing.Point(31, 389);
             this.guna2Separator3.Name = "guna2Separator3";
             this.guna2Separator3.Size = new System.Drawing.Size(236, 10);
@@ -208,18 +211,18 @@
             // 
             // txbLaiSuat
             // 
-            this.txbLaiSuat.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txbLaiSuat.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.txbLaiSuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(77)))));
+            this.txbLaiSuat.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(77)))));
             this.txbLaiSuat.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbLaiSuat.DefaultText = "";
             this.txbLaiSuat.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txbLaiSuat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txbLaiSuat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbLaiSuat.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txbLaiSuat.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.txbLaiSuat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(77)))));
             this.txbLaiSuat.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbLaiSuat.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbLaiSuat.ForeColor = System.Drawing.Color.Black;
+            this.txbLaiSuat.ForeColor = System.Drawing.Color.White;
             this.txbLaiSuat.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbLaiSuat.Location = new System.Drawing.Point(31, 357);
             this.txbLaiSuat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -234,6 +237,7 @@
             // 
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel4.Location = new System.Drawing.Point(31, 323);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(73, 27);
@@ -244,6 +248,7 @@
             // 
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel6.Location = new System.Drawing.Point(328, 129);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             this.guna2HtmlLabel6.Size = new System.Drawing.Size(96, 27);
@@ -279,7 +284,7 @@
             this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(223)))), ((int)(((byte)(177)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(144)))), ((int)(((byte)(154)))));
             this.guna2Button1.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.Location = new System.Drawing.Point(447, 368);
@@ -293,7 +298,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(77)))));
             this.ClientSize = new System.Drawing.Size(606, 433);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2HtmlLabel6);
