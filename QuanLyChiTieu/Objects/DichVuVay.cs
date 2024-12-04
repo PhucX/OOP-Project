@@ -55,6 +55,16 @@ namespace QuanLyChiTieu.Objects
             return tong;
         }
 
+        public Double TongchitieuAll()
+        {
+            Double tong = 0;
+            foreach(KhoanVay khoanvay in DanhSachKhoanVay.Values)
+            {
+                if (khoanvay.IdKhoanVay.Contains("loan"))
+                    tong += khoanvay.SoTienVay;
+            }
+            return tong;
+        }
         public Dictionary<string, KhoanVay> DanhSachKhoanVay { get => danhSachKhoanVay; set => danhSachKhoanVay = value; }
 
         public string GetIdKhoanNo()

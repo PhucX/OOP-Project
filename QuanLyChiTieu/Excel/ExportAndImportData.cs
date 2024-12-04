@@ -225,6 +225,7 @@ namespace QuanLyChiTieu
                     worksheet.Cell(1, 3).Value = "Ngày giao dịch";
                     worksheet.Cell(1, 4).Value = "Số tiền";
                     worksheet.Cell(1, 5).Value = "Ghi chú";
+                    worksheet.Cell(1, 6).Value = "Ví điện tử";
 
                     int lastRowUsed = worksheet.RowsUsed().Count() + 1;
 
@@ -236,7 +237,7 @@ namespace QuanLyChiTieu
                         worksheet.Cell(lastRowUsed, 3).Value = giaoDich.Value.NgayGiaoDich.ToString();
                         worksheet.Cell(lastRowUsed, 4).Value = giaoDich.Value.SoTienGiaoDich.ToString();
                         worksheet.Cell(lastRowUsed, 5).Value = giaoDich.Value.GhiChu;
-
+                        worksheet.Cell(lastRowUsed, 6).Value = giaoDich.Value.ViDienTu;
                         lastRowUsed += 1; // tăng chỉ số hàng đã dùng thêm 1
                     }
 

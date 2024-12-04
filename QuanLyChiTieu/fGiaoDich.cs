@@ -22,7 +22,8 @@ namespace QuanLyChiTieu
     
     public partial class fGiaoDich : Form
     {
-       public Guna2DataGridView Guna2DataGridView1;
+        public Guna2DataGridView Guna2DataGridView1;
+        private static fGiaoDich instance;
         public fGiaoDich()
         {
             InitializeComponent();
@@ -31,6 +32,17 @@ namespace QuanLyChiTieu
         }
         private Queue<int> queueIndex = new Queue<int>();
         
+        public static fGiaoDich Instance
+        {
+            get
+            {
+                if (instance == null)
+                    instance = new fGiaoDich();
+                return instance;
+            }
+
+            set => instance = value;
+        }
 
 
         private void dgv_Them(GiaoDich giaodich)
@@ -38,13 +50,17 @@ namespace QuanLyChiTieu
             dgvGiaoDich.Rows.Add(false, giaodich.MaGiaoDich, giaodich.LoaiGiaoDich,giaodich.ViDienTu, giaodich.NgayGiaoDich.ToString(), giaodich.SoTienGiaoDich.ToString(), giaodich.GhiChu);
         
         }
-        private void fGiaoDich_Load(object sender, EventArgs e)
+        public void fGiaoDich_Load(object sender, EventArgs e)
         {
             dgvGiaoDich.Rows.Clear();
             foreach (var giaodich in DichVuGiaoDich.Instance.DanhSachGiaoDich)
-            { 
+            {
                 if (giaodich.Value != null)
+                {
+                    if (giaodich.Value.ViDienTu == null)
+                        giaodich.Value.ViDienTu = "Nan";
                     dgv_Them(giaodich.Value);
+                }                  
             }
         }
         private void dgvGiaoDich_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

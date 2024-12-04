@@ -76,7 +76,7 @@ namespace QuanLyChiTieu
                     int index = (giaodich.NgayGiaoDich - Ngaybatdau).Days;
                     if (index >= 0 && index < thunhap.Length)
                     {
-                        if (giaodich.LoaiGiaoDich == "Nạp tiền")
+                        if (giaodich.LoaiGiaoDich == "Thu nhập")
                             thunhap[index] += giaodich.SoTienGiaoDich;
                         else
                             chitieu[index] += giaodich.SoTienGiaoDich;
@@ -212,7 +212,7 @@ namespace QuanLyChiTieu
             dtpStartDate.Value = new DateTime(today.Year, today.Month, 1);
 
             // Đặt ngày kết thúc là hôm nay
-            ptbEndDate.Value = today;
+            ptbEndDate.Value = new DateTime(today.Year, today.Month, DateTime.DaysInMonth(today.Year, today.Month));
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)

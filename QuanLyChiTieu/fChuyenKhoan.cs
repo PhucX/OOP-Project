@@ -50,6 +50,15 @@ namespace QuanLyChiTieu
                     MessageBox.Show("Số dư không đủ để thực hiện", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                string idgiaodich = DichVuGiaoDich.Instance.GetIdGiaoDich();
+                DateTime ngaygiaodich = DateTime.Now;
+                Double sotien = tienChuyen;
+                string loaigiaodich = "Chuyển khoản";
+                string ghichu = "None";
+                string viDienTu = taiKhoan;
+                GiaoDich GIaoDich = new GiaoDich(idgiaodich, ngaygiaodich, sotien, loaigiaodich, ghichu, viDienTu);
+                DichVuGiaoDich.Instance.Them(idgiaodich, GIaoDich);
+                fGiaoDich.Instance.fGiaoDich_Load(sender,e);
 
                 DichVuTaiKhoan.Instance.DanhSachTaiKhoan[taiKhoan].SoDu += tienChuyen;
                 DichVuTaiKhoan.Instance.DanhSachTaiKhoan[taiKhoanHienTai].SoDu -= tienChuyen;
