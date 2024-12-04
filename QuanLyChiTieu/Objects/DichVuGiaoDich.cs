@@ -32,8 +32,8 @@ namespace QuanLyChiTieu.Objects
         public string GetIdGiaoDich()
         {
             for (int i = 0; i < 1e6; i++)
-                if (!danhSachGiaoDich.ContainsKey("debt" + i.ToString()))
-                    return "debt" + i.ToString();
+                if (!danhSachGiaoDich.ContainsKey("transt" + i.ToString()))
+                    return "transt" + i.ToString();
             return "-1";
         }
         public override void Them(string id, GiaoDich item) 
