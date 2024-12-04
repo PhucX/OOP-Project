@@ -35,7 +35,7 @@ namespace QuanLyChiTieu
                     {
                         if(row.Cell(1).Value.ToString() == taiKhoan)
                         {
-                            NguoiDung nguoiDung = new NguoiDung(taiKhoan, row.Cell(2).ToString(), row.Cell(3).ToString(), row.Cell(4).ToString(), row.Cell(5).ToString());
+                            NguoiDung nguoiDung = new NguoiDung(taiKhoan, row.Cell(2).Value.ToString(), row.Cell(3).Value.ToString(), row.Cell(4).Value.ToString(), row.Cell(5).Value.ToString());
                             break;
                         }
                     }
@@ -313,7 +313,7 @@ namespace QuanLyChiTieu
                         int cnt = 9;
                         for (int i = 0; i < cellValue.SoLuongThanhToan();i++)
                         {
-                            worksheet.Cell(lastRowUsed, cnt++).Value = cellValue.DanhSachThanhToan[i].SoTienThanhToan.ToString() + cellValue.DanhSachThanhToan[i].NgayThanhToan.ToString();
+                            worksheet.Cell(lastRowUsed, cnt++).Value = cellValue.DanhSachThanhToan[i].SoTienThanhToan.ToString() + "," + cellValue.DanhSachThanhToan[i].NgayThanhToan.ToString();
                         }
                         lastRowUsed += 1; // tăng chỉ số hàng đã dùng thêm 1
                     }
@@ -342,13 +342,21 @@ namespace QuanLyChiTieu
                     IXLWorksheet worksheet = workbook.Worksheets.FirstOrDefault() ?? workbook.AddWorksheet("Sheet1");
 
                     // Xác định vị trí dòng cuối cùng của sheet
-                    int lastRow = worksheet.RowsUsed().Count();
+                    int viTriHienTai = 2;
 
-                    worksheet.Cell(lastRow + 1, 1).Value = NguoiDung.TaiKhoanNguoiDung;
-                    worksheet.Cell(lastRow + 1, 2).Value = NguoiDung.MatKhau;
-                    worksheet.Cell(lastRow + 1, 3).Value = NguoiDung.TenNguoiDung;
-                    worksheet.Cell(lastRow + 1, 4).Value = NguoiDung.SoDienThoai;
-                    worksheet.Cell(lastRow + 1, 5).Value = NguoiDung.DiaChi;
+                    foreach(IXLRow row in  worksheet.RowsUsed().Skip(1))
+                    {
+                        if(row.Cell(1).Value.ToString() == NguoiDung.TaiKhoanNguoiDung)
+                            break;
+
+                        ++viTriHienTai;
+                    }
+
+                    worksheet.Cell(viTriHienTai, 1).Value = NguoiDung.TaiKhoanNguoiDung;
+                    worksheet.Cell(viTriHienTai, 2).Value = NguoiDung.MatKhau;
+                    worksheet.Cell(viTriHienTai, 3).Value = NguoiDung.TenNguoiDung;
+                    worksheet.Cell(viTriHienTai, 4).Value = NguoiDung.SoDienThoai;
+                    worksheet.Cell(viTriHienTai, 5).Value = NguoiDung.DiaChi;
 
                     // Lưu lại file Excel
                     if (isNewFile)

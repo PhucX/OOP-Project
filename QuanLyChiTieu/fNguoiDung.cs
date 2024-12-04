@@ -21,17 +21,11 @@ namespace QuanLyChiTieu
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            string taiKhoan = QuanLyChiTieu.Objects.ConnectionFile.currentAccount;
-
             // cập nhật các khoản vay
-            string childpath = QuanLyChiTieu.Objects.ConnectionFile.GetFileChildConnection("LoanAndDebt");
-            string filepath = QuanLyChiTieu.Objects.ConnectionFile.GetFileConnection(childpath);
-            new DataManager(new ExcelExporter()).ExportKhoanVay(taiKhoan, filepath);
+            SaveData.SaveDataLoan();
 
             // cập nhật các khoản giao dịch
-            childpath = QuanLyChiTieu.Objects.ConnectionFile.GetFileChildConnection("LoanAndDebt");
-            childpath = QuanLyChiTieu.Objects.ConnectionFile.GetFileConnection(childpath);
-            new DataManager(new ExcelExporter()).ExportKhoanVay(taiKhoan, filepath);
+            SaveData.SaveDataTran();
         }
 
         private void fNguoiDung_Load(object sender, EventArgs e)
@@ -50,7 +44,7 @@ namespace QuanLyChiTieu
             NguoiDung nguoiDung = new NguoiDung(NguoiDung.TaiKhoanNguoiDung, NguoiDung.MatKhau);
             NguoiDung.CapNhatNguoiDung(txbTenNguoiDung.Text, txbSoDienThoai.Text, txbDiaChi.Text);
 
-            new DataManager(new ExcelExporter()).ExportNguoiDung(Objects.ConnectionFile.GetFileConnection("\\Data\\Account.xlsx"));
+            SaveData.SaveDataUser();
 
             fNguoiDung_Load(sender, e);
         }

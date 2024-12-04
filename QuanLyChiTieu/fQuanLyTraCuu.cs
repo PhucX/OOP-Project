@@ -49,21 +49,16 @@ namespace QuanLyChiTieu
 
             if (!DichVuTaiKhoan.Instance.DanhSachTaiKhoan.ContainsKey(taiKhoan))
             {
-                // lấy đường dẫn file
-                string childpath = QuanLyChiTieu.Objects.ConnectionFile.GetFileChildConnection("Accounts");
-                string filepath = QuanLyChiTieu.Objects.ConnectionFile.GetFileConnection(childpath);
-
                 // thêm và load lại bảng hiển thị
                 DichVuTaiKhoan.Instance.Them(taiKhoan, new Modules.TaiKhoan(taiKhoan, soDu));
                 fTranCuuQuanLy_Load(sender, e);
-                new DataManager(new ExcelExporter()).ExportTaiKhoan(filepath);
+                SaveData.SaveDataAccount();
 
-                childpath = QuanLyChiTieu.Objects.ConnectionFile.GetFileChildConnection("LoanAndDebt");
-                filepath = QuanLyChiTieu.Objects.ConnectionFile.GetFileConnection(childpath);
+                // lấy đường dẫn file
+                string filepath = QuanLyChiTieu.Objects.ConnectionFile.GetFileConnection("LoanAndDebt");
                 new QuanLyChiTieu.Excel.DataCreator(new TaoFileKhoanVay()).ThemSheet(filepath, taiKhoan);
 
-                childpath = QuanLyChiTieu.Objects.ConnectionFile.GetFileChildConnection("Transaction");
-                filepath = QuanLyChiTieu.Objects.ConnectionFile.GetFileConnection(childpath);
+                filepath = QuanLyChiTieu.Objects.ConnectionFile.GetFileConnection("Transaction");
                 new QuanLyChiTieu.Excel.DataCreator(new TaoFileGiaoDich()).ThemSheet(filepath, taiKhoan);
             }
             else
@@ -75,20 +70,10 @@ namespace QuanLyChiTieu
         {
             if (index >= 0)
             {
-                string currentAccount = dgvViDienTu.Rows[index].Cells[0].Value.ToString();
-                QuanLyChiTieu.Objects.ConnectionFile.currentAccount = currentAccount;
+                QuanLyChiTieu.Objects.ConnectionFile.currentAccount = dgvViDienTu.Rows[index].Cells[0].Value.ToString();
 
-                string childPathLoan = QuanLyChiTieu.Objects.ConnectionFile.GetFileChildConnection("LoanAndDebt");
-                string childPathTran = QuanLyChiTieu.Objects.ConnectionFile.GetFileChildConnection("Transaction");
-
-                string filepathTran = QuanLyChiTieu.Objects.ConnectionFile.GetFileConnection(childPathTran);
-                string filepathLoan = QuanLyChiTieu.Objects.ConnectionFile.GetFileConnection(childPathLoan);
-
-                DichVuGiaoDich.Instance.DanhSachGiaoDich.Clear();
-                DichVuVay.Instance.DanhSachKhoanVay.Clear();
-
-                new DataManager(new ExcelImporter()).ImportGiaoDich(filepathTran, currentAccount);
-                new DataManager(new ExcelImporter()).ImportKhoanVay(filepathLoan, currentAccount);
+                UsedData.UsedDataLoan(); // lấy dữ liệu khoản vay
+                UsedData.UsedDataTran(); // lấy dữ liệu giao dịch
             }
         }
 
@@ -101,6 +86,11 @@ namespace QuanLyChiTieu
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             new fChuyenKhoan().ShowDialog();
+        }
+
+        private void btnXoaTaiKhoan_Click(object sender, EventArgs e)
+        {
+            DichVuTaiKhoan.Instance.Xoa(QuanLyChiTieu.Objects.ConnectionFile.currentAccount);
         }
     }
 }

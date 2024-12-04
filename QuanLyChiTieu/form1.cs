@@ -103,7 +103,7 @@ namespace QuanLyChiTieu
             fBangDieuKhien form2 = new fBangDieuKhien();
 
             bool _ = false;
-            bool laHopLe = new Excel.ExcelSearcher().Search(Objects.ConnectionFile.GetFileConnection("\\Data\\Account.xlsx"), taiKhoan, txbMatKhau.Text, out _);
+            bool laHopLe = new Excel.ExcelSearcher().Search(Objects.ConnectionFile.GetFileConnectionAccount(), taiKhoan, txbMatKhau.Text, out _);
 
             if (laHopLe)
             {
@@ -113,17 +113,17 @@ namespace QuanLyChiTieu
                 QuanLyChiTieu.Objects.ConnectionFile.currentAccount = taiKhoan;
 
                 // lưu thông tin người dùng
-                new DataManager(new ExcelImporter()).ImportNguoiDung(taiKhoan, ConnectionFile.GetFileConnection($"\\Data\\Account.xlsx"));
+                UsedData.UsedDataUser();
 
                 // Lấy dữ liệu các tài khoản tại folder user
-                new DataManager(new ExcelImporter()).ImportTaiKhoan(ConnectionFile.GetFileConnection($"\\Data\\{txbTaiKhoan.Text}\\Accounts.xlsx"));
+                UsedData.UsedDataAccount();
 
                 // lấy dữ liệu phần giao dịch của user
-                new DataManager(new ExcelImporter()).ImportGiaoDich(ConnectionFile.GetFileConnection($"\\Data\\{txbTaiKhoan.Text}\\Transaction.xlsx"), taiKhoan);
+                UsedData.UsedDataTran();
 
 
                 // lấy dữ liệu phần khoản vay của user
-                new DataManager(new ExcelImporter()).ImportKhoanVay(ConnectionFile.GetFileConnection($"\\Data\\{txbTaiKhoan.Text}\\LoanAndDebt.xlsx"), taiKhoan);
+                UsedData.UsedDataLoan();
 
                 form2.ShowDialog();
                 this.Close();
@@ -145,7 +145,7 @@ namespace QuanLyChiTieu
                 return;
             }
             bool daTonTaiTK = false;
-            new Excel.ExcelSearcher().Search(Objects.ConnectionFile.GetFileConnection("\\Data\\Account.xlsx"), taiKhoanMoi, matKhauMoi, out daTonTaiTK);
+            new Excel.ExcelSearcher().Search(Objects.ConnectionFile.GetFileConnectionAccount(), taiKhoanMoi, matKhauMoi, out daTonTaiTK);
 
             if (!daTonTaiTK)
             {
@@ -156,18 +156,22 @@ namespace QuanLyChiTieu
                     if (matKhauMoi == matKhau2)
                     {
                         // lưu tài khoản mới đăng ký vào
-                        new DataManager(new ExcelExporter()).ExportNguoiDung(ConnectionFile.GetFileConnection("\\Data\\Account.xlsx"));
+                        SaveData.SaveDataUser();
 
                         // tạo file excel để lưu trữ dữ liệu cho tài khoản mới
-                        new DataCreator(new TaoFileTaiKhoan()).TaoFile(ConnectionFile.GetFileConnection($"\\Data\\{taiKhoanMoi}\\Accounts.xlsx"), "sheet1");
+                        new DataCreator(new TaoFileTaiKhoan()).TaoFile(ConnectionFile.GetFileConnection("Accounts"), "sheet1");
 
                         // tạo file excel lưu trữ các cuộc giao dịch
-                        new DataCreator(new TaoFileGiaoDich()).TaoFile(ConnectionFile.GetFileConnection($"\\Data\\{taiKhoanMoi}\\Transaction.xlsx"), taiKhoanMoi);
+                        new DataCreator(new TaoFileGiaoDich()).TaoFile(ConnectionFile.GetFileConnection("Transaction"), taiKhoanMoi);
 
                         // tạo file excel lưu trữ các khoản vay
-                        new DataCreator(new TaoFileKhoanVay()).TaoFile(ConnectionFile.GetFileConnection($"\\Data\\{taiKhoanMoi}\\LoanAndDebt.xlsx"), taiKhoanMoi);
+                        new DataCreator(new TaoFileKhoanVay()).TaoFile(ConnectionFile.GetFileConnection("LoanAndDebt"), taiKhoanMoi);
 
-                        DichVuTaiKhoan.Instance.Them(taiKhoanMoi, new TaiKhoan(taiKhoanMoi, 0));
+                        DichVuTaiKhoan.Instance.Them(taiKhoanMoi, new TaiKhoan(taiKhoanMoi, 0)); // thêm tài khoản mặc định
+                        // xuất dữ liệu tài khoản
+                        SaveData.SaveDataAccount();
+
+                        DichVuTaiKhoan.Instance.DanhSachTaiKhoan.Clear();
 
                         guna2ShadowPanel1.Visible = true;
                     }
