@@ -206,3 +206,4 @@ D:\Code\Backup\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyCh.D9B58F0F.Up2Date
 D:\Code\Backup\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.exe
 D:\Code\Backup\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.pdb
 D:\Code\Backup\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fNguoiDung.resources
+D:\Project\OOP\OOP-Project\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fNguoiDung.resources

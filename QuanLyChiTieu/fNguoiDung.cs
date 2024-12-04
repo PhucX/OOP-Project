@@ -37,7 +37,22 @@ namespace QuanLyChiTieu
         private void fNguoiDung_Load(object sender, EventArgs e)
         {
             foreach(TaiKhoan taiKhoan in DichVuTaiKhoan.Instance.DanhSachTaiKhoan.Values)
-                dgvViDienTu.Rows.Add(taiKhoan.TenTaiKhoan, taiKhoan.SoDu.ToString());   
+                dgvViDienTu.Rows.Add(taiKhoan.TenTaiKhoan, taiKhoan.SoDu.ToString());
+
+            guna2HtmlLabel12.Text = NguoiDung.TenNguoiDung;
+            lbTenDangNhap.Text = NguoiDung.TaiKhoanNguoiDung;
+            lbSoDienThoai.Text = NguoiDung.SoDienThoai;
+            lbDiaChi.Text = NguoiDung.DiaChi;
+        }
+
+        private void btnCapNhatThongTin_Click(object sender, EventArgs e)
+        {
+            NguoiDung nguoiDung = new NguoiDung(NguoiDung.TaiKhoanNguoiDung, NguoiDung.MatKhau);
+            NguoiDung.CapNhatNguoiDung(txbTenNguoiDung.Text, txbSoDienThoai.Text, txbDiaChi.Text);
+
+            new DataManager(new ExcelExporter()).ExportNguoiDung(Objects.ConnectionFile.GetFileConnection("\\Data\\Account.xlsx"));
+
+            fNguoiDung_Load(sender, e);
         }
     }
 }
