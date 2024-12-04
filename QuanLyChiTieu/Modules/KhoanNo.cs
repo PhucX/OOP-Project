@@ -28,8 +28,29 @@ namespace QuanLyChiTieu.Modules
 
         public double ThanhToan(double soTienTra)
         {
+            //// Kiểm tra nếu ngày hiện tại trước ngày vay, thì không tính lãi
+            //if (DateTime.Now < NgayVay)
+            //{
+            //    return SoDuNo;
+            //}
+
+            //// Tính số ngày đã trôi qua từ ngày vay đến ngày hiện tại
+            //int soNgay = (DateTime.Now - NgayVay).Days;
+
+            //// Tính số ngày giữa ngày vay và ngày hạn trả
+            //int soNgayHanTra = (NgayDenHan - NgayVay).Days;
+
+            //// Nếu ngày hiện tại đã qua ngày hạn trả, tính lãi theo toàn bộ thời gian cho đến hạn trả
+            //if (DateTime.Now >= NgayDenHan)
+            //{
+            //    soNgay = soNgayHanTra;  // Chỉ tính đến ngày hạn trả
+            //}
+
+            //// Tính tổng số dư nợ với lãi suất hàng ngày
+            //double soDu = soDuNo * (1 + LaiSuat * soNgay);
             soDuNo -= soTienTra;
-            return soDuNo;
+
+            return soDuNo - soTienTra;
         }
     }
 }

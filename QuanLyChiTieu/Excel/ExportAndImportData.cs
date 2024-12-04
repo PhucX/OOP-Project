@@ -106,7 +106,7 @@ namespace QuanLyChiTieu
                             if (parts.Length < 3)
                                 break;
 
-                            DichVuVay.Instance.DanhSachKhoanVay[maVay].ThemDanhSach(new ThanhToan(double.Parse(parts[0]), DateTime.Parse(parts[1].ToString()), parts[3].ToString()));
+                            DichVuVay.Instance.DanhSachKhoanVay[maVay].ThemDanhSach(new ThanhToan(double.Parse(parts[0]), DateTime.Parse(parts[1].ToString()), parts[2].ToString()));
 
                             cellValue = row.Cell(++cnt).Value.ToString();
                         }    

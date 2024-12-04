@@ -123,7 +123,7 @@ namespace QuanLyChiTieu
                     MessageBox.Show("Mật khẩu không hợp lệ!");
             }
             else
-                MessageBox.Show("Tài khoản không tồn tại!");
+                MessageBox.Show("Tài khoản đã có!");
         }
     }
 }

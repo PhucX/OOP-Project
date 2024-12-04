@@ -36,8 +36,17 @@ namespace QuanLyChiTieu
             {
                 KhoanChoVay _khoanChoVay = khoanChoVay.Value as KhoanChoVay;
 
-                if (_khoanChoVay != null)
-                    dgv_Them(_khoanChoVay);
+                if(_khoanChoVay != null)
+                {
+                    if (_khoanChoVay.NgayDenHan < DateTime.Now && _khoanChoVay.SoTienBiThieu > 0 && _khoanChoVay.TrangThai != "Đã thanh toán")
+                        DichVuVay.Instance.DanhSachKhoanVay[_khoanChoVay.IdKhoanVay].TrangThai = "Quá hạn";
+
+                    if (_khoanChoVay.SoTienBiThieu <= 0)
+                        DichVuVay.Instance.DanhSachKhoanVay[_khoanChoVay.IdKhoanVay].TrangThai = "Đã thanh toán";
+
+                    if (_khoanChoVay != null)
+                        dgv_Them(_khoanChoVay);
+                }    
             }
         }
 
