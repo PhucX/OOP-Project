@@ -29,7 +29,7 @@ namespace QuanLyChiTieu
                 string trangThai = guna2ComboBox1.SelectedItem.ToString();
                 DateTime ngayDenHan = NgayDenHan.Value.Date;
 
-                DichVuVay.Instance.Them(idVay, new Modules.KhoanNo(idVay, soTienVay, laiSuat, ngayDenHan, trangThai, nguoiChoVay));
+                DichVuVay.Instance.Them(idVay, new Modules.KhoanNo(idVay, soTienVay, laiSuat, DateTime.Now, ngayDenHan, trangThai, nguoiChoVay));
 
                 this.Close();
             }

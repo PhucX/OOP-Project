@@ -1,4 +1,5 @@
-﻿using DocumentFormat.OpenXml.Spreadsheet;
+﻿using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Spreadsheet;
 using QuanLyChiTieu.Modules;
 using QuanLyChiTieu.Objects;
 using System;
@@ -78,11 +79,18 @@ namespace QuanLyChiTieu
 
         private void XoaKhoanVay()
         {
-            while (queueIndex.Count > 0)
+            foreach (DataGridViewRow row in dgvKhoanVay.Rows)
             {
-                int index = queueIndex.Dequeue();
-                string maVay = dgvKhoanVay.Rows[index].Cells["maVay"].Value.ToString();
-                DichVuVay.Instance.Xoa(maVay); // xóa theo mã vay
+                // Kiểm tra xem dòng có phải là dòng data (không phải dòng tiêu đề hoặc dòng mới)
+                if (!row.IsNewRow)
+                {
+                    // Lấy giá trị từ cột đầu tiên (chỉ số cột là 0)
+                    var cellValue = row.Cells[0].Value;
+
+                    // Kiểm tra trạng thái của checkbox
+                    if (bool.Parse(cellValue.ToString()))
+                        DichVuVay.Instance.Xoa(row.Cells[1].Value.ToString()); // xóa theo mã vay
+                }
             }
         }
 
@@ -111,10 +119,6 @@ namespace QuanLyChiTieu
                     fSuaKhoanVay fSuaKhoanVay = new fSuaKhoanVay(dgvKhoanVay.Rows[e.RowIndex].Cells["maVay"].Value.ToString());
                     fSuaKhoanVay.ShowDialog();
                     fKhoanVay_Load(sender, e);
-                }
-                else if(e.ColumnIndex == dgvKhoanVay.Columns["chon"].Index)
-                {
-                    //MessageBox.Show("abc");
                 }
             }
         }
@@ -154,7 +158,8 @@ namespace QuanLyChiTieu
         {
             try
             {
-                KhoanNo khoanNo = new KhoanNo(rowData[1].ToString(), double.Parse(rowData[4].ToString()), double.Parse(rowData[5].ToString()), DateTime.Parse(rowData[3].ToString()), rowData[6].ToString(), rowData[2].ToString());
+                DateTime ngayVay = DichVuVay.Instance.DanhSachKhoanVay[rowData[1].ToString()].NgayVay;
+                KhoanNo khoanNo = new KhoanNo(rowData[1].ToString(), double.Parse(rowData[4].ToString()), double.Parse(rowData[5].ToString()), ngayVay, DateTime.Parse(rowData[3].ToString()), rowData[6].ToString(), rowData[2].ToString());
 
                 DichVuVay.Instance.CapNhat(rowData[1].ToString(), khoanNo);
             }

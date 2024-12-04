@@ -138,6 +138,9 @@ namespace QuanLyChiTieu
 
         }
 
-        
+        private void guna2PictureBox1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            new fNguoiDung().ShowDialog();
+        }
     }
 }

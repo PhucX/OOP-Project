@@ -37,9 +37,10 @@ namespace QuanLyChiTieu
             double soTienVay = double.Parse(txbSoTienVay.Text);
             double laiSuat = double.Parse(txbLaiSuat.Text);
             string trangThai = guna2ComboBox1.SelectedItem.ToString();
+            DateTime ngayVay = DichVuVay.Instance.DanhSachKhoanVay[idVay].NgayVay;
             DateTime ngayDenHan = NgayDenHan.Value.Date;
 
-            KhoanNo khoanNo = new KhoanNo(idVay, soTienVay, laiSuat, ngayDenHan, trangThai, nguoiChoVay);
+            KhoanNo khoanNo = new KhoanNo(idVay, soTienVay, laiSuat, ngayVay, ngayDenHan, trangThai, nguoiChoVay);
             DichVuVay.Instance.CapNhat(khoanVay.IdKhoanVay, khoanNo);
 
             this.Close();

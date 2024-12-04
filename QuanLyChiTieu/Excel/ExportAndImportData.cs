@@ -62,7 +62,8 @@ namespace QuanLyChiTieu
                             double.Parse(row.Cell(2).Value.ToString()),
                             double.Parse(row.Cell(3).Value.ToString()),
                             DateTime.Parse(row.Cell(4).Value.ToString()),
-                            row.Cell(5).Value.ToString(), row.Cell(6).Value.ToString()));
+                            DateTime.Parse(row.Cell(5).Value.ToString()),
+                            row.Cell(6).Value.ToString(), row.Cell(7).Value.ToString()));
                         }
                         else if(maVay.Contains("loan"))
                         {
@@ -70,8 +71,21 @@ namespace QuanLyChiTieu
                             double.Parse(row.Cell(2).Value.ToString()),
                             double.Parse(row.Cell(3).Value.ToString()),
                             DateTime.Parse(row.Cell(4).Value.ToString()),
-                            row.Cell(5).Value.ToString(), row.Cell(7).Value.ToString()));
+                            DateTime.Parse(row.Cell(5).Value.ToString()),
+                            row.Cell(6).Value.ToString(), row.Cell(8).Value.ToString()));
                         }
+
+                        int cnt = 9;
+                        var cellValue = row.Cell(8).Value.ToString().Trim();
+                        while (!string.IsNullOrEmpty(cellValue)) // Kiểm tra cột kế tiếp
+                        {
+                            string[] parts = cellValue.Split(',');
+                            if (parts.Length < 2)
+                                break;
+
+                            DichVuVay.Instance.DanhSachKhoanVay[maVay].ThemDanhSach(new ThanhToan(double.Parse(parts[0]), DateTime.Parse(parts[1].Trim())));
+                            cellValue = row.Cell(cnt++).Value.ToString();
+                        }    
                     }
                 }
             }
@@ -238,10 +252,11 @@ namespace QuanLyChiTieu
                     worksheet.Cell(1, 1).Value = "Mã vay";
                     worksheet.Cell(1, 2).Value = "Số tiền vay";
                     worksheet.Cell(1, 3).Value = "Lãi suất";
-                    worksheet.Cell(1, 4).Value = "Ngày đến hạn";
-                    worksheet.Cell(1, 5).Value = "Trạng thái";
-                    worksheet.Cell(1, 6).Value = "Người cho vay";
-                    worksheet.Cell(1, 7).Value = "Người vay";
+                    worksheet.Cell(1, 4).Value = "Ngày vay";
+                    worksheet.Cell(1, 5).Value = "Ngày đến hạn";
+                    worksheet.Cell(1, 6).Value = "Trạng thái";
+                    worksheet.Cell(1, 7).Value = "Người cho vay";
+                    worksheet.Cell(1, 8).Value = "Người vay";
 
                     int lastRowUsed = worksheet.RowsUsed().Count() + 1;
                     
@@ -250,25 +265,33 @@ namespace QuanLyChiTieu
                         worksheet.Cell(lastRowUsed, 1).Value = khoanVay.Value.IdKhoanVay;
                         worksheet.Cell(lastRowUsed, 2).Value = khoanVay.Value.SoTienVay.ToString();
                         worksheet.Cell(lastRowUsed, 3).Value = khoanVay.Value.LaiSuat.ToString();
-                        worksheet.Cell(lastRowUsed, 4).Value = khoanVay.Value.NgayDenHan.ToString();
-                        worksheet.Cell(lastRowUsed, 5).Value = khoanVay.Value.TrangThai;
+                        worksheet.Cell(lastRowUsed, 4).Value = khoanVay.Value.NgayVay.ToString();
+                        worksheet.Cell(lastRowUsed, 5).Value = khoanVay.Value.NgayDenHan.ToString();
+                        worksheet.Cell(lastRowUsed, 6).Value = khoanVay.Value.TrangThai;
                         
 
                         if (khoanVay.Value is KhoanNo)
                         {
                             KhoanNo khoanNo = (KhoanNo)khoanVay.Value; // nếu khoản vay là nợ
 
-                            worksheet.Cell(lastRowUsed, 6).Value = khoanNo.NguoiChoVay;
-                            worksheet.Cell(lastRowUsed, 7).Value = taiKhoan;
+                            worksheet.Cell(lastRowUsed, 7).Value = khoanNo.NguoiChoVay;
+                            worksheet.Cell(lastRowUsed, 8).Value = taiKhoan;
                         }
                         else
                         {
                             KhoanChoVay khoanChoVay = (KhoanChoVay)khoanVay.Value; // khoản vay là cho vay
 
-                            worksheet.Cell(lastRowUsed, 6).Value = taiKhoan;
-                            worksheet.Cell(lastRowUsed, 7).Value = khoanChoVay.NguoiVay;
+                            worksheet.Cell(lastRowUsed, 7).Value = taiKhoan;
+                            worksheet.Cell(lastRowUsed, 8).Value = khoanChoVay.NguoiVay;
                         }
 
+                        var cellValue = DichVuVay.Instance.DanhSachKhoanVay[khoanVay.Value.IdKhoanVay];
+
+                        int cnt = 9;
+                        for (int i = 0; i < cellValue.SoLuongThanhToan();i++)
+                        {
+                            worksheet.Cell(lastRowUsed, cnt++).Value = cellValue.DanhSachThanhToan[i].SoTienThanhToan.ToString() + cellValue.DanhSachThanhToan[i].NgayThanhToan.ToString();
+                        }
                         lastRowUsed += 1; // tăng chỉ số hàng đã dùng thêm 1
                     }
 

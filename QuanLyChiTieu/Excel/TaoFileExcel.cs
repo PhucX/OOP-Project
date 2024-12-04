@@ -99,10 +99,11 @@ namespace QuanLyChiTieu.Excel
                         worksheet.Cell(1, 1).Value = "Mã vay";
                         worksheet.Cell(1, 2).Value = "Số tiền vay";
                         worksheet.Cell(1, 3).Value = "Lãi suất";
-                        worksheet.Cell(1, 4).Value = "Ngày đến hạn";
-                        worksheet.Cell(1, 5).Value = "Trạng thái";
-                        worksheet.Cell(1, 6).Value = "Người cho vay";
-                        worksheet.Cell(1, 7).Value = "Người vay";
+                        worksheet.Cell(1, 4).Value = "Ngày vay";
+                        worksheet.Cell(1, 5).Value = "Ngày đến hạn";
+                        worksheet.Cell(1, 6).Value = "Trạng thái";
+                        worksheet.Cell(1, 7).Value = "Người cho vay";
+                        worksheet.Cell(1, 8).Value = "Người vay";
 
                         // Lưu workbook vào file Excel
                         workbook.SaveAs(filePath);

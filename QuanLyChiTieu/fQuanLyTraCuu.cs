@@ -97,5 +97,10 @@ namespace QuanLyChiTieu
             if (e.RowIndex >= 0)
                 index = e.RowIndex;
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            new fChuyenKhoan().ShowDialog();
+        }
     }
 }

@@ -28,7 +28,7 @@ namespace QuanLyChiTieu
             string trangThai = cbxTrangThai.SelectedItem.ToString();
             DateTime ngayDenHan = NgayDenHan.Value.Date;
 
-            DichVuVay.Instance.Them(idVay, new Modules.KhoanChoVay(idVay, soTienVay, laiSuat, ngayDenHan, trangThai, nguoiChoVay));
+            DichVuVay.Instance.Them(idVay, new Modules.KhoanChoVay(idVay, soTienVay, laiSuat, DateTime.Now, ngayDenHan, trangThai, nguoiChoVay));
 
             this.Close();
         }

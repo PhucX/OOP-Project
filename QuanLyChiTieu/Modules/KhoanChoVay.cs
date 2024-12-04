@@ -1,8 +1,10 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Presentation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QuanLyChiTieu.Modules
 {
@@ -13,7 +15,7 @@ namespace QuanLyChiTieu.Modules
 
         // phương thức khởi tạo
         public KhoanChoVay() { }
-        public KhoanChoVay(string idKhoanVay, double soTienVay, double laiSuat, DateTime ngayDenHan, string trangThai, string nguoiVay) : base(idKhoanVay, soTienVay, laiSuat, ngayDenHan, trangThai)
+        public KhoanChoVay(string idKhoanVay, double soTienVay, double laiSuat, DateTime ngayVay, DateTime ngayDenHan, string trangThai, string nguoiVay) : base(idKhoanVay, soTienVay, laiSuat, ngayVay, ngayDenHan, trangThai)
         {
             this.nguoiVay = nguoiVay;
         }
@@ -22,5 +24,18 @@ namespace QuanLyChiTieu.Modules
         public string NguoiVay { get => nguoiVay; set => nguoiVay = value; }
 
         public double SoTienBiThieu { get => soTienBiThieu; set => soTienBiThieu = value; }
+
+        public void ThanhToan(double soTienTra)
+        {
+            double ketqua = soTienBiThieu - soTienTra;
+            if (ketqua < 0)
+            {
+                MessageBox.Show("Lố số tiền cần trả", "Cảnh báo");
+                return;
+            }
+
+            soTienBiThieu = ketqua;
+            DanhSachThanhToan.Add(new Modules.ThanhToan(soTienTra, DateTime.Now));
+        }
     }
 }

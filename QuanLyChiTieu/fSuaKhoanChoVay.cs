@@ -40,9 +40,10 @@ namespace QuanLyChiTieu
             double soTienVay = double.Parse(txbSoTienVay.Text);
             double laiSuat = double.Parse(txbLaiSuat.Text);
             string trangThai = cbxTrangThai.SelectedItem.ToString();
+            DateTime ngayVay = DichVuVay.Instance.DanhSachKhoanVay[idVay].NgayVay;
             DateTime ngayDenHan = NgayDenHan.Value.Date;
 
-            KhoanChoVay _khoanChoVay = new KhoanChoVay(idVay, soTienVay, laiSuat, ngayDenHan, trangThai, nguoiChoVay);
+            KhoanChoVay _khoanChoVay = new KhoanChoVay(idVay, soTienVay, laiSuat, ngayVay, ngayDenHan, trangThai, nguoiChoVay);
             DichVuVay.Instance.CapNhat(_khoanChoVay.IdKhoanVay, _khoanChoVay);
 
             this.Close();

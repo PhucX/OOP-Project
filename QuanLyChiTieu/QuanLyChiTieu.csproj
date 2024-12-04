@@ -134,17 +134,17 @@
     <Compile Include="Excel\ExcelSearcher.cs" />
     <Compile Include="Excel\ExportAndImportData.cs" />
     <Compile Include="Excel\TaoFileExcel.cs" />
-    <Compile Include="fChuyenKhoan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fChuyenKhoan.Designer.cs">
-      <DependentUpon>fChuyenKhoan.cs</DependentUpon>
-    </Compile>
     <Compile Include="fBaoCao.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fBaoCao.Designer.cs">
       <DependentUpon>fBaoCao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fChuyenKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fChuyenKhoan.Designer.cs">
+      <DependentUpon>fChuyenKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="fGiaoDich.cs">
       <SubType>Form</SubType>
@@ -163,6 +163,12 @@
     </Compile>
     <Compile Include="fKhoanVay.Designer.cs">
       <DependentUpon>fKhoanVay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fNguoiDung.Designer.cs">
+      <DependentUpon>fNguoiDung.cs</DependentUpon>
     </Compile>
     <Compile Include="form1.cs">
       <SubType>Form</SubType>
@@ -224,6 +230,7 @@
     <Compile Include="fTrangChu.Designer.cs">
       <DependentUpon>fTrangChu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\NguoiDung.cs" />
     <Compile Include="Modules\ThanhToan.cs" />
     <Compile Include="Modules\GiaoDich.cs" />
     <Compile Include="Modules\KhoanChoVay.cs" />
@@ -255,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fKhoanVay.resx">
       <DependentUpon>fKhoanVay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fNguoiDung.resx">
+      <DependentUpon>fNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form1.resx">
       <DependentUpon>form1.cs</DependentUpon>
