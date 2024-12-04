@@ -126,6 +126,7 @@
             this.guna2Button1.Size = new System.Drawing.Size(105, 30);
             this.guna2Button1.TabIndex = 3;
             this.guna2Button1.Text = "Hôm nay";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // guna2Button2
             // 
@@ -144,7 +145,8 @@
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(105, 30);
             this.guna2Button2.TabIndex = 4;
-            this.guna2Button2.Text = "Tùy chỉnh";
+            this.guna2Button2.Text = "Reset";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button3
             // 
@@ -164,6 +166,7 @@
             this.guna2Button3.Size = new System.Drawing.Size(105, 30);
             this.guna2Button3.TabIndex = 5;
             this.guna2Button3.Text = "7 ngày trước";
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
             // guna2Button4
             // 
@@ -183,6 +186,7 @@
             this.guna2Button4.Size = new System.Drawing.Size(105, 30);
             this.guna2Button4.TabIndex = 6;
             this.guna2Button4.Text = "Tháng này";
+            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
             // guna2Panel1
             // 
@@ -193,6 +197,7 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(234, 55);
             this.guna2Panel1.TabIndex = 7;
+            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // guna2HtmlLabel2
             // 
@@ -339,6 +344,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fBaoCao";
             this.Text = "fBaoCao";
+            this.Load += new System.EventHandler(this.fBaoCao_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
