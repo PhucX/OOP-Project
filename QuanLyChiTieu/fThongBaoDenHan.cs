@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace QuanLyChiTieu
 {
-    public partial class fBaoCao : Form
+    public partial class fThongBaoDenHan : Form
     {
-        public fBaoCao()
+        public fThongBaoDenHan()
         {
             InitializeComponent();
-        }
-
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

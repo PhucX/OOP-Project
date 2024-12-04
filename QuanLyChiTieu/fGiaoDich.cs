@@ -174,5 +174,9 @@ namespace QuanLyChiTieu
             foreach (var giaodich in giaTriThoaMan)
                 dgv_Them(giaodich);
         }
+
+       
+
+        
     }
 }

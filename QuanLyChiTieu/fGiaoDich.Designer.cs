@@ -78,9 +78,6 @@ namespace QuanLyChiTieu
             // 
             // btnLuu
             // 
-            this.btnLuu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLuu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLuu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLuu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -90,16 +87,14 @@ namespace QuanLyChiTieu
             this.btnLuu.ForeColor = System.Drawing.Color.White;
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnLuu.Location = new System.Drawing.Point(759, 53);
+            this.btnLuu.Location = new System.Drawing.Point(783, 53);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(39, 40);
             this.btnLuu.TabIndex = 54;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoa
             // 
-            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXoa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnXoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnXoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -109,16 +104,14 @@ namespace QuanLyChiTieu
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnXoa.Location = new System.Drawing.Point(713, 53);
+            this.btnXoa.Location = new System.Drawing.Point(737, 53);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(39, 40);
             this.btnXoa.TabIndex = 53;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
-            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnThem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnThem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -128,17 +121,18 @@ namespace QuanLyChiTieu
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnThem.Location = new System.Drawing.Point(665, 53);
+            this.btnThem.Location = new System.Drawing.Point(689, 53);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(39, 40);
             this.btnThem.TabIndex = 52;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // ptbTimKiem
             // 
             this.ptbTimKiem.BackColor = System.Drawing.Color.Transparent;
             this.ptbTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("ptbTimKiem.Image")));
             this.ptbTimKiem.ImageRotate = 0F;
-            this.ptbTimKiem.Location = new System.Drawing.Point(254, 53);
+            this.ptbTimKiem.Location = new System.Drawing.Point(278, 53);
             this.ptbTimKiem.Name = "ptbTimKiem";
             this.ptbTimKiem.Size = new System.Drawing.Size(34, 37);
             this.ptbTimKiem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -160,7 +154,7 @@ namespace QuanLyChiTieu
             this.txbTimKiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txbTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbTimKiem.Location = new System.Drawing.Point(12, 53);
+            this.txbTimKiem.Location = new System.Drawing.Point(36, 56);
             this.txbTimKiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbTimKiem.Name = "txbTimKiem";
             this.txbTimKiem.PasswordChar = '\0';
@@ -173,7 +167,7 @@ namespace QuanLyChiTieu
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Cambria", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(12, 12);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(36, 12);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(208, 34);
             this.guna2HtmlLabel1.TabIndex = 49;
@@ -215,7 +209,7 @@ namespace QuanLyChiTieu
             this.dgvGiaoDich.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvGiaoDich.Font = new System.Drawing.Font("Cambria", 12F);
             this.dgvGiaoDich.GridColor = System.Drawing.Color.Red;
-            this.dgvGiaoDich.Location = new System.Drawing.Point(12, 99);
+            this.dgvGiaoDich.Location = new System.Drawing.Point(36, 99);
             this.dgvGiaoDich.Name = "dgvGiaoDich";
             this.dgvGiaoDich.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvGiaoDich.RowHeadersVisible = false;
@@ -243,6 +237,8 @@ namespace QuanLyChiTieu
             this.dgvGiaoDich.ThemeStyle.RowsStyle.Height = 22;
             this.dgvGiaoDich.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvGiaoDich.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvGiaoDich.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiaoDich_CellClick);
+            this.dgvGiaoDich.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvGiaoDich_CellFormatting);
             // 
             // Select
             // 
@@ -321,7 +317,7 @@ namespace QuanLyChiTieu
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(858, 586);
+            this.ClientSize = new System.Drawing.Size(930, 586);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThem);

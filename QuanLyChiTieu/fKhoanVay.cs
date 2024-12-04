@@ -180,5 +180,7 @@ namespace QuanLyChiTieu
             string filepath = QuanLyChiTieu.Objects.ConnectionFile.GetFileConnection(childpath);
             new DataManager(new ExcelExporter()).ExportKhoanVay(taiKhoan, filepath);
         }
+
+       
     }
 }

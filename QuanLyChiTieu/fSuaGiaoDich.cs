@@ -52,7 +52,7 @@ namespace QuanLyChiTieu
             MessageBox.Show("Bạn đã chọn: " + selectedValue);
         }
 
-        private void guna2Button1_Click_1(object sender, EventArgs e)
+        private void btnLuu_Click(object sender, EventArgs e)
         {
             string magiaodich = giaodich.MaGiaoDich;
             Double SoTien = Double.Parse(txbTSoTien.Text);

@@ -33,5 +33,11 @@ namespace QuanLyChiTieu
                 isFirstClick = true;
             }
         }
+
+        private void ptbThongBao_Click(object sender, EventArgs e)
+        {
+            fThongBaoDenHan f = new fThongBaoDenHan();
+            f.ShowDialog();
+        }
     }
 }
