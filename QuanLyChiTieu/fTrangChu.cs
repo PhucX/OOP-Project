@@ -38,7 +38,6 @@ namespace QuanLyChiTieu
         {
             fThongBaoDenHan f = new fThongBaoDenHan();
             f.ShowDialog();
-            
         }
     }
 }

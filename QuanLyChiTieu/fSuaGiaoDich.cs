@@ -34,9 +34,9 @@ namespace QuanLyChiTieu
             {
                 cbxViDienTu.Items.Add(taikhoan.Value.TenTaiKhoan);
             }
-            cbxLoaiGiaoDich.Text=giaodich.LoaiGiaoDich;
+            cbxLoaiGiaoDich.Text=giaodich.LoaiGiaoDich.ToString();
             txbTSoTien.Text=giaodich.SoTienGiaoDich.ToString();
-            txbGhiChu.Text = giaodich.GhiChu;
+            txbGhiChu.Text = giaodich.GhiChu.ToString();
             NgayGiaoDich.Text=giaodich.NgayGiaoDich.ToString();
             cbxViDienTu.Text = giaodich.ViDienTu.ToString();
 

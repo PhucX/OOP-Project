@@ -72,6 +72,11 @@ namespace QuanLyChiTieu
 
         private void dgvGiaoDich_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0 || e.RowIndex >= dgvGiaoDich.Rows.Count)
+            {
+                return; 
+            }
+
             if (e.ColumnIndex == dgvGiaoDich.Columns["xoaColumn"].Index)
             {
                 // Xác nhận trước khi xóa
@@ -94,8 +99,8 @@ namespace QuanLyChiTieu
                 fSuaGiaoDich fSuaGiaoDich = new fSuaGiaoDich(dgvGiaoDich.Rows[e.RowIndex].Cells["Idgiaodich"].Value.ToString());
                 fSuaGiaoDich.ShowDialog();
             }
-            
         }
+
 
         private void ptbSua_Click(object sender, EventArgs e)
         {

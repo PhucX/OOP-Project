@@ -181,11 +181,11 @@ namespace QuanLyChiTieu
         {
             dgvDaThanhToan.Rows.Clear();
             string maVay = dgvKhoanChoVay.Rows[index].Cells["maVay"].Value.ToString();
-            KhoanNo khoanNo = (KhoanNo)DichVuVay.Instance.DanhSachKhoanVay[maVay];
+            KhoanChoVay khoanNo = (KhoanChoVay)DichVuVay.Instance.DanhSachKhoanVay[maVay];
             List<ThanhToan> cacKhoanVay = khoanNo.DanhSachThanhToan;
 
             for (int i = 0; i < cacKhoanVay.Count; i++)
-                dgvDaThanhToan.Rows.Add(cacKhoanVay[i].NgayThanhToan.ToString(), cacKhoanVay[i].SoTienThanhToan.ToString(), khoanNo.SoDuNo.ToString());
+                dgvDaThanhToan.Rows.Add(cacKhoanVay[i].NgayThanhToan.ToString(), cacKhoanVay[i].SoTienThanhToan.ToString(), khoanNo.SoTienBiThieu.ToString());
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)

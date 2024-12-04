@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyChiTieu.Objects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,7 +36,7 @@ namespace QuanLyChiTieu.Modules
             }
 
             soDuNo = ketqua;
-            DanhSachThanhToan.Add(new Modules.ThanhToan(soTienTra, DateTime.Now));
+            this.DanhSachThanhToan.Add(new Modules.ThanhToan(soTienTra, DateTime.Now));
         }
     }
 }
