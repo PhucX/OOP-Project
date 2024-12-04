@@ -24,7 +24,7 @@ namespace QuanLyChiTieu
 
         private void dgv_Them(TaiKhoan taiKhoan)
         {
-            dgvViDienTu.Rows.Add(taiKhoan.TenTaiKhoan, taiKhoan.SoDu.ToString());
+            dgvViDienTu.Rows.Add(taiKhoan.TenTaiKhoan, taiKhoan.SoDu.ToString(), taiKhoan.LoaiThe);
         }
 
         private void CapNhatHienThi()
@@ -35,35 +35,46 @@ namespace QuanLyChiTieu
         private void fTranCuuQuanLy_Load(object sender, EventArgs e)
         {
             CapNhatHienThi();
+            guna2ComboBoxLoaiThe.Items.Clear();
             dgvViDienTu.Rows.Clear();
 
             foreach (var taiKhoan in DichVuTaiKhoan.Instance.DanhSachTaiKhoan)
                 dgv_Them(taiKhoan.Value);
+
+            guna2ComboBoxLoaiThe.Items.Add("Ví điện tử");
+            guna2ComboBoxLoaiThe.Items.Add("Thẻ ngân hàng");
+            guna2ComboBoxLoaiThe.Items.Add("Tiền mặt");
         }
 
         private void btnThemTaiKhoan_Click(object sender, EventArgs e)
         {
-            string taiKhoan = txbTenVi.Text;
-            double  soDu = double.Parse(txbSoDu.Text);
-
-
-            if (!DichVuTaiKhoan.Instance.DanhSachTaiKhoan.ContainsKey(taiKhoan))
+            try
             {
-                // thêm và load lại bảng hiển thị
-                DichVuTaiKhoan.Instance.Them(taiKhoan, new Modules.TaiKhoan(taiKhoan, soDu));
-                fTranCuuQuanLy_Load(sender, e);
-                SaveData.SaveDataAccount();
+                string taiKhoan = txbTenVi.Text;
+                double soDu = double.Parse(txbSoDu.Text);
+                string loaiThe = guna2ComboBoxLoaiThe.Text;
 
-                // lấy đường dẫn file
-                string filepath = QuanLyChiTieu.Objects.ConnectionFile.GetFileConnection("LoanAndDebt");
-                new QuanLyChiTieu.Excel.DataCreator(new TaoFileKhoanVay()).ThemSheet(filepath, taiKhoan);
+                if (!DichVuTaiKhoan.Instance.DanhSachTaiKhoan.ContainsKey(taiKhoan))
+                {
+                    // thêm và load lại bảng hiển thị
+                    DichVuTaiKhoan.Instance.Them(taiKhoan, new Modules.TaiKhoan(taiKhoan, soDu, loaiThe));
+                    fTranCuuQuanLy_Load(sender, e);
+                    SaveData.SaveDataAccount();
 
-                filepath = QuanLyChiTieu.Objects.ConnectionFile.GetFileConnection("Transaction");
-                new QuanLyChiTieu.Excel.DataCreator(new TaoFileGiaoDich()).ThemSheet(filepath, taiKhoan);
+                    // lấy đường dẫn file
+                    string filepath = QuanLyChiTieu.Objects.ConnectionFile.GetFileConnection("LoanAndDebt");
+                    new QuanLyChiTieu.Excel.DataCreator(new TaoFileKhoanVay()).ThemSheet(filepath, taiKhoan);
+
+                    filepath = QuanLyChiTieu.Objects.ConnectionFile.GetFileConnection("Transaction");
+                    new QuanLyChiTieu.Excel.DataCreator(new TaoFileGiaoDich()).ThemSheet(filepath, taiKhoan);
+                }
+                else
+                    MessageBox.Show("Tài khoản đã tồn tại");
             }
-            else
-                MessageBox.Show("Tài khoản đã tồn tại");
-
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSuaVi_Click(object sender, EventArgs e)
@@ -74,6 +85,8 @@ namespace QuanLyChiTieu
 
                 UsedData.UsedDataLoan(); // lấy dữ liệu khoản vay
                 UsedData.UsedDataTran(); // lấy dữ liệu giao dịch
+
+                MessageBox.Show("Đã chuyển tài khoản thành công.", "Thông báo");
             }
         }
 
@@ -90,7 +103,16 @@ namespace QuanLyChiTieu
 
         private void btnXoaTaiKhoan_Click(object sender, EventArgs e)
         {
-            DichVuTaiKhoan.Instance.Xoa(QuanLyChiTieu.Objects.ConnectionFile.currentAccount);
+            string taiKhoan = dgvViDienTu.Rows[index].Cells[0].Value.ToString();
+            DichVuTaiKhoan.Instance.Xoa(taiKhoan);
+
+            string filepath = QuanLyChiTieu.Objects.ConnectionFile.GetFileConnection("LoanAndDebt");
+            new ExcelSheetDeleter().RemoveSheet(filepath, taiKhoan);
+
+            filepath = QuanLyChiTieu.Objects.ConnectionFile.GetFileConnection("Transaction");
+            new ExcelSheetDeleter().RemoveSheet(filepath, taiKhoan);
+
+            fTranCuuQuanLy_Load(sender, e);
         }
     }
 }

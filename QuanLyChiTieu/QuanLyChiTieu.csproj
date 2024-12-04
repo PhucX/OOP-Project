@@ -132,6 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Excel\ExcelSearcher.cs" />
+    <Compile Include="Excel\ExcelSheetDeleter.cs" />
     <Compile Include="Excel\ExportAndImportData.cs" />
     <Compile Include="Excel\TaoFileExcel.cs" />
     <Compile Include="fBaoCao.cs">

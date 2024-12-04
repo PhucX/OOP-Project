@@ -33,6 +33,7 @@ namespace QuanLyChiTieu.Excel
                         // Thêm tiêu đề cột
                         worksheet.Cell(1, 1).Value = "Tên tài khoản";
                         worksheet.Cell(1, 2).Value = "Số dư";
+                        worksheet.Cell(1, 3).Value = "Loại thẻ";
 
                         // Lưu workbook vào file Excel
                         workbook.SaveAs(filePath);
@@ -148,11 +149,6 @@ namespace QuanLyChiTieu.Excel
             {
                 MessageBox.Show("Có lỗi khi tạo file Excel: " + ex.Message);
             }
-        }
-
-        public void XoaSheet(string filePath, string sheetName)
-        {
-
         }
     }
 }

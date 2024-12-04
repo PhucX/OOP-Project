@@ -57,7 +57,7 @@ namespace QuanLyChiTieu
                     foreach (IXLRow row in worksheet.RowsUsed().Skip(1))
                     {
                         string tenThe = row.Cell(1).Value.ToString();
-                        DichVuTaiKhoan.Instance.Them(tenThe, new TaiKhoan(tenThe, double.Parse(row.Cell(2).Value.ToString())));
+                        DichVuTaiKhoan.Instance.Them(tenThe, new TaiKhoan(tenThe, double.Parse(row.Cell(2).Value.ToString()), row.Cell(3).Value.ToString()));
                     }
                 }
             }
@@ -171,6 +171,7 @@ namespace QuanLyChiTieu
 
                     worksheet.Cell(1, 1).Value = "Tên tài khoản";
                     worksheet.Cell(1, 2).Value = "Số dư";
+                    worksheet.Cell(1, 3).Value = "Loại thẻ";
 
                     int lastRowUsed = worksheet.RowsUsed().Count() + 1;
 
@@ -179,6 +180,7 @@ namespace QuanLyChiTieu
                     {
                         worksheet.Cell(lastRowUsed, 1).Value = taiKhoan.Value.TenTaiKhoan;
                         worksheet.Cell(lastRowUsed, 2).Value = taiKhoan.Value.SoDu.ToString();
+                        worksheet.Cell(lastRowUsed, 3).Value = taiKhoan.Value.LoaiThe.ToString();
                         lastRowUsed++;
                     }
                     // Lưu lại file và ghi đè lên file gốc
